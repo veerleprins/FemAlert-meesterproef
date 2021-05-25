@@ -7,7 +7,7 @@
 </style>
 
 <svelte:head>
-  <title>Veerle Prins | Portfolio</title>
+  <title>FemAlert | Home</title>
 </svelte:head>
 
 <Home />
