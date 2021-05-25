@@ -1,5 +1,6 @@
 <script>
   // Components
+  import Button from '../atoms/Button.svelte'
 </script>
 
 <style lang="scss">
@@ -11,4 +12,6 @@
 
 <section>
   <h1>FemAlert</h1>
+  <Button text="Send" />
+  <Button text="Save" />
 </section>
