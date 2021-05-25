@@ -1,0 +1,19 @@
+{
+  "name": "femalert-meesterproef",
+  "version": "1.0.0",
+  "description": "A dashboard to view data visualizations from FemAlert data.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veerleprins/FemAlert-meesterproef.git"
+  },
+  "author": "Sharon Veldman, Johan van Beusekom, Veerle Prins",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/veerleprins/FemAlert-meesterproef/issues"
+  },
+  "homepage": "https://github.com/veerleprins/FemAlert-meesterproef#readme"
+}
