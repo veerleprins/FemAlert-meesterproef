@@ -4,6 +4,7 @@
 </script>
 
 <style lang="scss">
+  // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
   button {
     background-color: $tertiary;
