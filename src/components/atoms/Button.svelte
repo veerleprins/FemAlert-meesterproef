@@ -1,14 +1,30 @@
 <script>
   // Props
-  export let text
+  export let URL = ''
+  export let buttonTag = true
 </script>
 
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
-  button {
-    background-color: $tertiary;
+
+  button,
+  a {
+    background-color: $ui-blue;
+    border-radius: $borderSize;
+    padding: 0.5em 3em;
+    text-decoration: none;
+    border: none;
+    color: $ui-white;
   }
 </style>
 
-<button> {text} </button>
+{#if !buttonTag}
+  <a href={URL}>
+    <slot />
+  </a>
+{:else}
+  <button>
+    <slot />
+  </button>
+{/if}
