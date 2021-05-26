@@ -13,6 +13,5 @@
 
 <section>
   <h1>FemAlert</h1>
-  <Button text="Send" />
-  <Button text="Save" />
+  <Button URL="">Send</Button>
 </section>

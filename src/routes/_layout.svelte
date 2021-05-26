@@ -12,8 +12,9 @@
   }
 
   :global(body) {
-    background-color: hotpink;
+    background-color: #c4c4c4;
   }
+
   main {
     width: 100%;
   }
