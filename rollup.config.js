@@ -15,11 +15,18 @@ const mode = process.env.NODE_ENV
 const dev = mode === 'development'
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-const onwarn = (warning, onwarn) =>
+const warningIsIgnored = (warning) =>
+  warning.message.includes(
+    'Use of eval is strongly discouraged, as it poses security risks and may cause issues with minification'
+  ) || warning.message.includes('Circular dependency: node_modules')
+
+// Workaround for https://github.com/sveltejs/sapper/issues/1266
+const onwarn = (warning, _onwarn) =>
   (warning.code === 'MISSING_EXPORT' && /'preload'/.test(warning.message)) ||
   (warning.code === 'CIRCULAR_DEPENDENCY' &&
     /[/\\]@sapper[/\\]/.test(warning.message)) ||
-  onwarn(warning)
+  warningIsIgnored(warning) ||
+  console.warn(warning.toString())
 
 const preprocess = sveltePreprocess({
   scss: {
