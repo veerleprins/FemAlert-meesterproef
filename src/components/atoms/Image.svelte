@@ -13,7 +13,7 @@
 {#if !imageTag}
     <img {src} {alt} {width} {height}>
 {:else}
-    <a href="{URL}">
+    <a href={URL}>
         <img {src} {alt} {width} {height} {imageTag}>
     </a>
 {/if}
