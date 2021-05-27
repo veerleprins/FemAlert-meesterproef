@@ -1,8 +1,10 @@
 <script>
   // Components
   import Button from '../atoms/Button.svelte'
+  import donutChart from '../atoms/DonutChart.svelte'
 
-  import { onMount } from 'svelte'
+  import {onMount} from 'svelte'
+  import DonutChart from '../atoms/DonutChart.svelte'
 
   let data = []
 
@@ -27,8 +29,13 @@
 </section>
 
 <section>
-  <h1>Data:</h1>
-  {#each data as item}
-  <p>{item.first_name}</p>
-  {/each}
+  <DonutChart />
 </section>
+
+<!--<section>-->
+<!--  <h1>Data:</h1>-->
+<!--  {#each data as item}-->
+<!--  <p>{item.first_name}</p>-->
+<!--  {/each}-->
+<!--</section>-->
+

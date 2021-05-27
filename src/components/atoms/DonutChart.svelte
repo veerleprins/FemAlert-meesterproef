@@ -1,6 +1,6 @@
 <script>
     // Props
-    let data = [
+    let segments = [
         {
             'size': 5,
             'label': 'Agressie',
@@ -17,18 +17,32 @@
             'color': 'rgb(80,100,150)'
         }
     ]
-    import { pie, arc, scaleOrdinal } from 'd3'
 
-    let height = 450
-    let width = 450
-    let radius = 200
+    let width = 500
+    let height = 500
+    import { arc } from 'd3'
 
-    let buildChart = () => {
-
-
+    const fn = arc()
+    let angle = Math.PI * 2
+    $: total = segments.reduce((total, s) => total + s.size, 0)
+    let arcs
+    $: {
+        let acc = 0
+        arcs = segments.map(segment => {
+            const options = {
+                innerRadius: 20,
+                outerRadius: 100,
+                startAngle: acc,
+                endAngle: (acc += (angle * segment.size / total))
+            }
+            return {
+                color: segment.color,
+                label: segment.label,
+                d: fn(options),
+                centroid: fn.centroid(options)
+            }
+        })
     }
-
-    buildChart()
 </script>
 
 <style lang="scss">
@@ -39,6 +53,10 @@
 </style>
 
 <svg {width} {height} class='pie'>
-    <g class="arc"/>
-    <g class="arc"/>
+    <g transform='translate(50,50)'>
+        {#each arcs as arc}
+            <!-- arc -->
+            <path d={arc.d} fill={arc.color}/>
+        {/each}
+    </g>
 </svg>
