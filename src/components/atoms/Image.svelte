@@ -4,6 +4,7 @@
   export let width
   export let height
   export let imageTag
+  export let URL = ''
 </script>
 
 <style>
@@ -12,7 +13,7 @@
 {#if !imageTag}
     <img {src} {alt} {width} {height}>
 {:else}
-    <a href='/'>
+    <a href="{URL}">
         <img {src} {alt} {width} {height} {imageTag}>
     </a>
 {/if}

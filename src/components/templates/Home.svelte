@@ -27,5 +27,5 @@
 </section>
 
 <section>
-  <Image src='../img/fem-alert.png' alt='FemAlert logo' width='200px' height='200px' imageTag></Image>
+  <Image URL='' src='../img/fem-alert.png' alt='FemAlert logo' width='200px' height='200px' imageTag></Image>
 </section>
