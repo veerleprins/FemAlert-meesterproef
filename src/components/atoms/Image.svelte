@@ -1,18 +1,18 @@
 <script>
-  export let src = ''
-  export let alt = ''
-  export let width = ''
-  export let height = ''
-  export let imageTag = true
+  export let src
+  export let alt
+  export let width
+  export let height
+  export let imageTag
 </script>
 
-<style lang="scss">
+<style>
 </style>
 
-{#if imageTag}
-    <img src={src} alt={alt} width={width} height={height} imageTag={imageTag}>
+{#if !imageTag}
+    <img {src} {alt} {width} {height}>
 {:else}
-    <a>
-        <img src={src} alt={alt} width={width} height={height} imageTag={imageTag}>
+    <a href='/'>
+        <img {src} {alt} {width} {height} {imageTag}>
     </a>
 {/if}
