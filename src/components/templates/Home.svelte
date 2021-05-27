@@ -1,6 +1,7 @@
 <script>
   // Components
   import Button from '../atoms/Button.svelte'
+  import Image from '../atoms/Image.svelte'
 
   import { onMount } from 'svelte'
 
@@ -28,8 +29,12 @@
 </section>
 
 <section>
-  <h1>Data:</h1>
-  {#each data as item}
-    <p>{item.first_name}</p>
-  {/each}
+  <Image
+    URL=""
+    src="../img/fem-alert.png"
+    alt="FemAlert logo"
+    width="200px"
+    height="200px"
+    imageTag
+  />
 </section>
