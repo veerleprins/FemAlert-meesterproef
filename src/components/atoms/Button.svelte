@@ -1,7 +1,7 @@
 <script>
   // Props
   export let URL = ''
-  export let buttonTag = true
+  export let buttonTag = false
 </script>
 
 <style lang="scss">
