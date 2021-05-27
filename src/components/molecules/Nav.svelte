@@ -1,5 +1,6 @@
 <script>
-  let current = 'home'
+  // Imports
+  import List from '../atoms/List.svelte'
 </script>
 
 <style lang="scss">
@@ -7,6 +8,9 @@
 
 <nav>
   <ul>
-    <li><a href="#home">Home</a></li>
+    <List href="">Dashboard</List>
+    <List href="">Kaart</List>
+    <List href="">Alle meldingen</List>
+    <List href="">Instellingen</List>
   </ul>
 </nav>
