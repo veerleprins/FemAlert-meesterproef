@@ -9,7 +9,6 @@
   onMount(async () => {
     const res = await fetch(`https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`)
     data = await res.json()
-    // o
   })
 </script>
 
