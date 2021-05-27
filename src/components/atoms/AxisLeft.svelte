@@ -6,6 +6,16 @@
 </script>
 
 <style lang="scss">
+  // Import fonts, vars, etc.
+  @import 'src/styles/index.scss';
+
+  line {
+    stroke: $ui-black;
+  }
+
+  text {
+    fill: $ui-black;
+  }
 </style>
 
 {#each yScale.ticks() as tickValue}
