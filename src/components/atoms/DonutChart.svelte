@@ -1,48 +1,48 @@
 <script>
     // Props
-    let segments = [
-        {
-            'size': 5,
-            'label': 'Agressie',
-            'color': 'rgb(100,180,200)'
-        },
-        {
-            'size': 8,
-            'label': 'Aanranding',
-            'color': 'rgb(150,200,250)'
-        },
-        {
-            'size': 11,
-            'label': 'another thing',
-            'color': 'rgb(80,100,150)'
-        }
-    ]
+    export let innerRadius = 60
+    export let data
 
-    let width = 500
-    let height = 500
+
     import { arc } from 'd3'
 
-    const fn = arc()
+    let width = 200
+    let height = 200
+
+    //call the d3 function arc() to create arcs
+    let fn = arc()
+
+    //create a full circle
     let angle = Math.PI * 2
-    $: total = segments.reduce((total, s) => total + s.size, 0)
+
+    let total = data.reduce((total, item) => total + item.size, 0)
     let arcs
-    $: {
+    let buildDonut = () => {
         let acc = 0
-        arcs = segments.map(segment => {
+        //map over data and create an arc for each data point
+        arcs = data.map(segment => {
             const options = {
-                innerRadius: 20,
+                //set up inner and outer radius
+                innerRadius: innerRadius,
                 outerRadius: 100,
+                //get the starting point of the segment
                 startAngle: acc,
+                //find the end point of the segment and store this in startAngle
+                //this way the next segment will start where the previous one ended
                 endAngle: (acc += (angle * segment.size / total))
             }
+
             return {
                 color: segment.color,
-                label: segment.label,
-                d: fn(options),
-                centroid: fn.centroid(options)
+                path: fn(options)
             }
         })
     }
+    buildDonut()
+
+    //based on an example by Rich-harris
+    //https://github.com/Rich-Harris/svelte-d3-arc-demo
+
 </script>
 
 <style lang="scss">
@@ -53,10 +53,10 @@
 </style>
 
 <svg {width} {height} class='pie'>
-    <g transform='translate(50,50)'>
+    <g transform='translate(100,100)'>
         {#each arcs as arc}
-            <!-- arc -->
-            <path d={arc.d} fill={arc.color}/>
+            <!-- single arc -->
+            <path d={arc.path} fill={arc.color}/>
         {/each}
     </g>
 </svg>
