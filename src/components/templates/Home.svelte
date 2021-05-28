@@ -1,9 +1,14 @@
 <script>
   // Components
-  import Button from '../atoms/Button.svelte'
+
   import {onMount} from 'svelte'
   import DonutChart from '../atoms/DonutChart.svelte'
   import Image from '../atoms/Image.svelte'
+  import Title from '../atoms/Title.svelte'
+  import SubTitle from '../atoms/SubTitle.svelte'
+  import DateSlider from '../organisms/DateSlider.svelte'
+  import NewReportCounter from '../organisms/NewReportCounter.svelte'
+  import DonutSection from '../organisms/DonutSection.svelte'
 
   let data = []
 
@@ -18,29 +23,49 @@
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  h1 {
-    margin: 10em;
+  * {
+    font-family: $standard-font;
   }
+
+  section:first-of-type {
+    margin-left: 1.5em;
+    margin-top: 3em;
+  }
+
+  section:not(:first-of-type) {
+    margin: 2em 1.5em;
+    background-color: $ui-section;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #9a9a9a;
+  }
+
 </style>
 
 <section>
-  <h1>FemAlert</h1>
-  <Button URL="">Send</Button>
+  <Title>Hi Harold!</Title>
+  <SubTitle>Welkom Terug</SubTitle>
+</section>
+
+<DateSlider />
+
+<section>
+  <NewReportCounter/>
 </section>
 
 <section>
-  <Image
-      URL=""
-      src="../img/fem-alert.png"
-      alt="FemAlert logo"
-      width="200px"
-      height="200px"
-      imageTag
-  />
+  <DonutSection/>
 </section>
 
-<section>
-  <DonutChart innerRadius="95"/>
-</section>
+
+<!--<section>-->
+<!--  <Image-->
+<!--      URL=""-->
+<!--      src="../img/fem-alert.png"-->
+<!--      alt="FemAlert logo"-->
+<!--      width="200px"-->
+<!--      height="200px"-->
+<!--      imageTag-->
+<!--  />-->
+<!--</section>-->
 
 
