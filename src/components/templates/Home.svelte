@@ -17,6 +17,7 @@
 <style lang="scss">
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
+
   h1 {
     margin: 10em;
   }
@@ -29,16 +30,17 @@
 
 <section>
   <Image
-          URL=""
-          src="../img/fem-alert.png"
-          alt="FemAlert logo"
-          width="200px"
-          height="200px"
-          imageTag
+      URL=""
+      src="../img/fem-alert.png"
+      alt="FemAlert logo"
+      width="200px"
+      height="200px"
+      imageTag
   />
 </section>
 
 <section>
-  <DonutChart innerRadius="95" />
+  <DonutChart innerRadius="95"/>
 </section>
+
 
