@@ -1,7 +1,10 @@
 <script>
+  // Props
+  export let type
+  export let name
 </script>
 
 <style lang="scss">
 </style>
 
-<input type="text" name="message" />
+<input {type} {name} />

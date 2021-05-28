@@ -153,11 +153,12 @@
 </style>
 
 <section>
-  <DonutChart innerRadius="95" data={data4} />
+  <h1>FemAlert</h1>
+  <Button URL="">Send</Button>
 </section>
 
 
 <section>
-  <h1>FemAlert</h1>
-  <Button URL="">Send</Button>
+  <DonutChart innerRadius="95" data={data4} />
 </section>
+
