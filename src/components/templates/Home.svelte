@@ -3,13 +3,14 @@
   import Button from '../atoms/Button.svelte'
   import Image from '../atoms/Image.svelte'
 
-  import { onMount } from 'svelte'
+  import {onMount} from 'svelte'
+  import Title from '../atoms/Title.svelte'
 
   let data = []
 
   onMount(async () => {
     const res = await fetch(
-      `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
+            `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
     )
     data = await res.json()
   })
@@ -24,17 +25,9 @@
 </style>
 
 <section>
-  <h1>FemAlert</h1>
-  <Button URL="">Send</Button>
+  <Title> Dit is de titel</Title>
 </section>
 
 <section>
-  <Image
-    URL=""
-    src="../img/fem-alert.png"
-    alt="FemAlert logo"
-    width="200px"
-    height="200px"
-    imageTag
-  />
+
 </section>
