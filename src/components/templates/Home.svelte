@@ -3,6 +3,7 @@
   import Button from '../atoms/Button.svelte'
   import {onMount} from 'svelte'
   import DonutChart from '../atoms/DonutChart.svelte'
+  import Image from '../atoms/Image.svelte'
 
   let data = []
 
@@ -26,6 +27,16 @@
   <Button URL="">Send</Button>
 </section>
 
+<section>
+  <Image
+          URL=""
+          src="../img/fem-alert.png"
+          alt="FemAlert logo"
+          width="200px"
+          height="200px"
+          imageTag
+  />
+</section>
 
 <section>
   <DonutChart innerRadius="95" />
