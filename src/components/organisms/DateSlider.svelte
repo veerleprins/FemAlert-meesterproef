@@ -14,13 +14,11 @@
     overflow-x: scroll;
     margin: 1.5em 0 1.5em 1.5em;
   }
-
-
 </style>
 
 <section>
-  <Button buttonTag="true">Vandaag</Button>
-  <Button buttonTag="true">Gister</Button>
-  <Button buttonTag="true">Deze week</Button>
-  <Button buttonTag="true">Deze maand</Button>
+  <Button buttonTag>Vandaag</Button>
+  <Button buttonTag>Gister</Button>
+  <Button buttonTag>Deze week</Button>
+  <Button buttonTag=>Deze maand</Button>
 </section>

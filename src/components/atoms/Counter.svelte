@@ -5,13 +5,13 @@
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  h1 {
+  h2 {
     font-size: 2em;
     color: $ui-black;
   }
 
 </style>
 
-<h1>
+<h2>
   <slot />
-</h1>
+</h2>
