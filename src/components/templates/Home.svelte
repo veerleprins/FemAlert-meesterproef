@@ -37,7 +37,9 @@
     background-color: $ui-section;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #9a9a9a;
+    width: 90%;
   }
+
 
 </style>
 

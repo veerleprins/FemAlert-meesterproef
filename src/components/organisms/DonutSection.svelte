@@ -1,5 +1,8 @@
 <script>
   import DonutChart from '../atoms/DonutChart.svelte'
+  import Title from '../atoms/Title.svelte'
+  import SubTitle from '../atoms/SubTitle.svelte'
+  import Dropdown from '../atoms/Dropdown.svelte'
 </script>
 
 <style lang="scss">
@@ -7,17 +10,49 @@
   @import 'src/styles/index.scss';
 
   section {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    grid-column-gap: 0.5em;
-    overflow-x: scroll;
-    margin: 1.5em 0 1.5em 1.5em;
+    margin: 1.5em;
   }
 
+  div {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    div {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  ul {
+    margin-top: 1em;
+    list-style: square;
+  }
 
 </style>
 
 <section>
-  <DonutChart innerRadius="40"/>
+  <SubTitle>Soort meldingen</SubTitle>
+  <div>
+    <DonutChart innerRadius="40"/>
+    <div>
+      <Dropdown name="Tijd" />
+      <Dropdown name="Melding" />
+    </div>
+  </div>
+  <div>
+    <ul>
+      <li>Agressie</li>
+      <li>Aanranding</li>
+      <li>Racisme</li>
+    </ul>
+    <ul>
+      <li>Discriminatie</li>
+      <li>Uitschelden</li>
+      <li>Anders</li>
+    </ul>
+  </div>
+
+
 </section>

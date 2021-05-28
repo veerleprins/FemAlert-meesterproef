@@ -9,7 +9,7 @@
 
   section {
     margin: 1em;
-    height: 5em;
+    height: 6em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,6 +17,7 @@
       p {
         align-self: flex-start;
         font-weight: 100;
+        margin-top: 0.5em;
       }
   }
 
