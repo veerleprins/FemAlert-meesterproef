@@ -5,8 +5,9 @@
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
   h2 {
-    font-size: $h1-size;
+    font-size: 1.5em;
     color: $ui-black;
+    font-weight: lighter;
   }
 </style>
 
