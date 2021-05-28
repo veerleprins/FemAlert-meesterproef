@@ -1,8 +1,6 @@
 <script>
   // Components
   import Button from '../atoms/Button.svelte'
-  import donutChart from '../atoms/DonutChart.svelte'
-
   import {onMount} from 'svelte'
   import DonutChart from '../atoms/DonutChart.svelte'
 
@@ -11,7 +9,6 @@
   onMount(async () => {
     const res = await fetch(`https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`)
     data = await res.json()
-    // o
   })
 
 </script>
