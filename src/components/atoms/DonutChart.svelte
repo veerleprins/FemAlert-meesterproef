@@ -1,7 +1,7 @@
 <script>
     // Props
     export let innerRadius
-    export let data
+    // export let data
 
     /**
      * todo
@@ -10,6 +10,140 @@
      * give colour array with props?
      */
 
+
+        // let data1 = [
+        //   {
+        //     'size': 25,
+        //     'name': 'Agressie',
+        //     'color': '#D5C8F4'
+        //   },
+        //   {
+        //     'size': 8,
+        //     'name': 'Aanranding',
+        //     'color': '#17DBCC'
+        //   },
+        //   {
+        //     'size': 12,
+        //     'name': 'Anders',
+        //     'color': '#FFBB37'
+        //   },
+        //       {
+        //     'size': 2,
+        //     'name': 'Anders',
+        //     'color': '#FF82AC'
+        //   },
+        //       {
+        //     'size': 39,
+        //     'name': 'Anders',
+        //     'color': '#3969FF'
+        //   },
+        //       {
+        //     'size': 11,
+        //     'name': 'Anders',
+        //     'color': '#fff'
+        //   }
+        // ]
+        // let data2 = [
+        //   {
+        //     'size': 25,
+        //     'name': 'Agressie',
+        //     'color': '#8C4660'
+        //   },
+        //   {
+        //     'size': 8,
+        //     'name': 'Aanranding',
+        //     'color': '#7988D9'
+        //   },
+        //   {
+        //     'size': 12,
+        //     'name': 'Anders',
+        //     'color': '#252940'
+        //   },
+        //   {
+        //     'size': 2,
+        //     'name': 'Anders',
+        //     'color': '#54628C'
+        //   },
+        //   {
+        //     'size': 39,
+        //     'name': 'Anders',
+        //     'color': '#F2AEAE'
+        //   },
+        //   {
+        //     'size': 11,
+        //     'name': 'Anders',
+        //     'color': '#6D345D'
+        //   }
+        // ]
+        // let data3 = [
+        //   {
+        //     'size': 25,
+        //     'name': 'Agressie',
+        //     'color': '#3B3659'
+        //   },
+        //   {
+        //     'size': 8,
+        //     'name': 'Aanranding',
+        //     'color': '#2A2D40'
+        //   },
+        //   {
+        //     'size': 12,
+        //     'name': 'Anders',
+        //     'color': '#497364'
+        //   },
+        //   {
+        //     'size': 2,
+        //     'name': 'Anders',
+        //     'color': '#497385'
+        //   },
+        //   {
+        //     'size': 39,
+        //     'name': 'Anders',
+        //     'color': '#252940'
+        //   },
+        //   {
+        //     'size': 11,
+        //     'name': 'Anders',
+        //     'color': '#568C6D'
+        //   }
+        // ]
+    let data = [
+            {
+                'size': 25,
+                'name': 'Agressie',
+                'color': '#D96690'
+            },
+            {
+                'size': 8,
+                'name': 'Aanranding',
+                'color': '#F28DBC'
+            },
+            {
+                'size': 12,
+                'name': 'Anders',
+                'color': '#F2C9E0'
+            },
+            {
+                'size': 2,
+                'name': 'Anders',
+                'color': '#89C2D9'
+            },
+            {
+                'size': 39,
+                'name': 'Anders',
+                'color': '#88E8F2'
+            },
+            {
+                'size': 11,
+                'name': 'Anders',
+                'color': '#ac9fc2'
+            }
+        ]
+
+    /**
+     * based on an example by Rich-harrishttps:
+     * github.com/Rich-Harris/svelte-d3-arc-demo
+     */
     import { arc } from 'd3'
 
     let width = 200
@@ -23,7 +157,6 @@
 
     let total = data.reduce((total, item) => total + item.size, 0)
     let arcs
-    let buildDonut = () => {
         let acc = 0
         //map over data and create an arc for each data point
         arcs = data.map(segment => {
@@ -37,18 +170,11 @@
                 //this way the next segment will start where the previous one ended
                 endAngle: (acc += (angle * segment.size / total))
             }
-
             return {
                 color: segment.color,
                 path: fn(options)
             }
         })
-    }
-    buildDonut()
-
-    //based on an example by Rich-harris
-    //https://github.com/Rich-Harris/svelte-d3-arc-demo
-
 </script>
 
 <style lang="scss">
