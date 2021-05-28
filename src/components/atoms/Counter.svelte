@@ -4,13 +4,15 @@
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
-  h2 {
-    font-size: 1.5em;
+
+  p {
+    font-size: 2em;
+    font-weight: bold;
     color: $ui-black;
-    font-weight: lighter;
   }
+
 </style>
 
-<h2>
+<p>
   <slot />
-</h2>
+</p>

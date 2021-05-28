@@ -3,10 +3,9 @@
   import {onMount} from 'svelte'
   import Image from '../atoms/Image.svelte'
   import Title from '../atoms/Title.svelte'
-  import SubTitle from '../atoms/SubTitle.svelte'
-  import DateSlider from '../organisms/DateSlider.svelte'
-  import NewReportCounter from '../organisms/NewReportCounter.svelte'
-  import DonutSection from '../organisms/DonutSection.svelte'
+  import SearchBar from '../atoms/SearchBar.svelte'
+  import SingleReport from '../organisms/SingleReport.svelte'
+
 
   let data = []
 
@@ -20,7 +19,6 @@
 <style lang="scss">
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
-
   * {
     font-family: $standard-font;
   }
@@ -40,27 +38,9 @@
 </style>
 
 <section>
-  <Title>Hi Harold!</Title>
-  <SubTitle>Welkom Terug</SubTitle>
+  <Title>Alle meldingen</Title>
 </section>
 
-<DateSlider />
+<SearchBar placeholder="Zoek melding..." />
 
-<section>
-  <NewReportCounter/>
-</section>
-
-<section>
-  <DonutSection/>
-</section>
-
-<!--<section>-->
-<!--  <Image-->
-<!--      URL=""-->
-<!--      src="../img/fem-alert.png"-->
-<!--      alt="FemAlert logo"-->
-<!--      width="200px"-->
-<!--      height="200px"-->
-<!--      imageTag-->
-<!--  />-->
-<!--</section>-->
+<SingleReport/>
