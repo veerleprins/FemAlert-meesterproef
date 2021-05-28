@@ -180,10 +180,6 @@
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
-
-
-
-
 </style>
 
 <svg {width} {height} class='pie'>
