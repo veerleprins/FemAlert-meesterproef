@@ -1,8 +1,14 @@
 <script>
     // Props
-    export let innerRadius = 60
+    export let innerRadius
     export let data
 
+    /**
+     * todo
+     * give height/width with props
+     * calculate transform/outer radius based on width and height
+     * give colour array with props?
+     */
 
     import { arc } from 'd3'
 
@@ -24,7 +30,7 @@
             const options = {
                 //set up inner and outer radius
                 innerRadius: innerRadius,
-                outerRadius: 100,
+                outerRadius: width / 2,
                 //get the starting point of the segment
                 startAngle: acc,
                 //find the end point of the segment and store this in startAngle
