@@ -48,7 +48,7 @@ The desktop version of the dashboard is devided in 4 parts:
 
 On this page, multiple unique graphs and charts are being shown with data about the reports made on a particulary date/period.<br>
 Here's a screenshot of our design for the 'Home' page:<br><br>
-<img src="https://imgur.com/sErh1lt.png" width="500" height="300">
+<img src="https://imgur.com/sErh1lt.png" width="500" height="300" style="border-radius:1em">
 
 The main function on this page is the chart that shows the amount of reports made in a week. On this chart, you can filter the weeks, and the different types of harassments reported in that week. For example, if you want to see what reports were made last week, you can just click on the button of that particular week, and it shows the amounts of reports made in that week, on each day. To see what types of harassments these reports were, you have to click on them, and it filters out the rest of the reports.
 
@@ -61,7 +61,7 @@ These visualizations provide the most important data for club owners, and gives 
 On this page, a heatmap is shown. In our case we are using a heatmap of Amsterdam, because it's one of most famous and busiest nightlife-cities of The Netherlands.
 <br>
 Here's a screenshot of our design for the 'Map' page: <br><br>
-<img src="https://imgur.com/a3q1mE1.png" width="500" height="300">
+<img src="https://imgur.com/a3q1mE1.png" width="500" height="300" style="border-radius:1em">
 
 We are using a heatmap to give an indication to the club owners to see where te most reports are made. The different club owners can then compare their clubs to others.<br>
 Because of privacy reasons, we decided to use a heatmap in stead of a regular map that pinpoints the specific locations of the reports. With this heatmap, the club owners can see the areas in stead of the exact locations of the reports. How thicker the color on the map, how more reports were made in that specific area.
@@ -70,7 +70,7 @@ Because of privacy reasons, we decided to use a heatmap in stead of a regular ma
 
 On this page, all the reports are being shown in detail. Here you can see the story of the victim, the type of harassment they reported, the date and time, if the victim needs help, and if the victim wants to make contact with FemAlert. If you click on one of the reports, you can see the victims name and email adress.<br>
 Here's a screenshot of our design for the 'All Reports' page: <br><br>
-<img src="https://imgur.com/hahEljQ.png" width="500" height="300">
+<img src="https://imgur.com/hahEljQ.png" width="500" height="300" style="border-radius:1em">
 
 As you can see on the screenshot of our design, we have implemented a searchbar to look up reports. Club owners can search for a specific report. It filters on a specific date, a specific time, or a specific type of harassment.
 
@@ -79,7 +79,7 @@ Next to the section with all the reports, you can see two pie charts. These char
 ### 🔩 Settings
 
 On this page, the settings of the club owner are shown. The club owners can edit their information here, or turn on the Dark theme mode. Here's a screenshot of our design for the 'Settings' page:<br><br>
-<img src="https://imgur.com/RzhchBy.png" width="500" height="300">
+<img src="https://imgur.com/RzhchBy.png" width="500" height="300" style="border-radius:1em">
 
 As you can see, the information of the club and it's owner is being shown on this page. The club owner can also edit it's information, log out, or turn on the Dark theme mode.
 
