@@ -1,4 +1,5 @@
 <script>
+  // Props
   export let placeholder
 </script>
 
@@ -7,10 +8,11 @@
   @import 'src/styles/index.scss';
 
  input {
-   width: 100%;
+   width: 90%;
    font-size: 1.5em;
-   border-radius: 10px;
-   padding: 0.1em;
+   border-radius: 20px;
+   border: none;
+   padding: 0.3em 0.8em;
  }
 
 </style>
