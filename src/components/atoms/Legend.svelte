@@ -1,6 +1,7 @@
 <script>
   export let circleX = 50
   export let circleY = 50
+  export let circleCo = [50, 50]
 
   let data = [
     {
@@ -105,8 +106,8 @@
       <circle
         style="fill: #D96690"
         stroke="black"
-        cx={circleX}
-        cy={circleY}
+        cx={circleCo[0]}
+        cy={circleCo[1]}
         r="10"
       />
       <text x="70" y="55">{item.accident}</text>

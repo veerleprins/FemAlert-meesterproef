@@ -7,7 +7,7 @@
   import DateSlider from '../organisms/DateSlider.svelte'
   import NewReportCounter from '../organisms/NewReportCounter.svelte'
   import DonutSection from '../organisms/DonutSection.svelte'
-  import Legend from '../organisms/Legend.svelte'
+  import Legend from '../atoms/Legend.svelte'
 
   let data = []
 
