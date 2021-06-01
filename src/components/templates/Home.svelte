@@ -39,7 +39,7 @@
   }
 </style>
 
-<i class="fas fa-angry"></i>
+
 <section>
   <Title>Hi Harold!</Title>
   <SubTitle>Welkom Terug</SubTitle>
