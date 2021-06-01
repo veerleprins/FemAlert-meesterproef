@@ -1,7 +1,6 @@
 <script>
   // Components
   import {onMount} from 'svelte'
-  import Image from '../atoms/Image.svelte'
   import Title from '../atoms/Title.svelte'
   import SearchBar from '../atoms/SearchBar.svelte'
   import SingleReport from '../organisms/SingleReport.svelte'
@@ -19,8 +18,9 @@
 <style lang="scss">
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
+
   * {
-    font-family: $standard-font;
+    font-family: 'Open Sans';
   }
 
   section:first-of-type {
@@ -28,19 +28,36 @@
     margin-top: 3em;
   }
 
-  section:not(:first-of-type) {
+  section:nth-of-type(2) {
+    margin-top: 1.5em;
+    margin-left: 1.5em;
+  }
+
+  section:not(:first-of-type, :nth-of-type(2)) {
     margin: 2em 1.5em;
     background-color: $ui-section;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #9a9a9a;
     width: 90%;
   }
+
 </style>
 
 <section>
   <Title>Alle meldingen</Title>
 </section>
 
-<SearchBar placeholder="Zoek melding..." />
+<section>
+  <SearchBar placeholder="Zoek melding..." />
+</section>
 
-<SingleReport/>
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+<SingleReport />
+
