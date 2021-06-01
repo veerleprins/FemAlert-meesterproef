@@ -1,4 +1,4 @@
-# FemAlert 👩🏽‍🦳💗
+# FemAlert 👩🏽‍💗
 
 ## ❗ Live Link ❗
 
@@ -26,6 +26,8 @@ Our job is to make a neat-designed and detailled dashboard for club owners to pr
 ## 🔢 Data
 
 FemAlert is still a concept, which means it doesn't have a working application yet. Because it's still a work in progress, we couldn't be provided with real data. Therefore we had to generate our own dummy data. To do this, we used the online tool mockaroo.com. With Mockaroo you can create mock data, to your own likings. Based on the steps you have to take and the forms you have to fill in while making a new report, we created the dummy data with corresponding data-types and values.
+
+--- Insert screenshot of json melding ---
 
 ## 📊 Features
 
