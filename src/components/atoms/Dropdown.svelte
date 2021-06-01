@@ -1,7 +1,8 @@
 <script>
   export let name
-  export let values
+  // export let values
 
+  name = 'testDrop'
   let testValues = [
     '22:00',
     '23:00',
@@ -33,5 +34,3 @@
     <option value={option}>{option}</option>
   {/each}
 </select>
-
-
