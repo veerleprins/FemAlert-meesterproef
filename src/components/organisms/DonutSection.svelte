@@ -1,5 +1,5 @@
 <script>
-  import SubTitle from '../atoms/SubTitle.svelte'
+  import Title from '../atoms/Title.svelte'
   import DonutDropdown from '../molecules/DonutDropdown.svelte'
 </script>
 
@@ -25,7 +25,7 @@
 </style>
 
 <section>
-  <SubTitle>Soort meldingen</SubTitle>
+  <Title isSubtitle>Soort meldingen</Title>
   <DonutDropdown />
   <div>
     <ul>
