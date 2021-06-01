@@ -39,7 +39,6 @@
   }
 </style>
 
-
 <section>
   <Title>Hi Harold!</Title>
   <SubTitle>Welkom Terug</SubTitle>

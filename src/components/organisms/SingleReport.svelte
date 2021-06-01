@@ -1,5 +1,5 @@
 <script>
-  import MultibleReportTypes from '../molecules/MultibleReportTypes.svelte'
+  import MultipleReportTypes from '../molecules/MultipleReportTypes.svelte'
   import ReportExtraOptions from '../molecules/ReportExtraOptions.svelte'
 
   let reports = [
@@ -50,7 +50,7 @@
 
 <section>
   <section>
-    <MultibleReportTypes numberOfReports={reports}/>
+    <MultipleReportTypes numberOfReports={reports}/>
   </section>
 
   <p>
