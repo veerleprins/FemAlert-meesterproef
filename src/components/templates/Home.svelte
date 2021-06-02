@@ -8,6 +8,39 @@
   import DonutSection from '../organisms/DonutSection.svelte'
 
   let data = []
+  let donutData = [
+    {
+      'size': 25,
+      'name': 'Agressie',
+      'color': '#D6C8F4'
+    },
+    {
+      'size': 8,
+      'name': 'Aanranding',
+      'color': '#8760DB'
+    },
+    {
+      'size': 12,
+      'name': 'Anders',
+      'color': '#AA83FF'
+    },
+    {
+      'size': 2,
+      'name': 'Anders',
+      'color': '#7D43F9'
+    },
+    {
+      'size': 39,
+      'name': 'Anders',
+      'color': '#492B9E'
+    },
+    {
+      'size': 11,
+      'name': 'Anders',
+      'color': '#05006E'
+    }
+  ]
+
 
   onMount(async () => {
     const res = await fetch(

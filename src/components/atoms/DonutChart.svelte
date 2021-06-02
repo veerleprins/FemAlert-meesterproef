@@ -10,8 +10,6 @@
      * give colour array with props?
      */
 
-
-
     /**
      * based on an example by Rich-harrishttps:
      * github.com/Rich-Harris/svelte-d3-arc-demo
