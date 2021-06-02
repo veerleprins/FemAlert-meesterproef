@@ -3,7 +3,6 @@
   import { onMount } from 'svelte'
   import Image from '../atoms/Image.svelte'
   import Title from '../atoms/Title.svelte'
-  import SubTitle from '../atoms/SubTitle.svelte'
   import DateSlider from '../organisms/DateSlider.svelte'
   import NewReportCounter from '../organisms/NewReportCounter.svelte'
   import DonutSection from '../organisms/DonutSection.svelte'
@@ -43,7 +42,7 @@
 
 <section>
   <Title>Hi Harold!</Title>
-  <SubTitle>Welkom Terug</SubTitle>
+  <Title isSubtitle>Welkom terug</Title>
 </section>
 
 <DateSlider />
@@ -66,7 +65,3 @@
 <!--      imageTag-->
 <!--  />-->
 <!--</section>-->
-
-<section>
-  <Legend />
-</section>
