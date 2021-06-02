@@ -27,7 +27,13 @@ Our job is to make a neat-designed and detailled dashboard for club owners to pr
 
 FemAlert is still a concept, which means it doesn't have a working application yet. Because it's still a work in progress, we couldn't be provided with real data. Therefore we had to generate our own dummy data. To do this, we used the online tool mockaroo.com. With Mockaroo you can create mock data, to your own likings. Based on the steps you have to take and the forms you have to fill in while making a new report, we created the dummy data with corresponding data-types and values.
 
---- Insert screenshot of json melding ---
+We created 2 datasets. One for all the reports, and one for the clubs. These datasets are joint by their id's. Each report can be connected to a specific club or event. Here are two snippets of the datasets:
+
+Reports data:<br><br>
+<img src="https://imgur.com/ylmIW3U.png" width="500" height="250">
+
+Club data:<br><br>
+<img src="https://imgur.com/Fx8Etv2.png" width="300" height="150">
 
 ## 📊 Features
 
@@ -37,9 +43,50 @@ Our job is to create a mobile and desktop version of a dashboard which will give
 
 In the next chapters, the features of the dashboard will be explained for both versions.
 
+## 📱 Mobile version
+
+The mobile version of the dashboard is devided in 3 pages:
+
+- Home
+- All reports
+- Settings
+
+### 🏠 Home
+
+On this page, you can see a bar chart, a donut chart, and a counter of all the reports made on that day.<br>
+Here's a screenshot of our design for the 'Home' page:<br><br>
+<img src="https://imgur.com/ZPZxW3l.png" width="200" height="500">
+
+As you can see, the charts on this page give insights to the amount of reports and the different types of reports. On the top of this page you can see a horizontal slider with buttons. With these buttons you can switch between days/weeks to see the data from that specific day/week.
+
+### 📑 All Reports
+
+On this page, you can see all the reports that are made by the victims.<br>
+Here's a screenshot of our design for the 'All Reports' page:<br><br>
+<img src="https://imgur.com/bSqfxGW.png" width="200" height="500">
+<img src="https://imgur.com/LkmOEz1.png" width="200" height="500">
+
+On each report you can see the date and time, the kinds of harassments reported, the story of the victim, if the victim needs help, and/or if the victim wants to be contacted by FemAlert. If you click on the report, another page opens. On this page you can see the full version of the victim's story, the name of the victim, and the email adress of the victim. Also, there's an option where you can offer help to the victim, if wanted.<br> A screenshot of that page is next to the screenshot of the 'All Reports'-page screenshot.
+
+### 🔩 Settings
+
+On this page, you can see all the information about the user. In this case it's the owner of a club in Amsterdam. <br>
+Here's a screenshot of our design for the 'All Reports' page:<br><br>
+<img src="https://imgur.com/TEAZdIE.png" width="200" height="500">
+
+The user can change it's info with the use of the "Bewerk profiel" button. Also on this page, the user can change the language and turn on Dark theme mode. The Dark theme mode is a concept we're going to work on if we have time left. Our main focus is to make the important functions work on the other pages.
+
+### 🧭 Navigation
+
+The user can navigate through this app by using a navigation. We've implemented a 'hamburger' navigation, as you can see by the icon in the top right corner of each page. On this navigation screen, there's also an option to log out from the app.<br>
+Here's a screenshot of our design for the navigation page:<br><br>
+<img src="https://imgur.com/gxS2dpM.png" width="200" height="400">
+
+---
+
 ## 💻 Desktop version
 
-The desktop version of the dashboard is devided in 4 parts:
+The desktop version of the dashboard is devided in 4 pages:
 
 - Home
 - Map
@@ -52,7 +99,7 @@ On this page, multiple unique graphs and charts are being shown with data about 
 Here's a screenshot of our design for the 'Home' page:<br><br>
 <img src="https://imgur.com/sErh1lt.png" width="500" height="300">
 
-The main focus of this page is the bar chart which shows the amount of reports which have been made. On this chart, you can filter the weeks, and the different types of harassments reported in that week. For example, if you want to see what reports were made last week, you can just click on the button of that particular week, and it shows the amounts of reports made in that week, on each day. To see what types of harassments these reports were, you have to click on them, and it filters out the rest of the reports.
+The main focus of this page is the line chart which shows the amount of reports which have been made. On this chart, you can filter the weeks, and the different types of harassments reported in that week. For example, if you want to see what reports were made last week, you can just click on the button of that particular week, and it shows the amounts of reports made in that week, on each day. To see what types of harassments these reports were, you have to click on them, and it filters out the rest of the reports.
 
 Also being shown on this page is a donut chart with the different harassment types, on a particular date or period. Next to this chart is a section with a counter of the total amount of reports made on that day.
 
@@ -87,10 +134,29 @@ As you can see, the information of the club and it's owner is being shown on thi
 
 The Dark theme mode is an extra feature we are implementing if we have enough time to do so. Our main focus will be at the other pages, where the functionalities of the dashboard are the most important.
 
-## 📱 Mobile Version
+## 👨🏼‍💻 Coding
+
+In this project, we are using Svelte and D3.js to create the dashboards.<br>
+Svelte is a JavaScript framework made to reduce boilerplate code. This makes your code more understandable and much easier to read.<br>
+D3.js is a JavaScript libary to visualize data and make various types of graphs, charts, and other visualizations.
+<br>
+
+Our working method in this project is based on an article written by Brad Frost. In this article, Brad Frost writes about Atomic Web Design. Atomic Web Design is a work method where you basically filter your application in multiple layers. <br><br>
+With Atomic Web Design, you are using Atoms, Molucules, Organisms, and Templates. Each group is a part of the next group. For example; multiple atoms form a molecule, multiple molecules form an organism, and so on. On the following picture you can see a visual representation of Atomic Web Design: <br>
+
+<img src="https://imgur.com/zJcPlv4.png" width="500" height="300">
+<br><br>
+
+In our project, all the small parts like buttons, charts, graphs etc., are atoms. These atoms are put into molecules, like a navigation bar, a list of different reports, and so on. These molecules are then being placed into organisms; mostly bigger sections. All the organisms can be placed in a template, which create the pages for your application.<br>
+This way of working makes coding easier and more understandable.
+<br><br>
+Here is a screenshot of the map-structure in our project:<br><br>
+<img src="https://imgur.com/iwz8HB2.png" width="200" height="500">
 
 ## 🔨 Install
 
 ## 📋 Sources
+
+https://bradfrost.com/blog/post/atomic-web-design/
 
 ## © License
