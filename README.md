@@ -145,7 +145,8 @@ Our working method in this project is based on an article written by Brad Frost.
 With Atomic Web Design, you are using Atoms, Molucules, Organisms, and Templates. Each group is a part of the next group. For example; multiple atoms form a molecule, multiple molecules form an organism, and so on. On the following picture you can see a visual representation of Atomic Web Design: <br>
 
 <img src="https://imgur.com/zJcPlv4.png" width="500" height="300">
-<br><br>
+<a href="https://bradfrost.com/blog/post/atomic-web-design/">Click here for the article.</a>
+<br>
 
 In our project, all the small parts like buttons, charts, graphs etc., are atoms. These atoms are put into molecules, like a navigation bar, a list of different reports, and so on. These molecules are then being placed into organisms; mostly bigger sections. All the organisms can be placed in a template, which create the pages for your application.<br>
 This way of working makes coding easier and more understandable.
