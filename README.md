@@ -19,7 +19,7 @@ Nowadays, unwanted and inappropriate behaviour towards victims keeps getting wor
 That's where FemAlert comes in handy. FemAlert is an initiative, established by Rosanne Verbeek, to protect people (mostly women) from unwanted situations while partying or going out to clubs.
 FemAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. FemAlert also lets club or bar owners get in touch with victims to help them and offer support.
 
-The platform FemAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much more safer and better in their venues.
+The platform FemAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
 
 Our job is to make a neat-designed and detailled dashboard for club owners to provide them with visualized data about the reports made in/for their clubs.
 
