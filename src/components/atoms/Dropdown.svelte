@@ -12,9 +12,8 @@
     '03:00',
     '04:00',
     '05:00',
-    '06:00'
+    '06:00',
   ]
-
 </script>
 
 <style lang="scss">
@@ -22,9 +21,8 @@
   @import 'src/styles/index.scss';
   select {
     width: 5em;
-    background-color: #C4C4C4;
+    background-color: #c4c4c4;
   }
-
 </style>
 
 <label for={name}>{name}:</label>
