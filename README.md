@@ -5,7 +5,7 @@
 Here is the live link to our demo of the dashboard:
 
 [----Live link to dashboard!----](meesterproef.netlify.app/)
-<br><br>
+<br>
 
 _by [Sharon Veldman](https://github.com/SharonV33), [Johan van Beusekom](https://github.com/johancvb) & [Veerle Prins](https://github.com/veerleprins)_
 
