@@ -1,7 +1,7 @@
 <script>
     // Props
     export let innerRadius
-    export let data
+    // export let data
 
     /**
      * todo
@@ -9,6 +9,39 @@
      * calculate transform/outer radius based on width and height
      * give colour array with props?
      */
+
+    let data = [
+            {
+                'size': 25,
+                'name': 'Agressie',
+                'color': '#D96690'
+            },
+            {
+                'size': 8,
+                'name': 'Aanranding',
+                'color': '#F28DBC'
+            },
+            {
+                'size': 12,
+                'name': 'Anders',
+                'color': '#F2C9E0'
+            },
+            {
+                'size': 2,
+                'name': 'Anders',
+                'color': '#89C2D9'
+            },
+            {
+                'size': 39,
+                'name': 'Anders',
+                'color': '#88E8F2'
+            },
+            {
+                'size': 11,
+                'name': 'Anders',
+                'color': '#ac9fc2'
+            }
+        ]
 
     /**
      * based on an example by Rich-harrishttps:
