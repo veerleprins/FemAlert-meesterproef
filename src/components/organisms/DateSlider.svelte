@@ -8,17 +8,39 @@
 
   section {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 0.5em;
-    overflow-x: scroll;
-    margin: 1.5em 0 1.5em 1.5em;
+    ul {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      padding: 1em;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      li {
+        list-style-type: none;
+        width: 100%;
+        margin-right: 1em;
+        &:last-of-type {
+          padding-right: 1em;
+        }
+      }
+    }
   }
 </style>
 
 <section>
-  <Button buttonTag>Vandaag</Button>
-  <Button buttonTag>Gister</Button>
-  <Button buttonTag>Deze week</Button>
-  <Button buttonTag>Deze maand</Button>
+  <ul>
+    <li>
+      <Button buttonTag isClicked>Vandaag</Button>
+    </li>
+    <li>
+      <Button buttonTag>Gister</Button>
+    </li>
+    <li>
+      <Button buttonTag>Deze week</Button>
+    </li>
+    <li>
+      <Button buttonTag>Deze maand</Button>
+    </li>
+  </ul>
 </section>
