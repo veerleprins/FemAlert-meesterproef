@@ -22,7 +22,7 @@
 </style>
 
 <div>
-  <DonutChart innerRadius="40"/>
+  <DonutChart innerRadius="30"/>
   <div>
     <Dropdown name="Tijd" />
     <Dropdown name="Melding" />
