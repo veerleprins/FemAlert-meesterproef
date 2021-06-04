@@ -48,6 +48,10 @@ const aliases = alias({
       find: '@/stores',
       replacement: path.resolve(__dirname, 'src/stores'),
     },
+    {
+      find: '@/utils',
+      replacement: path.resolve(__dirname, 'src/utils'),
+    },
   ],
 })
 
