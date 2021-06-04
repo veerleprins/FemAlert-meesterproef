@@ -7,9 +7,14 @@
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
 
+  h1,
+  h2 {
+    font-family: 'OpenSans-Bold';
+    color: $ui-black;
+  }
+
   h1 {
     font-size: 2em;
-    color: $ui-black;
   }
 
   h2 {
