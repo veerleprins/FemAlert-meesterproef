@@ -13,6 +13,7 @@
 
   :global(body) {
     background-color: #c4c4c4;
+    overflow-x: hidden;
   }
 
   main {
