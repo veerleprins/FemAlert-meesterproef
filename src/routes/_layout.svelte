@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'OpenSans-Regular';
   }
 
   :global(body) {
@@ -18,6 +19,7 @@
 
   main {
     width: 100%;
+    padding: 1em;
   }
 </style>
 
