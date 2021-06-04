@@ -14,7 +14,7 @@
     justify-content: space-between;
     flex-direction: row;
 
-    div{
+    div {
       display: flex;
       flex-direction: column;
     }

@@ -1,12 +1,12 @@
 <script>
   // Components
-  import { onMount } from 'svelte'
-  import Image from '../atoms/Image.svelte'
-  import Title from '../atoms/Title.svelte'
+  import {onMount} from 'svelte'
   import DateSlider from '../organisms/DateSlider.svelte'
   import NewReportCounter from '../organisms/NewReportCounter.svelte'
   import DonutSection from '../organisms/DonutSection.svelte'
-  import Legend from '../atoms/Legend.svelte'
+  import LargeChartSection from '../organisms/LargeChartSection.svelte'
+  import Nav from '../molecules/Nav.svelte'
+  import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
 
   let data = []
 
@@ -22,46 +22,88 @@
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  * {
-    font-family: $standard-font;
+  section:nth-of-type(3) {
+    display: block;
   }
 
-  section:first-of-type {
-    margin-left: 1.5em;
-    margin-top: 3em;
-  }
+  @include size-m {
+    // outer container styling
+    section:only-child {
+      max-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 2fr 2fr 0.2em;
+      grid-template-rows: 0.2em 1fr 5fr 4fr 0.2em;
+      grid-column-gap: 2em;
+      grid-row-gap: 2em;
 
-  section:not(:first-of-type) {
-    margin: 2em 1.5em;
-    background-color: $ui-section;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #9a9a9a;
-    width: 90%;
+      // navigation
+      section:first-of-type {
+        grid-column: 1;
+        grid-row: 1 / 6;
+      }
+
+      // welcome message
+      header {
+        grid-column: 2 / 4;
+        grid-row: 2;
+        align-self: center;
+      }
+
+      // date slider
+      section:nth-of-type(2) {
+        display: none;
+      }
+
+      // large chart
+      section:nth-of-type(3) {
+        display: block;
+        grid-column: 2 / 4;
+        grid-row: 3;
+      }
+
+      // pie chart
+      section:nth-of-type(4) {
+        grid-column: 2;
+        grid-row: 4;
+      }
+
+      // small text blocks
+      section:nth-of-type(5) {
+        grid-column: 3;
+        grid-row: 4;
+        height: 100%;
+        display: grid;
+        grid-row-gap: 2em;
+      }
+    }
   }
 </style>
 
 <section>
-  <Title>Hi Harold!</Title>
-  <Title isSubtitle>Welkom terug</Title>
+
+  <section>
+    <Nav />
+  </section>
+
+  <header>
+    <WelcomeMessage />
+  </header>
+
+  <section>
+    <DateSlider />
+  </section>
+
+  <section>
+    <LargeChartSection />
+  </section>
+
+  <section>
+    <DonutSection />
+  </section>
+
+  <section>
+    <NewReportCounter />
+    <NewReportCounter />
+  </section>
+
 </section>
-
-<DateSlider />
-
-<section>
-  <NewReportCounter />
-</section>
-
-<section>
-  <DonutSection />
-</section>
-
-<!--<section>-->
-<!--  <Image-->
-<!--      URL=""-->
-<!--      src="../img/fem-alert.png"-->
-<!--      alt="FemAlert logo"-->
-<!--      width="200px"-->
-<!--      height="200px"-->
-<!--      imageTag-->
-<!--  />-->
-<!--</section>-->

@@ -1,6 +1,5 @@
 <script>
   import Counter from '../atoms/Counter.svelte'
-
 </script>
 
 <style lang="scss">
@@ -8,7 +7,11 @@
   @import 'src/styles/index.scss';
 
   section {
-    margin: 1em;
+    margin: 2em 1.5em;
+    padding: 1em;
+    background-color: $ui-section;
+    border-radius: 15px;
+    box-shadow: 1px 1px 6px #9a9a9a;
     height: 6em;
     display: flex;
     flex-direction: column;
@@ -17,16 +20,19 @@
       p {
         align-self: flex-start;
         font-weight: 100;
-        margin-top: 0.5em;
+        margin-bottom: 1em;
       }
   }
 
-
-
-
+   @include size-m {
+     section {
+       height: 8.5em;
+       margin: 0 ;
+     }
+   }
 </style>
 
 <section>
-  <p>Totaal aantal meldingen </p>
+  <p>Totaal aantal meldingen</p>
   <Counter>6</Counter>
 </section>
