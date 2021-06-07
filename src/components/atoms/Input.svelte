@@ -1,4 +1,6 @@
 <script>
+  // Components
+  import Icons from '@/components/atoms/Icons.svelte'
   // Props
   export let type
   export let name
@@ -16,9 +18,21 @@
       border: none;
       border-radius: $borderSize;
       height: 40px;
-      padding-left: 20px;
+      padding-left: 1rem;
+    }
+  }
+
+  div {
+    position: relative;
+    input[type='text'] {
+      padding-left: 2.5rem;
     }
   }
 </style>
 
-<input {type} {name} {placeholder} class:searchBar />
+{#if searchBar}
+  <div>
+    <Icons iconType="search" searchIcon />
+    <input {type} {name} {placeholder} class:searchBar />
+  </div>
+{:else}<input {type} {name} {placeholder} />{/if}
