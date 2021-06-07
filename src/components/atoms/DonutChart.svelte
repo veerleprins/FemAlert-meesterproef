@@ -14,32 +14,32 @@
             {
                 'size': 25,
                 'name': 'Agressie',
-                'color': '#D96690'
+                'color': '#05006E'
             },
             {
                 'size': 8,
                 'name': 'Aanranding',
-                'color': '#F28DBC'
+                'color': '#492B9E'
             },
             {
                 'size': 12,
                 'name': 'Anders',
-                'color': '#F2C9E0'
+                'color': '#7D43F9'
             },
             {
                 'size': 2,
                 'name': 'Anders',
-                'color': '#89C2D9'
+                'color': '#8760DB'
             },
             {
                 'size': 39,
                 'name': 'Anders',
-                'color': '#88E8F2'
+                'color': '#AA83FF'
             },
             {
                 'size': 11,
                 'name': 'Anders',
-                'color': '#ac9fc2'
+                'color': '#D6C8F4'
             }
         ]
 
@@ -49,8 +49,8 @@
      */
     import { arc } from 'd3'
 
-    let width = 150
-    let height = 150
+    let width = 200
+    let height = 200
 
     //call the d3 function arc() to create arcs
     let fn = arc()
@@ -86,7 +86,7 @@
 </style>
 
 <svg {width} {height} class='pie'>
-    <g transform='translate(75,75)'>
+    <g transform='translate(100,100)'>
         {#each arcs as arc}
             <!-- single arc -->
             <path d={arc.path} fill={arc.color}/>
