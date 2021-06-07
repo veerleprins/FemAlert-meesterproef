@@ -49,8 +49,8 @@
      */
     import { arc } from 'd3'
 
-    let width = 200
-    let height = 200
+    let width = 150
+    let height = 150
 
     //call the d3 function arc() to create arcs
     let fn = arc()
@@ -86,7 +86,7 @@
 </style>
 
 <svg {width} {height} class='pie'>
-    <g transform='translate(100,100)'>
+    <g transform='translate(75,75)'>
         {#each arcs as arc}
             <!-- single arc -->
             <path d={arc.path} fill={arc.color}/>
