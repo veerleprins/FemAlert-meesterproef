@@ -42,6 +42,12 @@
       }
     }
   }
+
+  @media (max-width: 350px) {
+    ul {
+      display: block;
+    }
+  }
   @include size-m {
     ul {
       grid-template-columns: auto;
