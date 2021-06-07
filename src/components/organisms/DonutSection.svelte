@@ -38,7 +38,6 @@
       }
     }
   }
-
 </style>
 
 <section>
