@@ -12,11 +12,23 @@
     padding-top: 1em;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
 
     div {
       display: flex;
       flex-direction: column;
+    }
+  }
+
+  @include size-xs {
+    div {
+      flex-direction: row;
+    }
+  }
+
+  @include size-s {
+    div {
+      justify-content: space-around;
     }
   }
 
