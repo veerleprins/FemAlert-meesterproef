@@ -1,8 +1,7 @@
 <script>
   // Components
-  // import MultipleReportTypes from '../molecules/MultipleReportTypes.svelte'
-  // import ReportExtraOptions from '../molecules/ReportExtraOptions.svelte'
   import Title from '@/components/atoms/Title.svelte'
+  import Options from '@/components/molecules/Options.svelte'
 
   // Internals
   import { countWords, shortenWords } from '../../utils/checkWords.js'
@@ -17,77 +16,59 @@
   @import 'src/styles/index.scss';
 
   li {
-    background-color: white;
+    background-color: $ui-section;
     height: auto;
-    margin-bottom: 1.625em;
+    margin-bottom: 1.5em;
     list-style-type: none;
     border-radius: $borderSize;
     padding: 1em;
-    h2 {
-      font-size: 20px;
-    }
-    h3 {
-      font-size: 14px;
-      font-weight: lighter;
+    p {
+      &.timestamp {
+        margin-bottom: 1rem;
+        font-family: $light-font;
+      }
     }
     ul {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 6px;
       height: 100%;
       width: 100%;
+      margin-bottom: 1rem;
       li {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: maroon;
         color: white;
-        width: 120px;
+        width: 150px;
         height: 15px;
         margin-bottom: 0em;
-        font-size: 12px;
       }
-    }
-    p {
-      margin: 1.625em 0em;
     }
     .readMore {
       display: inline-block;
-      p {
-        margin-bottom: 0;
-      }
-    }
-    div {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-between;
     }
   }
 </style>
 
 <li>
   <Title isSubtitle>Slachtoffer melding {index + 1}</Title>
-  <h3>{report.time} | {report.date}</h3>
+  <p class="timestamp">{report.time} | {report.date}</p>
   <ul>
     {#each report.accident as accident}
-      <li>{accident}</li>
+      <li style="background-color: {accident.color}">{accident.type}</li>
     {/each}
   </ul>
   {#if countWords(report.story) <= 40}
-    <p>{report.story}</p>
+    <p class="story">{report.story}</p>
   {:else}
     <div class="readMore">
-      <p id="storyText">
+      <p class="story">
         {shortenWords(report.story, 200)}...
         <a href="#">Lees meer</a>
       </p>
     </div>
   {/if}
-  <div>
-    <p>Contact voor meer info</p>
-    <p>Wil slachtofferhulp</p>
-  </div>
+  <Options support={report.need_help} contact={report.make_contact} />
 </li>
