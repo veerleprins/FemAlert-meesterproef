@@ -9,16 +9,16 @@
 
   h1,
   h2 {
-    font-family: 'OpenSans-Bold';
+    font-family: $bold-font;
     color: $ui-black;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: $h1-size;
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: $h2-size;
   }
 </style>
 
