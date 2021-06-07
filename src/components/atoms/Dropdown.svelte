@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     select {
-      width: 7em;
+      width: 100%;
       background-color: $ui-blue;
       color: #FFFFFF;
       border-radius: 15px;
@@ -31,11 +31,18 @@
     }
   }
 
-  @include size-xxs {
+  @include size-xs {
     section {
-      margin-bottom: 0.5em;
       select {
-        width: 100%;
+        width: 8em;
+      }
+    }
+  }
+
+  @include size-s {
+    section {
+      select {
+        width: 13em;
       }
     }
   }
