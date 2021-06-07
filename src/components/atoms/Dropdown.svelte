@@ -30,6 +30,15 @@
       margin-top: 0.5em;
     }
   }
+
+  @media (max-width: 350px) {
+    section {
+      margin-bottom: 0.5em;
+      select {
+        width: 100%;
+      }
+    }
+  }
 </style>
 
 <section>
