@@ -1,5 +1,6 @@
 <script>
   import Title from '../atoms/Title.svelte'
+  import Legend from '../atoms/Legend.svelte'
   import DonutDropdown from '../molecules/DonutDropdown.svelte'
 </script>
 
@@ -16,9 +17,6 @@
 
     div {
       padding: 1em 0 0 1em;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
     }
 
     ul {
@@ -30,23 +28,22 @@
   @include size-m {
     section {
       margin: 0;
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
     }
   }
 </style>
 
 <section>
   <Title isSubtitle>Soort meldingen</Title>
-  <DonutDropdown />
   <div>
-    <ul>
-      <li>Agressie</li>
-      <li>Aanranding</li>
-      <li>Racisme</li>
-    </ul>
-    <ul>
-      <li>Discriminatie</li>
-      <li>Uitschelden</li>
-      <li>Anders</li>
-    </ul>
+    <DonutDropdown />
+    <Legend />
   </div>
 </section>

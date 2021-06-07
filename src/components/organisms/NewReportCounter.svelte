@@ -26,7 +26,7 @@
 
    @include size-m {
      section {
-       height: 8.5em;
+       height: 8em;
        margin: 0 ;
      }
    }

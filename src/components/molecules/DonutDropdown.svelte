@@ -19,6 +19,14 @@
       flex-direction: column;
     }
   }
+
+  @include size-m {
+    div {
+      div {
+        display: none;
+      }
+    }
+  }
 </style>
 
 <div>

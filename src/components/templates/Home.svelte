@@ -71,7 +71,6 @@
       section:nth-of-type(5) {
         grid-column: 3;
         grid-row: 4;
-        height: 100%;
         display: grid;
         grid-row-gap: 2em;
       }
