@@ -5,6 +5,11 @@
 </script>
 
 <style lang="scss">
+  a,
+  a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+  }
 </style>
 
 {#if !isClickable}
