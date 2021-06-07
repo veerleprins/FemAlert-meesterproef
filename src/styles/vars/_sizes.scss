@@ -1,3 +1,4 @@
+$phone-xs: 350px;
 $phone-xl: 460px;
 $tablet: 760px;
 $tablet-xl: 1080px;
@@ -5,6 +6,12 @@ $laptop: 1240px;
 $desktop: 1650px;
 $desktop-xl: 2000px;
 $desktop-xxl: 2000px;
+
+@mixin size-xxs {
+  @media (max-width: 350px) {
+    @content;
+  }
+}
 
 @mixin size-xs {
   @media (min-width: $phone-xl) {

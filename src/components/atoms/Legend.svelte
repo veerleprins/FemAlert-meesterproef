@@ -43,7 +43,7 @@
     }
   }
 
-  @media (max-width: 350px) {
+  @include size-xxs {
     ul {
       display: block;
     }

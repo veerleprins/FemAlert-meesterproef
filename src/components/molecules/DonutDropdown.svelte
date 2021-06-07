@@ -20,7 +20,7 @@
     }
   }
 
-  @media (max-width: 350px) {
+   {
     div {
       flex-direction: column;
 

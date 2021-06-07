@@ -31,7 +31,7 @@
     }
   }
 
-  @media (max-width: 350px) {
+  @include size-xxs {
     section {
       margin-bottom: 0.5em;
       select {
