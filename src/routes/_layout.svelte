@@ -9,12 +9,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'OpenSans-Regular';
+    font-family: $standard-font;
   }
 
   :global(body) {
-    background-color: #e8e8e8;
+    background-color: $ui-background-color;
     overflow-x: hidden;
+    font-size: 14px;
+  }
+
+  @include size-xs {
+    :global(body) {
+      font-size: 16px;
+    }
+  }
+
+  @include size-xl {
+    :global(body) {
+      font-size: 18px;
+    }
   }
 
   main {
