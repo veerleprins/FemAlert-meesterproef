@@ -22,12 +22,28 @@
     display: flex;
     flex-direction: column;
     select {
-      width: 7em;
+      width: 100%;
       background-color: $ui-blue;
       color: #FFFFFF;
       border-radius: 15px;
       padding: 0.5em 1em;
       margin-top: 0.5em;
+    }
+  }
+
+  @include size-xs {
+    section {
+      select {
+        width: 8em;
+      }
+    }
+  }
+
+  @include size-s {
+    section {
+      select {
+        width: 13em;
+      }
     }
   }
 </style>
