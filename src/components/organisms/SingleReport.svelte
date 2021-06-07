@@ -1,68 +1,93 @@
 <script>
-  import MultipleReportTypes from '../molecules/MultipleReportTypes.svelte'
-  import ReportExtraOptions from '../molecules/ReportExtraOptions.svelte'
+  // Components
+  // import MultipleReportTypes from '../molecules/MultipleReportTypes.svelte'
+  // import ReportExtraOptions from '../molecules/ReportExtraOptions.svelte'
+  import Title from '@/components/atoms/Title.svelte'
 
-  let reports = [
-    'agressie',
-    'mishandeling',
-    'discriminatie',
-    'aanranding',
-    'uitschelden',
-    'anders'
-  ]
+  // Internals
+  import { countWords, shortenWords } from '../../utils/checkWords.js'
 
+  // Props
+  export let report
+  export let index
 </script>
 
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2em 1.5em;
-    padding: 1em 1em;
-    background-color: $ui-section;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #9a9a9a;
-
-    section {
-      box-shadow: none;
-      display: flex;
-      margin: 0 0 1em 0;
-      padding: 0;
+  li {
+    background-color: white;
+    height: auto;
+    margin-bottom: 1.625em;
+    list-style-type: none;
+    border-radius: $borderSize;
+    padding: 1em;
+    h2 {
+      font-size: 20px;
     }
-
-    a {
-      display: inline;
-      text-decoration: none;
+    h3 {
+      font-size: 14px;
+      font-weight: lighter;
     }
-
-    .extraInfo {
+    ul {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-between;
-      margin: 1.5em 0 0 0;
+      gap: 6px;
+      height: 100%;
+      width: 100%;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: maroon;
+        color: white;
+        width: 120px;
+        height: 15px;
+        margin-bottom: 0em;
+        font-size: 12px;
+      }
+    }
+    p {
+      margin: 1.625em 0em;
+    }
+    .readMore {
+      display: inline-block;
+      p {
+        margin-bottom: 0;
+      }
+    }
+    div {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 </style>
 
-<section>
-  <section>
-    <MultipleReportTypes numberOfReports={reports}/>
-  </section>
-
-  <p>
-    Was iemand die mij aanrandde tijdens het dansen. Hij bleef maar doorgaan ondanks dat ik al
-    een aantal keer zei dat hij moest stoppen. <a href="www.google.com"> Lees meer...</a>
-  </p>
-
-  <section class="extraInfo">
-    <ReportExtraOptions/>
-    <section>
-      <p>23:00 | 21/5/2021</p>
-    </section>
-  </section>
-
-</section>
+<li>
+  <Title isSubtitle>Slachtoffer melding {index + 1}</Title>
+  <h3>{report.time} | {report.date}</h3>
+  <ul>
+    {#each report.accident as accident}
+      <li>{accident}</li>
+    {/each}
+  </ul>
+  {#if countWords(report.story) <= 40}
+    <p>{report.story}</p>
+  {:else}
+    <div class="readMore">
+      <p id="storyText">
+        {shortenWords(report.story, 200)}...
+        <a href="#">Lees meer</a>
+      </p>
+    </div>
+  {/if}
+  <div>
+    <p>Contact voor meer info</p>
+    <p>Wil slachtofferhulp</p>
+  </div>
+</li>
