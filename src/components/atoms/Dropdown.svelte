@@ -2,7 +2,6 @@
   export let name
   // export let values
 
-  name = 'testDrop'
   let testValues = [
     '22:00',
     '23:00',
@@ -19,16 +18,26 @@
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
-  select {
-    width: 5em;
-    background-color: #c4c4c4;
+  section {
+    display: flex;
+    flex-direction: column;
+    select {
+      width: 7em;
+      background-color: $ui-blue;
+      color: #FFFFFF;
+      border-radius: 15px;
+      padding: 0.5em 1em;
+      margin-top: 0.5em;
+    }
   }
 </style>
 
-<label for={name}>{name}:</label>
+<section>
+  <label for={name}>{name}:</label>
 
-<select {name} id={name}>
-  {#each testValues as option}
-    <option value={option}>{option}</option>
-  {/each}
-</select>
+  <select {name} id={name}>
+    {#each testValues as option}
+      <option value={option}>{option}</option>
+    {/each}
+  </select>
+</section>
