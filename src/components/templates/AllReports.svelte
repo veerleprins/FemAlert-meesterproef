@@ -82,10 +82,7 @@
 </header>
 
 <section>
-  <Input
-    placeholder="Zoek melding... (Bijv. “Aanranding” of “21-5-2021”)"
-    searchBar
-  />
+  <Input placeholder="Zoek melding...  (Bijv. “Aanranding”)" searchBar />
   <ul>
     {#each data as report, index}
       <SingleReport {report} {index} />
