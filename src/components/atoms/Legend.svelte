@@ -43,11 +43,6 @@
     }
   }
 
-  @include size-xxs {
-    ul {
-      display: block;
-    }
-  }
   @include size-m {
     ul {
       grid-template-columns: auto;
