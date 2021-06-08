@@ -17,7 +17,6 @@
     label {
       padding-left: 0.5em;
     }
-
     input {
       border: 1px solid $ui-accent-grey;
       border-radius: 5px;
