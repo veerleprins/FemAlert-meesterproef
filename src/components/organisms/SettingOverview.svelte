@@ -45,16 +45,13 @@
   }
 </style>
 
-
+<section>
 {#if edit === true}
-  <section>
-    <SettingsEdit />
-  </section>
+  <SettingsEdit />
   {:else}
-    <section>
       <UserProfile />
-    </section>
 {/if}
+</section>
 <section>
   <SelectDarkMode />
 </section>
