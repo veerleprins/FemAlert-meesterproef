@@ -2,7 +2,7 @@
   // Props
   export let type
   export let name
-  export let lable
+  export let label
   export let value
 
 </script>
@@ -41,7 +41,7 @@
 </style>
 
 <section>
-  <label for {name}>{lable}</label>
+  <label for {name}>{label}</label>
   <input {type} {name} {value}/>
 
 </section>

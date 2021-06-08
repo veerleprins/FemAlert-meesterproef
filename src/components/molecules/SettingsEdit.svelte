@@ -4,9 +4,6 @@
   import Button from '../atoms/Button.svelte'
   export let userData
 
-
-  let edit = false
-
   userData = {
     'name': 'Harold Janssen',
     'email': 'H.Janssen@mail.com',
@@ -39,39 +36,39 @@
 </style>
 
 
-  <section>
-<!--https://stackoverflow.com/questions/14255631/style-svg-circle-with-css-->
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <circle cx="50" cy="50" r="50"
-  fill="white" stroke="black"/>
-  </svg>
-  <Button buttonTag>Opslaan</Button>
+<section>
+  <!--https://stackoverflow.com/questions/14255631/style-svg-circle-with-css-->
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="50"
+    fill="white" stroke="black"/>
+    </svg>
+    <Button buttonTag>Opslaan</Button>
 </section>
 
 <form>
   <Input  type="text"
           name="name"
-          lable="Naam: "
+          label="Naam: "
           value={userData.name}
   />
   <Input  type="email"
           name="email"
-          lable="Email: "
+          label="Email: "
           value={userData.email}
   />
   <Input  type="text"
           name="clubName"
-          lable="Club: "
+          label="Club: "
           value={userData.clubName}
   />
   <Input  type="text"
           name="clubStreet"
-          lable="Adress: "
+          label="Adress: "
           value={userData.clubStreet}
   />
   <Input  type="text"
           name="clubCity"
-          lable=""
+          label=""
           value={userData.clubCity}
   />
 </form>

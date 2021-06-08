@@ -8,7 +8,7 @@
   export let userData
 
 
-  let edit = true
+  let edit = false
 
   userData = {
     'name': 'Harold Janssen',
