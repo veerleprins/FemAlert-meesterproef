@@ -10,11 +10,4 @@
   <Title>Test</Title>
 </header>
 
-<div class="grid-container">
-  <div class="icon" />
-  <div class="welcome" />
-  <div class="nav" />
-  <div class="content">
-    <Map />
-  </div>
-</div>
+<Map />
