@@ -7,7 +7,7 @@
 </style>
 
 <svelte:head>
-  <title>FemAlert | Home</title>
+  <title>FemAlert | Instellingen</title>
 </svelte:head>
 
 <Settings />
