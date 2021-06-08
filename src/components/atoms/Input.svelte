@@ -28,7 +28,6 @@
   @include size-m {
     section {
       grid-template-columns: 1fr 3fr;
-
       input {
         line-height: 2em;
         width: 20em;
