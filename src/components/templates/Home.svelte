@@ -31,16 +31,10 @@
     section:only-child {
       max-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 2fr 2fr 0.2em;
+      grid-template-columns: 0.2em 2fr 2fr 0.2em;
       grid-template-rows: 0.2em 1fr 5fr 4fr 0.2em;
       grid-column-gap: 2em;
       grid-row-gap: 2em;
-
-      // navigation
-      section:first-of-type {
-        grid-column: 1;
-        grid-row: 1 / 6;
-      }
 
       // welcome message
       header {
@@ -50,25 +44,25 @@
       }
 
       // date slider
-      section:nth-of-type(2) {
+      section:nth-of-type(1) {
         display: none;
       }
 
       // large chart
-      section:nth-of-type(3) {
+      section:nth-of-type(2) {
         display: block;
         grid-column: 2 / 4;
         grid-row: 3;
       }
 
       // pie chart
-      section:nth-of-type(4) {
+      section:nth-of-type(3) {
         grid-column: 2;
         grid-row: 4;
       }
 
       // small text blocks
-      section:nth-of-type(5) {
+      section:nth-of-type(4) {
         grid-column: 3;
         grid-row: 4;
         display: grid;
@@ -79,11 +73,6 @@
 </style>
 
 <section>
-
-  <section>
-    <Nav />
-  </section>
-
   <header>
     <WelcomeMessage />
   </header>
