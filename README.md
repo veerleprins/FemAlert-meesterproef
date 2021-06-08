@@ -1,6 +1,6 @@
-# FemAlert 👩🏽‍💗
+# FemAlert 🧑🏼👩🏽‍💗
 
-## ❗ Live Link ❗
+## 🔴 Live Link 🔴
 
 Here is the live link to our demo of the dashboard:
 
@@ -13,10 +13,10 @@ _by [Sharon Veldman](https://github.com/SharonV33), [Johan van Beusekom](https:/
 
 ## 📝 Description
 
-53% of all women in The Netherlands have experienced harassment in some way. <br>
+Many people in The Netherlands are the vitcim of (sexual) harassment. For example; 53% of all women have experienced harassment in some way, but also men are more often the victim of harassment. <br>
 Nowadays, unwanted and inappropriate behaviour towards victims keeps getting worse. Especially in clubs and festivals, people are more often the victim of harassment in any possible way. Sexual harassment and intimidation, aggression, racism and/or discrimination towards victims are the main problems in todays nightlife.
 
-That's where FemAlert comes in handy. FemAlert is an initiative, established by Rosanne Verbeek, to protect people (mostly women) from unwanted situations while partying or going out to clubs.
+That's where FemAlert comes in handy. FemAlert is an initiative, established by Rosanne Verbeek, to protect people from unwanted situations while partying or going out to clubs.
 FemAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. FemAlert also lets club or bar owners get in touch with victims to help them and offer support.
 
 The platform FemAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
@@ -156,8 +156,61 @@ Here is a screenshot of the map-structure in our project:<br><br>
 
 ## 🔨 Install
 
+Here's a manual for installing this project.
+
+### 📡 Install Node.js & npm
+
+To start off, install Node.js & npm. Node.js is a platform built on Chrome's JavaScript runtime for easily building fast and scalable network applications. Npm is a Node Package Manager, to install and manage packages.
+
+To install Node.js and npm, go to <a href="https://nodejs.org/en/">https://nodejs.org/en/</a>, and download the latest version of Node.js on your device. Make sure to select the npm-install option while installing Node.js.
+
+### 📍 Clone the GitHub repository
+
+To get the project on your code-editor, you have to clone it from our GitHub repository. (<a href="https://github.com/veerleprins/FemAlert-meesterproef">https://github.com/veerleprins/FemAlert-meesterproef</a>)
+<br><br>
+To do this, type the following command in your terminal:
+<br>
+`git clone https://github.com/veerleprins/FemAlert-meesterproef.git`
+
+### 📦 Install all the used packages
+
+To install all the used packages in this project, type the following command in your terminal:
+<br>
+`npm i`
+<br>
+This may take some time to install.
+
+### Start and run the server
+
+To run the sever, type the following command in your terminal:
+<br>
+`npm run dev`
+
 ## 📋 Sources
 
 https://bradfrost.com/blog/post/atomic-web-design/
 
 ## © License
+
+This repo is licensed as MIT by Veerle Prins, Sharon Veldman and Johan van Beusekom, 2021.
+<br><br><br>
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
