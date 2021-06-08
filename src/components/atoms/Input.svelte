@@ -26,8 +26,6 @@
     }
   }
 
-
-
   @include size-m {
     section {
       grid-template-columns: 1fr 3fr;
@@ -43,5 +41,4 @@
 <section>
   <label for {name}>{label}</label>
   <input {type} {name} {value}/>
-
 </section>
