@@ -21,7 +21,7 @@ FemAlert is a platform where people can report any kind of unacceptable behavior
 
 The platform FemAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
 
-Our job is to make a neat-designed and detailed dashboard for club owners to provide them with visualized data about the reports made in/for their clubs.
+Our job is to make a neat-designed and detailed dashboard for both club owners and festival owners to provide them with visualized data about the reports made in/for their clubs.
 
 ## 🔢 Data
 
@@ -127,7 +127,7 @@ Next to the section with all the reports, you can see two pie charts. These char
 
 ### 🔩 Settings
 
-On this page, the settings of the club owner are shown. The club owners can edit their information here, log out, or turn on the Dark theme mode. Here's a screenshot of our design for the 'Settings' page:<br><br>
+On this page, the settings of the club owner or festival owner are shown. The owners can edit their information here, log out, or turn on the Dark theme mode. Here's a screenshot of our design for the 'Settings' page:<br><br>
 <img src="https://imgur.com/RzhchBy.png" width="500" height="300">
 
 The Dark theme mode is an extra feature we are implementing if we have enough time to do so. Our main focus will be on the other pages, where the functionalities of the dashboard are the most important.
@@ -139,12 +139,9 @@ Svelte is a JavaScript framework made to reduce boilerplate code. This makes you
 D3.js is a JavaScript library to visualize data and make various types of graphs, charts, and other visualizations.
 <br>
 
-Our working method in this project is based on an article written by Brad Frost. In this article, Brad Frost writes about Atomic Web Design. Atomic Web Design is a work method where you basically filter your application in multiple layers. <br><br>
-With Atomic Web Design, you are using Atoms, Molecules, Organisms, and Templates. Each group is a part of the next group. For example; multiple atoms form a molecule, multiple molecules form an organism, and so on. On the following picture, you can see a visual representation of Atomic Web Design: <br>
+Our working method in this project is based on an article written by Brad Frost. In this article, Brad Frost writes about Atomic Web Design. Atomic Web Design is a work method where you basically filter your application in multiple layers. <a href="https://bradfrost.com/blog/post/atomic-web-design/">Click here for the article.</a><br>
 
-<img src="https://imgur.com/zJcPlv4.png" width="500" height="300">
-<a href="https://bradfrost.com/blog/post/atomic-web-design/">Click here for the article.</a>
-<br><br>
+With Atomic Web Design, you are using Atoms, Molecules, Organisms, and Templates. Each group is a part of the next group. For example; multiple atoms form a molecule, multiple molecules form an organism, and so on.
 
 In our project, all the small parts like buttons, charts, graphs etc., are atoms. These atoms are put into molecules, like a navigation bar, a list of different reports, and so on. These molecules are then being placed into organisms; mostly bigger sections. All the organisms can be placed in a template, which create the pages for your application.<br>
 This way of working makes coding easier and more understandable.
@@ -167,9 +164,8 @@ To install Node.js and npm, go to <a href="https://nodejs.org/en/">https://nodej
 To get the project on your code-editor, you have to clone it from our GitHub repository. (<a href="https://github.com/veerleprins/FemAlert-meesterproef">https://github.com/veerleprins/FemAlert-meesterproef</a>)
 <br>
 To do this, type the following command in your terminal:
-<br><br>
+
 `git clone https://github.com/veerleprins/FemAlert-meesterproef.git`
-<br>
 
 ### 📦 Install all the used packages
 
@@ -191,4 +187,4 @@ https://bradfrost.com/blog/post/atomic-web-design/
 
 ## © License
 
-This repo is licensed as MIT by Veerle Prins, Sharon Veldman and Johan van Beusekom, 2021.
+This repo is licensed as MIT by <a href="https://github.com/veerleprins">Veerle Prins</a>, <a href="https://github.com/SharonV33">Sharon Veldman</a> and <a href="https://github.com/johancvb">Johan van Beusekom</a>, 2021.
