@@ -137,9 +137,8 @@ The Dark theme mode is an extra feature we are implementing if we have enough ti
 In this project, we are using Svelte and D3.js to create the dashboards.<br>
 Svelte is a JavaScript framework made to reduce boilerplate code. This makes your code more understandable and much easier to read.<br>
 D3.js is a JavaScript library to visualize data and make various types of graphs, charts, and other visualizations.
-<br>
 
-Our working method in this project is based on an article written by Brad Frost. In this article, Brad Frost writes about Atomic Web Design. Atomic Web Design is a work method where you basically filter your application in multiple layers. <a href="https://bradfrost.com/blog/post/atomic-web-design/">Click here for the article.</a><br>
+Our working method in this project is based on an article written by Brad Frost. In this article, Brad Frost writes about Atomic Web Design. Atomic Web Design is a work method where you basically filter your application in multiple layers. <a href="https://bradfrost.com/blog/post/atomic-web-design/">Click here for the article.</a>
 
 With Atomic Web Design, you are using Atoms, Molecules, Organisms, and Templates. Each group is a part of the next group. For example; multiple atoms form a molecule, multiple molecules form an organism, and so on.
 
