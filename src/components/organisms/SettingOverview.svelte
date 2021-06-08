@@ -50,11 +50,11 @@
   <section>
     <SettingsEdit />
   </section>
-    {:else}
-  <section>
-    <UserProfile />
-  </section>
-  {/if}
+  {:else}
+    <section>
+      <UserProfile />
+    </section>
+{/if}
 <section>
   <SelectDarkMode />
 </section>
