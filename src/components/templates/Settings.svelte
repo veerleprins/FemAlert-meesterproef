@@ -25,7 +25,7 @@
 
   @include size-m {
     // outer container styling
-    section:only-child {
+    div {
       max-height: 100vh;
       display: grid;
       grid-template-columns: 0.2em 2fr 2fr 0.2em;
@@ -52,7 +52,7 @@
 
 </style>
 
-<section>
+<div>
   <header>
     <WelcomeMessage />
   </header>
@@ -60,4 +60,4 @@
   <section>
     <SettingOverview />
   </section>
-</section>
+</div>
