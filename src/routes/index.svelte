@@ -1,46 +1,37 @@
 <script context="module">
-  // // import { fetchData } from '@/utils/collect.js'
-  // export async function preload() {
-  //   // const data = await fetchData(
-  //   //   `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
-  //   // )
-  //   const response = await this.fetch(
-  //     `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
-  //   )
-  //   const data = await response.json()
-  //   return { data }
-  // }
-  // import { db } from '../firebase-config.js'
+  import { db } from '@/utils/firebase-config.js'
 
-  // export async function preload(page, session) {
-  // let fbList = db.collection('list')
-  // return { list: fbList.docs }
-  // }
+  export async function preload() {
+    try {
+      let dataList = []
+      const snapshot = await db.collection('reports').get()
+      snapshot.forEach((doc) => {
+        dataList.push(doc.data())
+      })
+      return { data: dataList }
+    } catch (err) {
+      console.log(err)
+    }
+  }
 </script>
 
 <script>
   // Components
   import Home from '../components/templates/Home.svelte'
-  import { db } from '../firebase-config.js'
 
   // Internals
-  import { onMount } from 'svelte'
   import { reportData } from '@/stores/dataStore.js'
 
   // Props
-  // export let list = []
-  // export let data
-  // onMount(data)
+  export let data
 
   // Storing the data
-  // reportData.set(data)
-
-  db.collection('reports')
-    .onSnapshot(query)
-    .once('value')
-    .then((snapshot) => {
-      console.log(snapshot)
-    })
+  reportData.set(data)
+  let count_value
+  reportData.subscribe((value) => {
+    count_value = value
+  })
+  console.log(count_value)
 </script>
 
 <style>
