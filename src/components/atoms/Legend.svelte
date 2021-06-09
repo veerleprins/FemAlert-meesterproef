@@ -43,7 +43,7 @@
     }
   }
 
-  @include size-xxs {
+  @include size-xs {
     ul {
       display: block;
     }
