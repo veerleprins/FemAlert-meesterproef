@@ -43,11 +43,14 @@
     }
   }
 
+<<<<<<< HEAD
   @include size-xs {
     ul {
       display: block;
     }
   }
+=======
+>>>>>>> 3dae19893b03a7342f8d364f0112a372d3d5cb33
   @include size-m {
     ul {
       grid-template-columns: auto;
