@@ -1,21 +1,10 @@
 <script>
   // Components
-  import {onMount} from 'svelte'
   import DateSlider from '../organisms/DateSlider.svelte'
   import NewReportCounter from '../organisms/NewReportCounter.svelte'
   import DonutSection from '../organisms/DonutSection.svelte'
   import LargeChartSection from '../organisms/LargeChartSection.svelte'
-  import Nav from '../molecules/Nav.svelte'
   import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
-
-  let data = []
-
-  onMount(async () => {
-    const res = await fetch(
-      `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
-    )
-    data = await res.json()
-  })
 </script>
 
 <style lang="scss">
@@ -93,5 +82,4 @@
     <NewReportCounter />
     <NewReportCounter />
   </section>
-
 </section>
