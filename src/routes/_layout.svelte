@@ -34,15 +34,30 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $standard-font;
   }
 
   :global(body) {
-    background-color: #c4c4c4;
+    background-color: $ui-background-color;
     overflow-x: hidden;
+    font-size: 14px;
+  }
+
+  @include size-xs {
+    :global(body) {
+      font-size: 16px;
+    }
+  }
+
+  @include size-xl {
+    :global(body) {
+      font-size: 18px;
+    }
   }
 
   main {
     width: 100%;
+    padding: 1em;
   }
 </style>
 
