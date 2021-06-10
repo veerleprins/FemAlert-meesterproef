@@ -1,13 +1,12 @@
 <script>
   // Components
   import Icons from '@/components/atoms/Icons.svelte'
+
   // Props
   export let type
   export let name
   export let placeholder
   export let searchBar = false
-  export let label
-  export let value
 </script>
 
 <style lang="scss">

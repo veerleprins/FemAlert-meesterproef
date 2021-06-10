@@ -4,7 +4,7 @@
   import Options from '@/components/molecules/Options.svelte'
 
   // Internals
-  import { countWords, shortenWords } from '../../utils/checkWords.js'
+  import { countWords, shortenWords } from '@/utils/checkWords.js'
 
   // Props
   export let report
@@ -70,5 +70,5 @@
       </p>
     </div>
   {/if}
-  <Options support={report.need_help} contact={report.make_contact} />
+  <Options support={report.support} contact={report.contact} />
 </li>

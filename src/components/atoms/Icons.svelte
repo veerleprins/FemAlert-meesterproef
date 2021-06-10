@@ -15,9 +15,6 @@
     height: 1em;
     fill: none;
     margin-right: 0.5rem;
-    // path {
-    //   fill: $ui-black;
-    // }
     &.searchIcon {
       position: absolute;
       z-index: 1;
