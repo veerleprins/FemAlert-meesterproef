@@ -1,5 +1,30 @@
+<script context="module">
+  import { db } from '@/utils/firebase-config.js'
+
+  export async function preload() {
+    try {
+      let dataList = []
+      const snapshot = await db.collection('reports').get()
+      snapshot.forEach(async (doc) => {
+        const data = doc.data()
+        dataList.push(data)
+      })
+      return { data: dataList }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+</script>
+
 <script>
-  // Components
+  // Internals
+  import { reportData } from '@/stores/dataStore.js'
+
+  // Props
+  export let data
+
+  // Storing the data
+  reportData.set(data)
 </script>
 
 <style lang="scss">
