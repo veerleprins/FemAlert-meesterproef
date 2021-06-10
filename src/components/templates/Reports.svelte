@@ -5,7 +5,8 @@
   import Input from '@/components/atoms/Input.svelte'
 
   // Internals
-  import { reportData } from '@/stores/dataStore.js'
+  import {reportData} from '@/stores/dataStore.js'
+  import DonutSection from '../organisms/DonutSection.svelte'
 
   let data
   reportData.subscribe((value) => {
@@ -28,6 +29,9 @@
         margin-top: 1.5em;
       }
     }
+    section:nth-of-type(2) {
+      display: none;
+    }
   }
 
   @include size-m {
@@ -35,8 +39,8 @@
     div {
       max-height: 100vh;
       display: grid;
-      grid-template-columns: 1fr 2fr 2fr 0.2em;
-      grid-template-rows: 0.2em 1fr 5fr 4fr 0.2em;
+      grid-template-columns: 0.2em 2fr 1fr 0.2em;
+      grid-template-rows: 0.2em 1fr 1fr 4fr 0.2em;
       grid-column-gap: 2em;
       grid-row-gap: 2em;
       header {
@@ -44,8 +48,14 @@
         grid-row: 2;
         align-self: center;
       }
-      section {
-        // Styling section
+      section:first-of-type {
+        grid-column: 2;
+        grid-row: 3;
+      }
+      section:nth-of-type(2) {
+        display: block;
+        grid-column: 3;
+        grid-row: 3;
       }
     }
   }
@@ -71,6 +81,6 @@
   </section>
 
   <section>
-    <!-- Insert donut charts here -->
+    <DonutSection />
   </section>
 </div>
