@@ -3,10 +3,8 @@
   import SingleReport from '@/components/organisms/SingleReport.svelte'
   import Title from '@/components/atoms/Title.svelte'
   import Input from '@/components/atoms/Input.svelte'
-
   // Internals
   import { reportData } from '@/stores/dataStore.js'
-
   let data
   reportData.subscribe((value) => {
     data = value
@@ -16,20 +14,17 @@
 <style lang="scss">
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
-
   div {
     header {
       width: 100%;
       margin-bottom: 1.5em;
     }
-
     section {
       ul {
         margin-top: 1.5em;
       }
     }
   }
-
   @include size-m {
     // Styling for grid
     div {
@@ -55,12 +50,11 @@
   <header>
     <Title>Alle meldingen</Title>
   </header>
-
   <section>
     <Input
       type="text"
       name="search"
-      placeholder="Zoek melding...  (Bijv. “Aanranding”)"
+      placeholder="Zoek melding... (Bijv. “Aanranding”)"
       searchBar
     />
     <ul>
@@ -69,7 +63,6 @@
       {/each}
     </ul>
   </section>
-
   <section>
     <!-- Insert donut charts here -->
   </section>

@@ -1,18 +1,20 @@
 <script>
-  var map = L.map('map').setView([0, 0], 1)
+  var mymap = L.map('mapid').setView([51.505, -0.09], 13)
 </script>
 
 <style>
-  #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  #mapid {
+    height: 180px;
   }
 </style>
 
 <svelte:head>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""
+  />
   <script
     defer
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -21,4 +23,4 @@
   </script>
 </svelte:head>
 
-<div id="map" />
+<div id="mapid" />
