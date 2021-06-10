@@ -10,6 +10,7 @@ import config from 'sapper/config/rollup.js'
 import pkg from './package.json'
 import sveltePreprocess from 'svelte-preprocess'
 import alias from '@rollup/plugin-alias'
+import sapperEnv from 'sapper-environment'
 
 const mode = process.env.NODE_ENV
 const dev = mode === 'development'
@@ -48,9 +49,14 @@ const aliases = alias({
       find: '@/stores',
       replacement: path.resolve(__dirname, 'src/stores'),
     },
+    {
+      find: '@/utils',
+      replacement: path.resolve(__dirname, 'src/utils'),
+    },
   ],
 })
 
+// Warn Rollup https://github.com/sveltejs/sapper-template/issues/302
 export default {
   client: {
     input: config.client.input(),
@@ -58,8 +64,12 @@ export default {
     plugins: [
       aliases,
       replace({
-        'process.browser': true,
-        'process.env.NODE_ENV': JSON.stringify(mode),
+        preventAssignment: true,
+        values: {
+          ...sapperEnv(),
+          'process.browser': true,
+          'process.env.NODE_ENV': JSON.stringify(mode),
+        },
       }),
       svelte({
         dev,
@@ -72,6 +82,7 @@ export default {
         publicPath: '/client/',
       }),
       resolve({
+        preventAssignment: true,
         browser: true,
         dedupe: ['svelte'],
         // aliases,
@@ -118,6 +129,7 @@ export default {
     plugins: [
       aliases,
       replace({
+        preventAssignment: true,
         'process.browser': false,
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
@@ -133,6 +145,7 @@ export default {
         emitFiles: false, // already emitted by client build
       }),
       resolve({
+        preventAssignment: true,
         dedupe: ['svelte'],
         // aliases,
       }),
@@ -152,6 +165,7 @@ export default {
     plugins: [
       resolve(),
       replace({
+        preventAssignment: true,
         'process.browser': true,
         'process.env.NODE_ENV': JSON.stringify(mode),
       }),
