@@ -1,47 +1,93 @@
 <script>
     // Props
     export let innerRadius
-    // export let data
 
-    /**
-     * todo
-     * give height/width with props
-     * calculate transform/outer radius based on width and height
-     * give colour array with props?
-     */
+    // Internals
+    import { reportData } from '@/stores/dataStore.js'
 
-    let data = [
-            {
-                'size': 25,
-                'name': 'Agressie',
-                'color': '#05006E'
-            },
-            {
-                'size': 8,
-                'name': 'Aanranding',
-                'color': '#492B9E'
-            },
-            {
-                'size': 12,
-                'name': 'Anders',
-                'color': '#7D43F9'
-            },
-            {
-                'size': 2,
-                'name': 'Anders',
-                'color': '#8760DB'
-            },
-            {
-                'size': 39,
-                'name': 'Anders',
-                'color': '#AA83FF'
-            },
-            {
-                'size': 11,
-                'name': 'Anders',
-                'color': '#D6C8F4'
+    // Select only the accidents from each report
+    let rawData
+    reportData.subscribe((value) => {
+        rawData = value
+    })
+
+    // Map over all the reports and return them as arrays with objects
+    const allReports = rawData.map((item) => item.accident)
+
+     // Create empty objects which will be used to count the
+     // number of reports and to build the donut chart
+     let agressie = {
+        'size': 0,
+         'name': 'Agressie',
+         'color': ''
+     }
+     let aanranding = {
+        'size': 0,
+         'name': 'Aanranding',
+         'color': ''
+     }
+     let uitschelden = {
+        'size': 0,
+         'name': 'Uitschelden',
+         'color': ''
+     }
+    let discriminatie = {
+        'size': 0,
+        'name': 'Discriminatie',
+        'color': ''
+    }
+    let rasicme = {
+        'size': 0,
+        'name': 'Rasicme',
+        'color': ''
+    }
+    let anders = {
+        'size': 0,
+        'name': 'Anders',
+        'color': ''
+    }
+
+     // For each array of objects containing report types
+     // loop through both the outer arrays and the objects
+     // and check the type of report, then add to the correct counter
+     allReports.forEach((item) => {
+        item.forEach((accident) => {
+            if (accident.type === 'Aanranding') {
+                aanranding.size ++
+                aanranding.color = accident.color
             }
-        ]
+            else if (accident.type === 'Agressie') {
+                agressie.size ++
+                agressie.color = accident.color
+            }
+            else if (accident.type === 'Uitschelden') {
+                uitschelden.size ++
+                uitschelden.color = accident.color
+            }
+            else if (accident.type === 'Discriminatie') {
+                discriminatie.size ++
+                discriminatie.color = accident.color
+            }
+            else if (accident.type === 'Rasicme') {
+                rasicme.size ++
+                rasicme.color = accident.color
+            }
+            else if (accident.type === 'Anders') {
+                anders.size ++
+                anders.color = accident.color
+            }
+        })
+    })
+
+    // Combine all the new objects into an array
+    let data = [
+        agressie,
+        aanranding,
+        uitschelden,
+        discriminatie,
+        rasicme,
+        anders
+    ]
 
     /**
      * based on an example by Rich-harrishttps:
