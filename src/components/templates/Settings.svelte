@@ -1,18 +1,7 @@
 <script>
   // Components
-  import {onMount} from 'svelte'
-  import Nav from '../molecules/Nav.svelte'
   import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
   import SettingOverview from '../organisms/SettingOverview.svelte'
-
-  let data = []
-
-  onMount(async () => {
-    const res = await fetch(
-      `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
-    )
-    data = await res.json()
-  })
 </script>
 
 <style lang="scss">
@@ -33,7 +22,6 @@
       grid-column-gap: 2em;
       grid-row-gap: 2em;
 
-
       // welcome message
       header {
         grid-column: 2 / 4;
@@ -49,7 +37,6 @@
       }
     }
   }
-
 </style>
 
 <div>
