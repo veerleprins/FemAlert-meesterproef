@@ -1,18 +1,18 @@
 <script>
   // Components
-  import {onMount} from 'svelte'
+  // import { onMount } from 'svelte'
   import Title from '../atoms/Title.svelte'
   import SearchBar from '../atoms/SearchBar.svelte'
   import SingleReport from '../organisms/SingleReport.svelte'
 
+  // let data = []
 
-  let data = []
-
-  onMount(async () => {
-    const res = await fetch(`https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`)
-    data = await res.json()
-  })
-
+  // onMount(async () => {
+  //   const res = await fetch(
+  //     `https://my.api.mockaroo.com/fem_alert_v5?key=6cbcdbc0`
+  //   )
+  //   data = await res.json()
+  // })
 </script>
 
 <style lang="scss">
@@ -40,7 +40,6 @@
     box-shadow: 1px 1px 6px #9a9a9a;
     width: 90%;
   }
-
 </style>
 
 <section>
@@ -60,4 +59,3 @@
 <SingleReport />
 <SingleReport />
 <SingleReport />
-
