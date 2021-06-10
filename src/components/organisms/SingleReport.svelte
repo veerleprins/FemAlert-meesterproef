@@ -1,68 +1,74 @@
 <script>
-  import MultipleReportTypes from '../molecules/MultipleReportTypes.svelte'
-  import ReportExtraOptions from '../molecules/ReportExtraOptions.svelte'
+  // Components
+  import Title from '@/components/atoms/Title.svelte'
+  import Options from '@/components/molecules/Options.svelte'
 
-  let reports = [
-    'agressie',
-    'mishandeling',
-    'discriminatie',
-    'aanranding',
-    'uitschelden',
-    'anders'
-  ]
+  // Internals
+  import { countWords, shortenWords } from '@/utils/checkWords.js'
 
+  // Props
+  export let report
+  export let index
 </script>
 
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 2em 1.5em;
-    padding: 1em 1em;
+  li {
     background-color: $ui-section;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #9a9a9a;
-
-    section {
-      box-shadow: none;
-      display: flex;
-      margin: 0 0 1em 0;
-      padding: 0;
+    height: auto;
+    margin-bottom: 1.5em;
+    list-style-type: none;
+    border-radius: $borderSize;
+    padding: 1em;
+    p {
+      &.timestamp {
+        margin-bottom: 1rem;
+        font-family: $light-font;
+      }
     }
-
-    a {
-      display: inline;
-      text-decoration: none;
-    }
-
-    .extraInfo {
+    ul {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      margin: 1.5em 0 0 0;
+      flex-wrap: wrap;
+      gap: 6px;
+      height: 100%;
+      width: 100%;
+      margin-bottom: 1rem;
+      li {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        width: 150px;
+        height: 15px;
+        margin-bottom: 0em;
+      }
+    }
+    .readMore {
+      display: inline-block;
     }
   }
 </style>
 
-<section>
-  <section>
-    <MultipleReportTypes numberOfReports={reports}/>
-  </section>
-
-  <p>
-    Was iemand die mij aanrandde tijdens het dansen. Hij bleef maar doorgaan ondanks dat ik al
-    een aantal keer zei dat hij moest stoppen. <a href="www.google.com"> Lees meer...</a>
-  </p>
-
-  <section class="extraInfo">
-    <ReportExtraOptions/>
-    <section>
-      <p>23:00 | 21/5/2021</p>
-    </section>
-  </section>
-
-</section>
+<li>
+  <Title isSubtitle>Slachtoffer melding {index + 1}</Title>
+  <p class="timestamp">{report.time} | {report.date}</p>
+  <ul>
+    {#each report.accident as accident}
+      <li style="background-color: {accident.color}">{accident.type}</li>
+    {/each}
+  </ul>
+  {#if countWords(report.story) <= 40}
+    <p class="story">{report.story}</p>
+  {:else}
+    <div class="readMore">
+      <p class="story">
+        {shortenWords(report.story, 200)}...
+        <a href="#">Lees meer</a>
+      </p>
+    </div>
+  {/if}
+  <Options support={report.support} contact={report.contact} />
+</li>

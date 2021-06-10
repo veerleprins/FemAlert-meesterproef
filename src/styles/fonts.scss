@@ -1,4 +1,34 @@
 @font-face {
-  // font-family: 'Vendura';
-  // src: url('/fonts/Vendura-SemiBold-Demo.otf') format('opentype');
+  font-family: 'OpenSans-Regular';
+  src: url('/fonts/OpenSans-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('/fonts/OpenSans-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Italic';
+  src: url('/fonts/OpenSans-Italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('/fonts/OpenSans-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OpenSans-LightItalic';
+  src: url('/fonts/OpenSans-LightItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
