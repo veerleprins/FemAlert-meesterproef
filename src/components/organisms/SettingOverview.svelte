@@ -7,7 +7,7 @@
 
   export let userData
 
-
+  //switch between editing and static mode
   let edit = false
 
   userData = {

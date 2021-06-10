@@ -1,6 +1,6 @@
 <script>
   // Imports
-  import Input from '../atoms/Input.svelte'
+  import InputWithLabel from '../molecules/InputWithLabel.svelte'
   import Button from '../atoms/Button.svelte'
   export let userData
 
@@ -46,29 +46,34 @@
 </section>
 
 <form>
-  <Input  type="text"
-          name="name"
-          label="Naam: "
-          value={userData.name}
+  <InputWithLabel
+      type="text"
+      name="name"
+      label="Naam: "
+      value={userData.name}
   />
-  <Input  type="email"
-          name="email"
-          label="Email: "
-          value={userData.email}
+  <InputWithLabel
+      type="email"
+      name="email"
+      label="Email: "
+      value={userData.email}
   />
-  <Input  type="text"
-          name="clubName"
-          label="Club: "
-          value={userData.clubName}
+  <InputWithLabel
+      type="text"
+      name="clubName"
+      label="Club: "
+      value={userData.clubName}
   />
-  <Input  type="text"
-          name="clubStreet"
-          label="Adress: "
-          value={userData.clubStreet}
+  <InputWithLabel
+      type="text"
+      name="clubStreet"
+      label="Adress: "
+      value={userData.clubStreet}
   />
-  <Input  type="text"
-          name="clubCity"
-          label=""
-          value={userData.clubCity}
+  <InputWithLabel
+      type="text"
+      name="clubCity"
+      label=""
+      value={userData.clubCity}
   />
 </form>

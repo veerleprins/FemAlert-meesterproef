@@ -1,13 +1,13 @@
 <script>
   // Components
-  import Icons from '@/components/atoms/Icons.svelte'
+  import Label from '../atoms/Label.svelte'
+  import Input from '../atoms/Input.svelte'
 
   // Props
   export let type
   export let name
-  export let placeholder
   export let value
-  export let searchBar = false
+  export let label
 </script>
 
 <style lang="scss">
@@ -44,11 +44,19 @@
       padding-left: 0.5em;
     }
   }
+
+  @include size-m {
+    section {
+      grid-template-columns: 1fr 3fr;
+      input {
+        line-height: 2em;
+        width: 20em;
+      }
+    }
+  }
 </style>
 
-{#if searchBar}
-  <div>
-    <Icons iconType="search" searchIcon />
-    <input {type} {name} {placeholder} class:searchBar />
-  </div>
-{:else}<input {type} {name} {value} />{/if}
+<section>
+  <Label {name} {label}/>
+  <Input {type} {name} {value}/>
+</section>
