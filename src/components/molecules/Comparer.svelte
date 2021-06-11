@@ -4,59 +4,46 @@
 
   // Will be removed once more data is in the database
   const testDates = [
-    '11/06/2021',
-    '11/06/2021',
-    '11/06/2021',
-    '04/06/2021',
-    '04/06/2021',
-    '04/06/2021',
-    '28/5/2021'
+    { date: '11/06/2021' },
+    { date: '11/06/2021' },
+    { date: '11/06/2021' },
+    { date: '04/06/2021' },
+    { date: '04/06/2021' },
+    { date: '05/06/2021' },
+    { date: '28/05/2021' }
   ]
-
-  // Document the number of days each month has
-  const monthDays = {
-    1: 31,
-    2: 28,
-    3: 31,
-    4: 30,
-    5: 31,
-    6: 30,
-    7: 31,
-    8: 31,
-    9: 30,
-    10: 31,
-    11: 30,
-    12: 31
-  }
 
   // Internals
   import { reportData } from '@/stores/dataStore.js'
 
   // Select the date from the reports
   let allReports
-  reportData.subscribe((value) => {
-    allReports = value
-  })
-  const allDates = allReports.map((item) => item.date)
+    reportData.subscribe((value) => {
+      allReports = value
+    })
+  allReports = testDates // TODO: remove
 
   // Get todays date in DD/MM/YYYY format
-  let date  = new Date()
-  let today = date.toLocaleDateString("en-US", { day: 'numeric' })+ "/"+ date.toLocaleDateString("en-US", { month: 'numeric' })+ "/" + date.toLocaleDateString("en-US", { year: 'numeric' }) // 16-Nov-2019
+  const dateOptions = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric'
+  };
 
-  let testDay = '4/6/2021'
+  const today = new Date()
+  const lastWeek = new Date()
+  lastWeek.setDate(today.getDate() - 7)
 
-  // Count the number of reports made today
-  let todayReports = testDates.filter((item) => item === today).length
+  const todayFormatted = today.toLocaleDateString('en-GB', dateOptions)
+  const lastWeekFormatted = lastWeek.toLocaleDateString('en-GB', dateOptions)
 
-  //replace testDay with numberDateArray
-  // Calculate the date from last week
-  const lastWeekDate = date.setDate(date.getDate() - 7)
-  const formattedDate = lastWeekDate.getDate()+'/'+ lastWeekDate.getMonth()+'/'+ lastWeekDate.getYear()
+  const reportsToday = allReports.filter((item) => item.date === todayFormatted).length
+  const reportsLastWeek = allReports.filter((item) => item.date === lastWeekFormatted).length
 
-
-  console.log('last week date ' + formattedDate)
-  let lastWeekReport = testDates.filter((item) => item === formattedDate).length
-  console.log(lastWeekReport)
+  const difference = reportsLastWeek - reportsToday
+  const content = difference > 0
+    ? `+${difference}`
+    : difference
 </script>
 
 <style lang="scss">
@@ -64,4 +51,6 @@
   @import 'src/styles/index.scss';
 </style>
 
-<Counter>{todayReports}</Counter>
+<Counter isNegative="{difference < 0}" isPositive="{difference > 0}">
+  {content}
+</Counter>
