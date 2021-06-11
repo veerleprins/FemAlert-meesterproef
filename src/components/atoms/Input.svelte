@@ -51,4 +51,4 @@
     <Icons iconType="search" searchIcon />
     <input {type} {name} {placeholder} class:searchBar />
   </div>
-{:else}<input {type} {name} {value} />{/if}
+{:else}<input {type} {name} {value} {placeholder}/>{/if}

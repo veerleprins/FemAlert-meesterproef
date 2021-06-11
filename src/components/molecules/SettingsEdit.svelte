@@ -51,29 +51,34 @@
       name="name"
       label="Naam: "
       value={userData.name}
+      placeholder="Naam"
   />
   <InputWithLabel
       type="email"
       name="email"
       label="Email: "
       value={userData.email}
+      placeholder="voorbeeld@mail.com"
   />
   <InputWithLabel
       type="text"
       name="clubName"
       label="Club: "
       value={userData.clubName}
+      placeholder="De naam van uw club"
   />
   <InputWithLabel
       type="text"
       name="clubStreet"
       label="Adress: "
       value={userData.clubStreet}
+      placeholder="Straat en huisnummer"
   />
   <InputWithLabel
       type="text"
       name="clubCity"
       label=""
       value={userData.clubCity}
+      placeholder="plaatsnaam"
   />
 </form>
