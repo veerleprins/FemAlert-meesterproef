@@ -69,8 +69,4 @@
       {/each}
     </ul>
   </section>
-
-  <section>
-    <!-- Insert donut charts here -->
-  </section>
 </div>
