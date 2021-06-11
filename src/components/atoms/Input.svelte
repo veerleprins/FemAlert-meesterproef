@@ -6,6 +6,7 @@
   export let type
   export let name
   export let placeholder
+  export let value
   export let searchBar = false
 </script>
 
@@ -21,6 +22,10 @@
       height: 40px;
       padding-left: 1rem;
     }
+  }
+
+  input:not(.searchBar) {
+    width: 100%;
   }
 
   div {
@@ -43,14 +48,9 @@
       padding-left: 0.5em;
     }
   }
-
   @include size-m {
-    section {
-      grid-template-columns: 1fr 3fr;
-      input {
-        line-height: 2em;
-        width: 20em;
-      }
+    input:not(.searchBar) {
+      width: 50%;
     }
   }
 </style>
@@ -60,4 +60,4 @@
     <Icons iconType="search" searchIcon />
     <input {type} {name} {placeholder} class:searchBar />
   </div>
-{:else}<input {type} {name} {placeholder} />{/if}
+{:else}<input {type} {name} {value} {placeholder}/>{/if}
