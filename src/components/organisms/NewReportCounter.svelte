@@ -4,11 +4,12 @@
   // Internals
   import { reportData } from '@/stores/dataStore.js'
 
-  // Select the date from the reports
+  // Get all reports
   let allReports
   reportData.subscribe((value) => {
     allReports = value
   })
+  // Select the date from the reports
   const allDates = allReports.map((item) => item.date)
 
   // Get todays date in DD/MM/YYYY format

@@ -1,4 +1,6 @@
 <script>
+  export let isPositive = false
+  export let isNegative = false
 </script>
 
 <style lang="scss">
@@ -10,9 +12,25 @@
     font-weight: bold;
     color: $ui-black;
   }
+  #positive {
+    color: green;
+  }
+  #negative {
+    color: red;
+  }
 
 </style>
 
-<p>
-  <slot />
-</p>
+{#if isPositive === false && isNegative === false}
+  <p>
+    <slot />
+  </p>
+  {:else if isPositive === true}
+  <p id="positive">
+    <slot />
+  </p>
+  {:else}
+  <p id="negative">
+    <slot />
+  </p>
+{/if}
