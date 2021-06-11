@@ -13,11 +13,15 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: $ui-background-color;
+    background-color: $ui-white;
     padding: 5em 1em 1em 1em;
+    z-index: 2;
     nav {
       display: flex;
       flex-direction: column;
+      ul {
+        height: 100%;
+      }
     }
   }
 
@@ -27,13 +31,13 @@
 </style>
 
 <aside class:open>
-  <nav class="p-12 text-xl">
+  <nav>
     <ul>
-      <List href="/">Dashboard</List>
-      <List href="">Kaart</List>
-      <List href="/meldingen">Alle meldingen</List>
-      <List href="/instellingen">Instellingen</List>
-      <List href="">Uitloggen</List>
+      <List isNav href="/">Dashboard</List>
+      <List isNav href="">Kaart</List>
+      <List isNav href="/meldingen">Alle meldingen</List>
+      <List isNav href="/instellingen">Instellingen</List>
+      <List isNav href="">Uitloggen</List>
     </ul>
   </nav>
 </aside>
