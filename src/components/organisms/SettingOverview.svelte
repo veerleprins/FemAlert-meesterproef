@@ -8,7 +8,7 @@
   export let userData
 
   //switch between editing and static mode
-  let edit = false
+  let edit = true
 
   userData = {
     'name': 'Harold Janssen',

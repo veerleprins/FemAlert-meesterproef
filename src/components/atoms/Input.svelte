@@ -24,6 +24,10 @@
     }
   }
 
+  input:not(.searchBar) {
+    width: 100%;
+  }
+
   div {
     position: relative;
     input[type='text'] {
@@ -42,6 +46,11 @@
       border-radius: 5px;
       line-height: 1.5em;
       padding-left: 0.5em;
+    }
+  }
+  @include size-m {
+    input:not(.searchBar) {
+      width: 50%;
     }
   }
 </style>
