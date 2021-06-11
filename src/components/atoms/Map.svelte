@@ -1,10 +1,86 @@
 <script>
-  var mymap = L.map('mapid').setView([51.505, -0.09], 13)
+  import 'leaflet/dist/leaflet.css'
+  import { onMount } from 'svelte'
+
+  export let map
+  let L
+
+  onMount(async () => {
+    const l = await import('leaflet')
+    L = l.default
+
+    var mymap = L.map('mapid').setView([52.379189, 4.899431], 13)
+
+    L.tileLayer(
+      'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken:
+          'pk.eyJ1Ijoiam9waWVqb3BpZSIsImEiOiJja290dThjc3cwMGVoMnFxanZxcjc3Yms2In0.QFYSy0vq1gYhoSh4XtRPMQ',
+      }
+    ).addTo(mymap)
+
+    let styling = {
+      color: 'gray',
+      weight: 2,
+      opacity: 1,
+    }
+
+    fetch(
+      'https://maps.amsterdam.nl/open_geodata/geojson_lnglat.php?KAARTLAAG=GEBIED_BUURTEN&THEMA=gebiedsindeling'
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        L.geoJson(data, {
+          style: styling,
+        }).addTo(mymap)
+
+        function highlightFeature(e) {
+          var layer = e.target
+
+          layer.setStyle({
+            weight: 3,
+            color: '#666',
+            dashArray: '',
+            fillOpacity: 0.7,
+          })
+
+          if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+            layer.bringToFront()
+          }
+        }
+
+        var geojson
+        // ... our listeners
+        geojson = L.geoJson(data)
+
+        function resetHighlight(e) {
+          geojson.resetStyle(e.target)
+        }
+
+        function onEachFeature(feature, layer) {
+          layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+          })
+        }
+
+        geojson = L.geoJson(data, {
+          style: styling,
+          onEachFeature: onEachFeature,
+        }).addTo(mymap)
+      })
+  })
 </script>
 
 <style>
   #mapid {
-    height: 180px;
+    height: 800px;
   }
 </style>
 
@@ -15,6 +91,7 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""
   />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
   <script
     defer
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
