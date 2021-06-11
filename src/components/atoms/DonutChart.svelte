@@ -36,7 +36,7 @@
         'name': 'Discriminatie',
         'color': ''
     }
-    let rasicme = {
+    let racisme = {
         'size': 0,
         'name': 'Rasicme',
         'color': ''
@@ -68,9 +68,9 @@
                 discriminatie.size ++
                 discriminatie.color = accident.color
             }
-            else if (accident.type === 'Rasicme') {
-                rasicme.size ++
-                rasicme.color = accident.color
+            else if (accident.type === 'Racisme') {
+                racisme.size ++
+                racisme.color = accident.color
             }
             else if (accident.type === 'Anders') {
                 anders.size ++
@@ -85,7 +85,7 @@
         aanranding,
         uitschelden,
         discriminatie,
-        rasicme,
+        racisme,
         anders
     ]
 
