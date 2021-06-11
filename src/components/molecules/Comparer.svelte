@@ -1,4 +1,7 @@
 <script>
+  // Internals
+  import { reportData } from '@/stores/dataStore.js'
+
   // Imports
   import Counter from '../atoms/Counter.svelte'
 
@@ -13,17 +16,14 @@
     { date: '28/05/2021' }
   ]
 
-  // Internals
-  import { reportData } from '@/stores/dataStore.js'
-
-  // Select the date from the reports
+  // Retrieve reports
   let allReports
     reportData.subscribe((value) => {
       allReports = value
     })
   allReports = testDates // TODO: remove
 
-  // Get todays date in DD/MM/YYYY format
+  // DD/MM/YYYY format
   const dateOptions = {
     day: 'numeric',
     month: 'numeric',
