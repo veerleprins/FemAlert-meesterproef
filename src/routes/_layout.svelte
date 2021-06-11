@@ -41,6 +41,10 @@
     font-family: $standard-font;
   }
 
+  :global(html) {
+    overflow-x: hidden;
+  }
+
   :global(body) {
     background-color: $ui-background-color;
     overflow-x: hidden;
