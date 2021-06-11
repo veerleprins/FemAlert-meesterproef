@@ -5,6 +5,7 @@
   import DonutSection from '../organisms/DonutSection.svelte'
   import LargeChartSection from '../organisms/LargeChartSection.svelte'
   import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
+  import ComparedTo from '../organisms/ComparedTo.svelte'
 </script>
 
 <style lang="scss">
@@ -80,6 +81,6 @@
 
   <section>
     <NewReportCounter />
-    <NewReportCounter />
+    <ComparedTo />
   </section>
 </section>
