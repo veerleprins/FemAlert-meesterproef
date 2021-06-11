@@ -1,15 +1,39 @@
 <script>
+  // Components
+  import Icons from '@/components/atoms/Icons.svelte'
+
   // Props
   export let type
   export let name
-  export let label
+  export let placeholder
   export let value
-
+  export let searchBar = false
 </script>
 
 <style lang="scss">
-  // Import fonts, vars, etc.
+  // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
+
+  input {
+    &.searchBar {
+      width: 100%;
+      border: none;
+      border-radius: $borderSize;
+      height: 40px;
+      padding-left: 1rem;
+    }
+  }
+
+  input:not(.searchBar) {
+    width: 100%;
+  }
+
+  div {
+    position: relative;
+    input[type='text'] {
+      padding-left: 2.5rem;
+    }
+  }
 
   section {
     display: grid;
@@ -24,19 +48,16 @@
       padding-left: 0.5em;
     }
   }
-
   @include size-m {
-    section {
-      grid-template-columns: 1fr 3fr;
-      input {
-        line-height: 2em;
-        width: 20em;
-      }
+    input:not(.searchBar) {
+      width: 50%;
     }
   }
 </style>
 
-<section>
-  <label for {name}>{label}</label>
-  <input {type} {name} {value}/>
-</section>
+{#if searchBar}
+  <div>
+    <Icons iconType="search" searchIcon />
+    <input {type} {name} {placeholder} class:searchBar />
+  </div>
+{:else}<input {type} {name} {value} {placeholder}/>{/if}

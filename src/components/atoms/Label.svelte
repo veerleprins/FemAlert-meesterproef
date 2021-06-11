@@ -1,20 +1,28 @@
 <script>
+
   // Props
-  export let className
-  export let yVal
-  export let xVal
-  export let transform
+  export let name
+  export let label
 </script>
 
 <style lang="scss">
-  // Import fonts, vars, etc.
+  // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  text {
-    fill: $ui-black;
+  label {
+    display: block;
   }
+
+  @include size-m {
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
 </style>
 
-<text class={className} y={yVal} x={xVal} {transform} textAnchor="middle">
-  <slot />
-</text>
+<label for={name}>
+    {label}
+    <slot/>
+</label>
