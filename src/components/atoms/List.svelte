@@ -2,6 +2,8 @@
   // Props
   export let href
   export let isClickable = false
+  export let isNav = false
+  let active = true
 </script>
 
 <style lang="scss">
@@ -12,6 +14,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    &.isNav {
+      height: 50px;
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &.active {
+      font-family: $bold-font;
+      border-bottom: 1px solid $ui-blue;
+    }
   }
   a {
     color: $ui-black;
@@ -23,7 +40,7 @@
 </style>
 
 {#if !isClickable}
-  <li>
+  <li class:isNav class:active>
     <a {href}><slot /></a>
   </li>
 {:else}
