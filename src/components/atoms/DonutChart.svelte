@@ -16,19 +16,19 @@
 
      // Create empty objects which will be used to count the
      // number of reports and to build the donut chart
-    const getObject = (DynamischeNaam) => {
+    const getObject = (dynamicName) => {
         return {
-            name: DynamischeNaam,
+            name: dynamicName,
             count: 0,
             color: ''
         }
     }
-    const aanrandingObject = getObject('Aanranding')
-    const racismeObject = getObject('Racisme')
-    const uitscheldenObject = getObject('Uitschelden')
-    const agressieObject = getObject('Agressie')
+    const gropingObject = getObject('Groping')
+    const racismObject = getObject('Racism')
+    const swearingObject = getObject('Swearing')
+    const agressionObject = getObject('Agression')
     const andersObject = getObject('Anders')
-    const discriminatieObject = getObject('Discriminatie')
+    const discriminationObject = getObject('Discrimination')
 
      // For each array of objects containing report types
      // loop through both the outer arrays and the objects
@@ -37,24 +37,24 @@
 
         item.forEach((accident) => {
             if (accident.type === 'Aanranding') {
-                aanrandingObject.count ++
-                aanrandingObject.color = accident.color
+                gropingObject.count ++
+                gropingObject.color = accident.color
             }
             else if (accident.type === 'Agressie') {
-                agressieObject.count ++
-                agressieObject.color = accident.color
+                agressionObject.count ++
+                agressionObject.color = accident.color
             }
             else if (accident.type === 'Uitschelden') {
-                uitscheldenObject.count ++
-                uitscheldenObject.color = accident.color
+                swearingObject.count ++
+                swearingObject.color = accident.color
             }
             else if (accident.type === 'Discriminatie') {
-                discriminatieObject.count ++
-                discriminatieObject.color = accident.color
+                discriminationObject.count ++
+                discriminationObject.color = accident.color
             }
             else if (accident.type === 'Racisme') {
-                racismeObject.count ++
-                racismeObject.color = accident.color
+                racismObject.count ++
+                racismObject.color = accident.color
             }
             else if (accident.type === 'Anders') {
                 andersObject.count ++
@@ -65,11 +65,11 @@
 
     // Combine all the new objects into an array
     let data = [
-        agressieObject,
-        aanrandingObject,
-        uitscheldenObject,
-        discriminatieObject,
-        racismeObject,
+        agressionObject,
+        gropingObject,
+        swearingObject,
+        discriminationObject,
+        racismObject,
         andersObject
     ]
 
