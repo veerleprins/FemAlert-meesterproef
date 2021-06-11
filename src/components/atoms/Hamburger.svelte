@@ -5,7 +5,7 @@
 
 <style lang="scss">
   button {
-    margin-top: 1em;
+    padding-top: 2em;
     z-index: 20;
     cursor: pointer;
     border: none;
@@ -50,5 +50,4 @@
     <line id="middle" x1="8" y1="12" x2="32" y2="12" />
     <line id="bottom" x1="0" y1="22" x2="32" y2="22" />
   </svg>
-  Menu
 </button>
