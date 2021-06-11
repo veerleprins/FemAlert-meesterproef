@@ -17,6 +17,10 @@
 </script>
 
 <script>
+  // Components
+  import Header from '@/components/organisms/global/Header.svelte'
+  import Footer from '@/components/organisms/global/Footer.svelte'
+
   // Internals
   import { reportData } from '@/stores/dataStore.js'
 
@@ -41,6 +45,7 @@
     background-color: $ui-background-color;
     overflow-x: hidden;
     font-size: 14px;
+    position: relative;
   }
 
   @include size-xs {
@@ -61,10 +66,10 @@
   }
 </style>
 
-<header />
+<Header />
 
 <main>
   <slot />
 </main>
 
-<footer />
+<Footer />
