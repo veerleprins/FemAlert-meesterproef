@@ -12,7 +12,7 @@
   }
 
   @include size-m {
-    section {
+    div {
       margin: 0;
       background-color: $ui-accent-grey;
       border-radius: 15px;
@@ -21,7 +21,7 @@
   }
 </style>
 
-<section>
+<div>
   <Title>Hi Harold!</Title>
   <Title isSubtitle>Welkom terug</Title>
-</section>
+</div>
