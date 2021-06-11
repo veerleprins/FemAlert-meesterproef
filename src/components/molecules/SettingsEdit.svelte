@@ -1,6 +1,6 @@
 <script>
   // Imports
-  import Input from '../atoms/Input.svelte'
+  import InputWithLabel from '../molecules/InputWithLabel.svelte'
   import Button from '../atoms/Button.svelte'
   export let userData
 
@@ -31,7 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 12em;
+    height: 15em;
   }
 </style>
 
@@ -46,29 +46,39 @@
 </section>
 
 <form>
-  <Input  type="text"
-          name="name"
-          label="Naam: "
-          value={userData.name}
+  <InputWithLabel
+      type="text"
+      name="name"
+      label="Naam: "
+      value={userData.name}
+      placeholder="Naam"
   />
-  <Input  type="email"
-          name="email"
-          label="Email: "
-          value={userData.email}
+  <InputWithLabel
+      type="email"
+      name="email"
+      label="Email: "
+      value={userData.email}
+      placeholder="voorbeeld@mail.com"
   />
-  <Input  type="text"
-          name="clubName"
-          label="Club: "
-          value={userData.clubName}
+  <InputWithLabel
+      type="text"
+      name="clubName"
+      label="Club: "
+      value={userData.clubName}
+      placeholder="De naam van uw club"
   />
-  <Input  type="text"
-          name="clubStreet"
-          label="Adress: "
-          value={userData.clubStreet}
+  <InputWithLabel
+      type="text"
+      name="clubStreet"
+      label="Adress: "
+      value={userData.clubStreet}
+      placeholder="Straat en huisnummer"
   />
-  <Input  type="text"
-          name="clubCity"
-          label=""
-          value={userData.clubCity}
+  <InputWithLabel
+      type="text"
+      name="clubCity"
+      label=" "
+      value={userData.clubCity}
+      placeholder="plaatsnaam"
   />
 </form>
