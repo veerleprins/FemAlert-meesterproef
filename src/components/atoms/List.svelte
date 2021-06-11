@@ -5,10 +5,20 @@
 </script>
 
 <style lang="scss">
-  a,
-  a:visited {
-    color: #FFFFFF;
+  @import 'src/styles/index.scss';
+  li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  a {
+    color: $ui-black;
     text-decoration: none;
+    // &:visited {
+    //   color: #ffffff;
+    // }
   }
 </style>
 
