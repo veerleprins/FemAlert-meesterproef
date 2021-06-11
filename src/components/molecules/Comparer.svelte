@@ -8,23 +8,25 @@
     '11/06/2021',
     '11/06/2021',
     '04/06/2021',
-    '28/06/2021'
+    '04/06/2021',
+    '04/06/2021',
+    '28/5/2021'
   ]
 
   // Document the number of days each month has
   const monthDays = {
-    '01': 31,
-    '02': 28,
-    '03': 31,
-    '04': 30,
-    '05': 31,
-    '06': 30,
-    '07': 31,
-    '08': 31,
-    '09': 30,
-    '10': 31,
-    '11': 30,
-    '12': 31
+    1: 31,
+    2: 28,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31
   }
 
   // Internals
@@ -39,22 +41,22 @@
 
   // Get todays date in DD/MM/YYYY format
   let date  = new Date()
-  let today = date.toLocaleDateString("en-US", { day: '2-digit' })+ "/"+ date.toLocaleDateString("en-US", { month: '2-digit' })+ "/" + date.toLocaleDateString("en-US", { year: 'numeric' }) // 16-Nov-2019
+  let today = date.toLocaleDateString("en-US", { day: 'numeric' })+ "/"+ date.toLocaleDateString("en-US", { month: 'numeric' })+ "/" + date.toLocaleDateString("en-US", { year: 'numeric' }) // 16-Nov-2019
+
+  let testDay = '4/6/2021'
 
   // Count the number of reports made today
   let todayReports = testDates.filter((item) => item === today).length
 
-  // Turn todays date into an array and make the numbers from strings to integers
-  let numbereDateArray = today
-        .split('/')
-        .map((item) => parseInt(item, 10))
+  //replace testDay with numberDateArray
+  // Calculate the date from last week
+  const lastWeekDate = date.setDate(date.getDate() - 7)
+  const formattedDate = lastWeekDate.getDate()+'/'+ lastWeekDate.getMonth()+'/'+ lastWeekDate.getYear()
 
-  let lastWeeksDate = (() => {
-    if (numbereDateArray[1] - 7 >= 1 ) {
-      return new Array(numbereDateArray[0], numbereDateArray[1] - 7, numbereDateArray[2])
-    }
-  })
-  console.log(lastWeeksDate())
+
+  console.log('last week date ' + formattedDate)
+  let lastWeekReport = testDates.filter((item) => item === formattedDate).length
+  console.log(lastWeekReport)
 </script>
 
 <style lang="scss">
