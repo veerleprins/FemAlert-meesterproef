@@ -16,7 +16,8 @@
   @include size-m {
     label {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+    }
   }
 
 </style>

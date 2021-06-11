@@ -77,7 +77,7 @@
   <InputWithLabel
       type="text"
       name="clubCity"
-      label=""
+      label=" "
       value={userData.clubCity}
       placeholder="plaatsnaam"
   />

@@ -6,8 +6,6 @@
 
   // Internals
   import {reportData} from '@/stores/dataStore.js'
-  import DonutSection from '../organisms/DonutSection.svelte'
-
   let data
   reportData.subscribe((value) => {
     data = value
@@ -52,11 +50,6 @@
         grid-column: 2;
         grid-row: 3;
       }
-      section:nth-of-type(2) {
-        display: block;
-        grid-column: 3;
-        grid-row: 3;
-      }
     }
   }
 </style>
@@ -80,7 +73,4 @@
     </ul>
   </section>
 
-  <section>
-    <DonutSection />
-  </section>
 </div>
