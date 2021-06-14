@@ -13,10 +13,10 @@
     color: $ui-black;
   }
   #positive {
-    color: green;
+    color: #ff0000;
   }
   #negative {
-    color: red;
+    color: #44ff00;
   }
 
 </style>
