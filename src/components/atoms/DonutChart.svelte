@@ -23,12 +23,12 @@
             color: ''
         }
     }
-    const gropingObject = getObject('Groping')
-    const racismObject = getObject('Racism')
-    const swearingObject = getObject('Swearing')
-    const agressionObject = getObject('Agression')
+    const gropingObject = getObject('Aanranding')
+    const racismObject = getObject('Racisme')
+    const swearingObject = getObject('Uitgescholden')
+    const agressionObject = getObject('Agressie')
     const andersObject = getObject('Anders')
-    const discriminationObject = getObject('Discrimination')
+    const discriminationObject = getObject('Discriminatie')
 
      // For each array of objects containing report types
      // loop through both the outer arrays and the objects
@@ -43,7 +43,7 @@
                 agressionObject.count ++
                 agressionObject.color = accident.color
             }
-            else if (accident.type === 'Uitschelden') {
+            else if (accident.type === 'Uitgescholden') {
                 swearingObject.count ++
                 swearingObject.color = accident.color
             }
@@ -143,6 +143,7 @@
     align-items: center;
 
     #tooltip {
+      color: #FFFFFF;
       min-width: 15em;
       text-align: center;
       margin-top: 0.5em;
