@@ -39,7 +39,8 @@
   const todayFormatted = today.toLocaleDateString('en-GB', dateOptions)
   const lastWeekFormatted = lastWeek.toLocaleDateString('en-GB', dateOptions)
 
-  // Check for each date the amount of reports made that day
+  // Check for each date the amount of
+  // reports made that day
   const reportsToday = allReports.filter((item) => item.date === todayFormatted).length
   const reportsLastWeek = allReports.filter((item) => item.date === lastWeekFormatted).length
 
