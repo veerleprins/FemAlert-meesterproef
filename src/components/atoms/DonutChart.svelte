@@ -34,7 +34,6 @@
      // loop through both the outer arrays and the objects
      // and check the type of report, then add to the correct counter
      allReports.forEach((item) => {
-
         item.forEach((accident) => {
             if (accident.type === 'Aanranding') {
                 gropingObject.count ++
@@ -90,36 +89,61 @@
 
     let total = data.reduce((total, item) => total + item.count, 0)
     let arcs
-        let acc = 0
-        //map over data and create an arc for each data point
-        arcs = data.map(segment => {
-            const options = {
-                //set up inner and outer radius
-                innerRadius: innerRadius,
-                outerRadius: width / 2,
-                //get the starting point of the segment
-                startAngle: acc,
-                //find the end point of the segment and store this in startAngle
-                //this way the next segment will start where the previous one ended
-                endAngle: (acc += (angle * segment.count / total))
-            }
-            return {
-                color: segment.color,
-                path: fn(options)
-            }
-        })
+    let acc = 0
+
+    //map over data and create an arc for each data point
+    arcs = data.map((segment, id) => {
+        const options = {
+            //set up inner and outer radius
+            innerRadius: innerRadius,
+            outerRadius: width / 2,
+            //get the starting point of the segment
+            startAngle: acc,
+            //find the end point of the segment and store this in startAngle
+            //this way the next segment will start where the previous one ended
+            endAngle: (acc += (angle * segment.count / total))
+        }
+
+        return {
+            color: segment.color,
+            path: fn(options),
+            label: segment.name,
+            centroid: fn.centroid(options),
+            id: id
+        }
+    })
+
+    let shownTooltip = 1
+
+    const showTooltip = (id) => {
+        shownTooltip = id
+    }
 </script>
 
 <style lang="scss">
-  // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
+  rect {
+      fill: #FFFFFF;
+      stroke: #000000;
+      width: 6em;
+      height: 2em;
+  }
+  .tooltip {
+      fill: black;
+  }
 </style>
 
 <svg {width} {height} class='pie'>
     <g transform='translate(75,75)'>
         {#each arcs as arc}
             <!-- single arc -->
-            <path d={arc.path} fill={arc.color}/>
+            <path d={arc.path} fill={arc.color} on:mouseenter={showTooltip(arc.id)}/>
+            {#if shownTooltip === arc.id}
+                <rect x={arc.centroid[0]} y={arc.centroid[1]}></rect>
+                    <text class='tooltip' x={arc.centroid[0]} y={arc.centroid[1]}>
+                        {arc.label}
+                    </text>
+            {/if}
         {/each}
     </g>
 </svg>
