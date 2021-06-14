@@ -5,23 +5,11 @@
   // Imports
   import Counter from '../atoms/Counter.svelte'
 
-  // Will be removed once more data is in the database
-  const testDates = [
-    { date: '11/06/2021' },
-    { date: '11/06/2021' },
-    { date: '11/06/2021' },
-    { date: '04/06/2021' },
-    { date: '04/06/2021' },
-    { date: '05/06/2021' },
-    { date: '28/05/2021' }
-  ]
-
   // Retrieve reports
   let allReports
     reportData.subscribe((value) => {
       allReports = value
     })
-  allReports = testDates // TODO: remove
 
   // DD/MM/YYYY format
   const dateOptions = {
