@@ -105,45 +105,65 @@
         }
 
         return {
-            color: segment.color,
-            path: fn(options),
-            label: segment.name,
-            centroid: fn.centroid(options),
-            id: id
+          color: segment.color,
+          label: segment.name,
+          value: segment.count,
+          d: fn(options),
+          centroid: fn.centroid(options),
+          id: id
         }
     })
 
     let shownTooltip = 1
+    let tooltipColor = gropingObject.color
+    let tooltipName = gropingObject.name
+    let tooltipValue = gropingObject.count
+    let  content = tooltipValue > 1
+      ? 'meldingen'
+      : 'melding'
 
-    const showTooltip = (id) => {
-        shownTooltip = id
+
+    const showTooltip = (id, color, name, value) => {
+      shownTooltip = id,
+      tooltipColor = color
+      tooltipName = name
+      tooltipValue = value
+      content = tooltipValue > 1
+        ? 'meldingen'
+        : 'melding'
     }
 </script>
 
 <style lang="scss">
   @import 'src/styles/index.scss';
-  rect {
-      fill: #FFFFFF;
-      stroke: #000000;
-      width: 6em;
-      height: 2em;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #tooltip {
+      min-width: 15em;
+      text-align: center;
+      margin-top: 0.5em;
+      padding: 0.5em 0;
+      border-radius: 15px;
+    }
   }
-  .tooltip {
-      fill: black;
-  }
+
+
 </style>
 
-<svg {width} {height} class='pie'>
+<div>
+  <svg {width} {height} class='pie'>
     <g transform='translate(75,75)'>
-        {#each arcs as arc}
-            <!-- single arc -->
-            <path d={arc.path} fill={arc.color} on:mouseenter={showTooltip(arc.id)}/>
-            {#if shownTooltip === arc.id}
-                <rect x={arc.centroid[0]} y={arc.centroid[1]}></rect>
-                    <text class='tooltip' x={arc.centroid[0]} y={arc.centroid[1]}>
-                        {arc.label}
-                    </text>
-            {/if}
-        {/each}
+      {#each arcs as arc}
+        <!-- single arc -->
+        <path d={arc.d} fill={arc.color} on:mouseenter={showTooltip(arc.id, arc.color, arc.label, arc.value)}/>
+      {/each}
     </g>
-</svg>
+  </svg>
+  <div id="tooltip" style="background-color: {tooltipColor}">
+    {tooltipName} : {tooltipValue} {content}
+  </div>
+</div>
