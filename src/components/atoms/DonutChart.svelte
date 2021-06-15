@@ -23,18 +23,17 @@
             color: ''
         }
     }
-    const gropingObject = getObject('Groping')
-    const racismObject = getObject('Racism')
-    const swearingObject = getObject('Swearing')
-    const agressionObject = getObject('Agression')
+    const gropingObject = getObject('Aanranding')
+    const racismObject = getObject('Racisme')
+    const swearingObject = getObject('Uitgescholden')
+    const agressionObject = getObject('Agressie')
     const andersObject = getObject('Anders')
-    const discriminationObject = getObject('Discrimination')
+    const discriminationObject = getObject('Discriminatie')
 
      // For each array of objects containing report types
      // loop through both the outer arrays and the objects
      // and check the type of report, then add to the correct counter
      allReports.forEach((item) => {
-
         item.forEach((accident) => {
             if (accident.type === 'Aanranding') {
                 gropingObject.count ++
@@ -44,7 +43,7 @@
                 agressionObject.count ++
                 agressionObject.color = accident.color
             }
-            else if (accident.type === 'Uitschelden') {
+            else if (accident.type === 'Uitgescholden') {
                 swearingObject.count ++
                 swearingObject.color = accident.color
             }
@@ -90,36 +89,82 @@
 
     let total = data.reduce((total, item) => total + item.count, 0)
     let arcs
-        let acc = 0
-        //map over data and create an arc for each data point
-        arcs = data.map(segment => {
-            const options = {
-                //set up inner and outer radius
-                innerRadius: innerRadius,
-                outerRadius: width / 2,
-                //get the starting point of the segment
-                startAngle: acc,
-                //find the end point of the segment and store this in startAngle
-                //this way the next segment will start where the previous one ended
-                endAngle: (acc += (angle * segment.count / total))
-            }
-            return {
-                color: segment.color,
-                path: fn(options)
-            }
-        })
+    let acc = 0
+
+    //map over data and create an arc for each data point
+    arcs = data.map((segment, id) => {
+        const options = {
+            //set up inner and outer radius
+            innerRadius: innerRadius,
+            outerRadius: width / 2,
+            //get the starting point of the segment
+            startAngle: acc,
+            //find the end point of the segment and store this in startAngle
+            //this way the next segment will start where the previous one ended
+            endAngle: (acc += (angle * segment.count / total))
+        }
+
+        return {
+          color: segment.color,
+          label: segment.name,
+          value: segment.count,
+          d: fn(options),
+          centroid: fn.centroid(options),
+          id: id
+        }
+    })
+
+    let shownTooltip = 1
+    let tooltipColor = gropingObject.color
+    let tooltipName = gropingObject.name
+    let tooltipValue = gropingObject.count
+    let  content = tooltipValue > 1
+      ? 'meldingen'
+      : 'melding'
+
+
+    const showTooltip = (id, color, name, value) => {
+      shownTooltip = id,
+      tooltipColor = color
+      tooltipName = name
+      tooltipValue = value
+      content = tooltipValue > 1
+        ? 'meldingen'
+        : 'melding'
+    }
 </script>
 
 <style lang="scss">
-  // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #tooltip {
+      color: #FFFFFF;
+      min-width: 15em;
+      text-align: center;
+      margin-top: 0.5em;
+      padding: 0.5em 0;
+      border-radius: 15px;
+    }
+  }
+
+
 </style>
 
-<svg {width} {height} class='pie'>
+<div>
+  <svg {width} {height} class='pie'>
     <g transform='translate(75,75)'>
-        {#each arcs as arc}
-            <!-- single arc -->
-            <path d={arc.path} fill={arc.color}/>
-        {/each}
+      {#each arcs as arc}
+        <!-- single arc -->
+        <path d={arc.d} fill={arc.color} on:mouseenter={showTooltip(arc.id, arc.color, arc.label, arc.value)}/>
+      {/each}
     </g>
-</svg>
+  </svg>
+  <div id="tooltip" style="background-color: {tooltipColor}">
+    {tooltipName} : {tooltipValue} {content}
+  </div>
+</div>
