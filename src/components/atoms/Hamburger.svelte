@@ -4,18 +4,19 @@
 </script>
 
 <style lang="scss">
+  @import 'src/styles/index.scss';
   button {
     padding-top: 2em;
-    z-index: 20;
     cursor: pointer;
     border: none;
     background-color: transparent;
     width: 40px;
     width: 40px;
-    position: absolute;
-    z-index: 2;
+    z-index: 3;
     right: 1em;
-
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
     svg {
       min-height: 24px;
       transition: transform 0.3s ease-in-out;
@@ -26,6 +27,7 @@
       }
     }
     &.open {
+      position: fixed;
       svg {
         transform: scale(0.8);
         line {
@@ -42,9 +44,15 @@
       }
     }
   }
+
+  @include size-m {
+    button {
+      display: none;
+    }
+  }
 </style>
 
-<button class:open on:click={() => (open = !open)}>
+<button class:open on:click>
   <svg width="32" height="24">
     <line id="top" x1="0" y1="2" x2="32" y2="2" />
     <line id="middle" x1="8" y1="12" x2="32" y2="12" />
