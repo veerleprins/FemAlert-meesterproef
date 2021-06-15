@@ -52,7 +52,7 @@
       }
 
       // small text blocks
-      section:nth-of-type(4) {
+      div {
         grid-column: 3;
         grid-row: 4;
         display: grid;
@@ -79,8 +79,8 @@
     <DonutSection />
   </section>
 
-  <section>
+  <div>
     <NewReportCounter />
     <ComparedTo />
-  </section>
+  </div>
 </section>
