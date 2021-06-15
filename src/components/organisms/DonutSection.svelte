@@ -33,7 +33,7 @@
 
       div {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column;
         justify-content: space-between;
       }
     }

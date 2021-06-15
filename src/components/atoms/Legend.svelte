@@ -42,12 +42,6 @@
       }
     }
   }
-
-  @include size-m {
-    ul {
-      grid-template-columns: auto;
-    }
-  }
 </style>
 
 <ul>

@@ -142,7 +142,15 @@
     flex-direction: column;
     align-items: center;
 
+    g path {
+      stroke: #FFFFFF;
+      stroke-width: 3px;
+    }
+
     #tooltip {
+      position: absolute;
+      top: 50em;
+      width: 24em;
       color: #FFFFFF;
       min-width: 15em;
       text-align: center;
