@@ -2,6 +2,9 @@
 </script>
 
 <style lang="scss">
+  footer {
+    padding: 0em 2em;
+  }
 </style>
 
 <footer>
