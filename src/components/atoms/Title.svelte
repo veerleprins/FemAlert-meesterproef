@@ -10,7 +10,6 @@
   h1,
   h2 {
     font-family: $bold-font;
-    color: $ui-black;
   }
 
   h1 {
