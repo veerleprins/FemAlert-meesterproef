@@ -6,8 +6,4 @@
 <style>
 </style>
 
-<header>
-  <Title>Test</Title>
-</header>
-
 <Map />
