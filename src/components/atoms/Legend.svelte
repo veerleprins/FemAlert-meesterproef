@@ -31,6 +31,7 @@
 <style lang="scss">
   @import 'src/styles/index.scss';
   ul {
+    margin: 0 0.5em 0.5em 0.5em;
     display: grid;
     grid-template-columns: auto auto;
     li {

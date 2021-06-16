@@ -148,18 +148,19 @@
     }
 
     #tooltip {
-      position: absolute;
-      top: 50em;
-      width: 24em;
+      margin: 0.5em;
       color: #FFFFFF;
-      min-width: 15em;
       text-align: center;
-      margin-top: 0.5em;
-      padding: 0.5em 0;
-      border-radius: 15px;
+      padding: 0.5em;
+      width: 100%;
     }
   }
 
+  @include size-m {
+    #tooltip {
+
+    }
+  }
 
 </style>
 
