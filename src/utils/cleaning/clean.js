@@ -10,6 +10,26 @@ export const getCleanedChartData = (data) => {
 
   // Count duplicate values
   let cleaned = countDuplicateValues(filtered, uniqueArray)
+
+  cleaned.push({
+    type: '05:00',
+    count: 0,
+  })
+  cleaned.push({
+    type: '06:00',
+    count: 0,
+  })
+
+  cleaned.sort((a, b) => {
+    if (a.type < b.type) {
+      return -1
+    }
+    if (a.type > b.type) {
+      return 1
+    }
+    return 0
+  })
+
   return cleaned
 }
 
