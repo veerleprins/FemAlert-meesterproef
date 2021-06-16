@@ -112,7 +112,9 @@
       }
     }
 
-    L.geoJson(statesData, { style: style }).addTo(map)
+    let test = [{}]
+
+    L.geoJson(test, { style: style }).addTo(map)
   })
 </script>
 
