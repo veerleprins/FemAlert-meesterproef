@@ -1,4 +1,4 @@
-# FemAlert 🧑🏼👩🏽‍💗
+# ReportAlert 🧑🏼👩🏽‍💗
 
 ## 🔴 Live Link 🔴
 
@@ -16,24 +16,56 @@ _by [Sharon Veldman](https://github.com/SharonV33), [Johan van Beusekom](https:/
 Many people in The Netherlands are the victim of (sexual) harassment. For example; 53% of all women have experienced harassment in some way, but also men are more often the victim of harassment. <br>
 Nowadays, unwanted and inappropriate behavior towards victims keeps getting worse. Especially in clubs and festivals, people are more often the victim of harassment in any possible way. Sexual harassment and intimidation, aggression, racism and/or discrimination towards victims are the main problems in today's nightlife.
 
-That's where FemAlert comes in handy. FemAlert is an initiative, established by Rosanne Verbeek, to protect people from unwanted situations while partying or going out to clubs.
-FemAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. FemAlert also lets club or bar owners get in touch with victims to help them and offer support.
+That's where ReportAlert comes in handy. ReportAlert is an initiative, established by Rosanne Verbeek, to protect people from unwanted situations while partying or going out to clubs.
+ReportAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. ReportAlert also lets club or bar owners get in touch with victims to help them and offer support.
 
-The platform FemAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
+The platform ReportAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
 
 Our job is to make a neat-designed and detailed dashboard for both club owners and festival owners to provide them with visualized data about the reports made in/for their clubs.
 
 ## 🔢 Data
 
-FemAlert is still a concept, which means it doesn't have a working application yet. Because it's still a work in progress, we couldn't be provided with real data. Therefore, we had to generate our own dummy data. To do this, we used the online tool mockaroo.com. With Mockaroo you can create mock data, to your own liking. Based on the steps you have to take and the forms you have to fill in while making a new report, we created the dummy data with corresponding data-types and values.
+ReportAlert is still a concept, which means it doesn't have a working application yet. Because it's still a work in progress, we couldn't be provided with real data. Therefore, we had to generate our own dummy data. To do this, we used the online tool mockaroo.com. With Mockaroo you can create mock data, to your own liking. Based on the steps you have to take and the forms you have to fill in while making a new report, we created the dummy data with corresponding data-types and values.
 
 We created 2 datasets. One for all the reports, and one for the clubs. These datasets are joint by their ID's. Each report can be connected to a specific club or event. Here are two snippets of the datasets:
 
-Reports data:<br><br>
-<img src="https://imgur.com/ylmIW3U.png" width="500" height="250">
+Reports data:
 
-Club data:<br><br>
-<img src="https://imgur.com/Fx8Etv2.png" width="300" height="150">
+```{
+    "id": 12,
+    "date": "07/02/2021",
+    "time": "0:18",
+    "accident": [
+      "Gediscrimineerd",
+      "Racisme",
+      "Agressie",
+      "Uitgescholden",
+      "Aangerand",
+      "Anders"
+    ],
+    "story": "donec dapibus duis at velit eu est congue elementum in hac",
+    "first_name": "Lynnette",
+    "email": "lopyb@amazon.de",
+    "need_help": false,
+    "make_contact": true,
+    "club_id": 18
+  }
+```
+
+Club data:
+
+```
+  {
+    "club_id": 3,
+    "lat": 52.362252,
+    "long": 4.846075,
+    "club_name": "Het Paleis"
+  }
+```
+
+### Database
+
+To save this data, a database is needed. That's why we are using Firebase during this project. Firebase is a platform developed by Google for creating mobile and web applications. It also supports a realtime database function.
 
 ## 📊 Features
 
@@ -55,7 +87,7 @@ The mobile version of the dashboard is divided in 3 pages:
 
 On this page, you can see a bar chart, a donut chart, and a counter of all the reports made on that day.<br>
 Here's a screenshot of our design for the 'Home' page:<br><br>
-<img src="https://imgur.com/ZPZxW3l.png" width="200" height="500">
+<img src="https://imgur.com/ysHxhAn.png" width="200" height="600">
 
 As you can see, the charts on this page give insights to the amount of reports and the different types of reports. On the top of this page you can see a horizontal slider with buttons. With these buttons, you can switch between days/weeks to see the data from that specific day/week.
 
@@ -63,16 +95,16 @@ As you can see, the charts on this page give insights to the amount of reports a
 
 On this page, you can see all the reports that are made by the victims.<br>
 Here's a screenshot of our design for the 'All Reports' page:<br><br>
-<img src="https://imgur.com/bSqfxGW.png" width="200" height="500">
-<img src="https://imgur.com/LkmOEz1.png" width="200" height="500">
+<img src="https://imgur.com/tlMXFsJ.png" width="200" height="600">
+<img src="https://imgur.com/0DOdicl.png" width="200" height="600">
 
-On each report you can see the date and time, the kinds of harassments reported, the story of the victim, if the victim needs help, and/or if the victim wants to be contacted by FemAlert. If you click on the report, another page opens. On this page you can see the full version of the victim's story, the name of the victim, and the email address of the victim. Also, there's an option where you can offer help to the victim, if wanted.<br> A screenshot of that page is next to the screenshot of the 'All Reports'-page screenshot.
+On each report you can see the date and time, the kinds of harassments reported, the story of the victim, if the victim needs help, and/or if the victim wants to be contacted by ReportAlert. If you click on the report, another page opens. On this page you can see the full version of the victim's story, the name of the victim, and the email address of the victim. Also, there's an option where you can offer help to the victim, if wanted.<br> A screenshot of that page is next to the screenshot of the 'All Reports'-page screenshot.
 
 ### 🔩 Settings
 
 On this page, you can see all the information about the user. In this case it's the owner of a club in Amsterdam. <br>
 Here's a screenshot of our design for the 'All Reports' page:<br><br>
-<img src="https://imgur.com/TEAZdIE.png" width="200" height="500">
+<img src="https://imgur.com/YwiV3Sz.png" width="200" height="500">
 
 The user can change its info with the use of the "Bewerk profiel" button. Also on this page, the user can change the language and turn on Dark theme mode. The Dark theme mode is a concept we're going to work on if we have time left. Our main focus is to make the important functions work on the other pages.
 
@@ -80,7 +112,7 @@ The user can change its info with the use of the "Bewerk profiel" button. Also o
 
 The user can navigate through this app by using a navigation. We've implemented a 'hamburger' navigation, as you can see by the icon in the top right corner of each page. On this navigation screen, there's also an option to log out from the app.<br>
 Here's a screenshot of our design for the navigation page:<br><br>
-<img src="https://imgur.com/gxS2dpM.png" width="200" height="400">
+<img src="https://imgur.com/5YAngR4.png" width="200" height="400">
 
 ---
 
@@ -117,13 +149,13 @@ Because of privacy reasons, we decided to use a heatmap instead of a regular map
 
 ### 📑 All Reports
 
-On this page, all the reports are being shown in detail. Here you can see the story of the victim, the type of harassment they reported, the date and time, if the victim needs help, and if the victim wants to be contacted by FemAlert. If you click on one of the reports, you will see the victims name and email address, given that they gave permission for the club owner to reach out.<br>
+On this page, all the reports are being shown in detail. Here you can see the story of the victim, the type of harassment they reported, the date and time, if the victim needs help, and if the victim wants to be contacted by ReportAlert. If you click on one of the reports, you will see the victims name and email address, given that they gave permission for the club owner to reach out.<br>
 Here's a screenshot of our design for the 'All Reports' page: <br><br>
 <img src="https://imgur.com/hahEljQ.png" width="500" height="300">
 
 As you can see on the screenshot of our design, we have implemented a search bar to find specific reports. With the search bar, you can find reports for specific days and times, as well as a specific type of harassment.
 
-Next to the section with all the reports, you can see two pie charts. These charts visualize the amount of victims who asked for help or want to be in contact with FemAlert.
+Next to the section with all the reports, you can see two pie charts. These charts visualize the amount of victims who asked for help or want to be in contact with ReportAlert.
 
 ### 🔩 Settings
 
@@ -160,24 +192,34 @@ To install Node.js and npm, go to <a href="https://nodejs.org/en/">https://nodej
 
 ### 📍 Clone the GitHub repository
 
-To get the project on your code-editor, you have to clone it from our GitHub repository. (<a href="https://github.com/veerleprins/FemAlert-meesterproef">https://github.com/veerleprins/FemAlert-meesterproef</a>)
+To get the project on your code-editor, you have to clone it from our GitHub repository. (<a href="https://github.com/veerleprins/ReportAlert-meesterproef">https://github.com/veerleprins/ReportAlert-meesterproef</a>)
 <br>
 To do this, type the following command in your terminal:
 
-`git clone https://github.com/veerleprins/FemAlert-meesterproef.git`
+```
+git clone https://github.com/veerleprins/ReportAlert-meesterproef.git
+```
 
 ### 📦 Install all the used packages
 
 To install all the used packages in this project, type the following command in your terminal:
 <br><br>
-`npm i`
+
+```
+npm install
+```
+
 <br>
 
 ### 🟢 Start and run the server
 
 To run the server, type the following command in your terminal:
 <br><br>
-`npm run dev`
+
+```
+npm run dev
+```
+
 <br>
 
 ## 📋 Sources
