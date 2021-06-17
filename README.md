@@ -4,7 +4,7 @@
 
 Here is the live link to our demo of the dashboard:
 
-[----Live link to dashboard!----](meesterproef.netlify.app/)
+[----Live link to dashboard!----](https://meesterproef.netlify.app/)
 <br>
 
 <img src="https://imgur.com/xqAxZ5I.png">
