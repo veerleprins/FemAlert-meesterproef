@@ -13,10 +13,6 @@
   // Importing fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  section:nth-of-type(3) {
-    display: block;
-  }
-
   @include size-m {
     // outer container styling
     section:only-child {

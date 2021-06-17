@@ -30,7 +30,6 @@
     padding: 1em;
     background-color: $ui-section;
     border-radius: 15px;
-    box-shadow: 1px 1px 6px #9a9a9a;
     height: 6em;
     display: flex;
     flex-direction: column;
