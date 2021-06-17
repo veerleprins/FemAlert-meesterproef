@@ -56,7 +56,7 @@
     <AxisLabel transform={`rotate(-90)`} x={-innerHeight / 2} y={-45}>
       Aantal meldingen
     </AxisLabel>
-    <AxisLabel x={innerWidth / 2} y={innerHeight + 40}>Tijd in uren</AxisLabel>
+    <AxisLabel x={innerWidth / 2} y={innerHeight + 70}>Tijd in uren</AxisLabel>
     <Bars {data} {innerHeight} {xScale} {yScale} {xValue} {yValue} />
   </g>
 </svg>

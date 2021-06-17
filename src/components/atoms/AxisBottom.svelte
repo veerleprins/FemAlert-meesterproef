@@ -33,7 +33,9 @@
       transform={`translate(${xScale(tickValue) + xScale.bandwidth() / 2}, 0)`}
     >
       <line y1={0} y2={innerHeight} />
-      <text dy=".41em" y={innerHeight + 10}>{tickValue}</text>
+      <text dy="5em" x={-innerHeight - 15} transform="rotate(-70)">
+        {tickValue}
+      </text>
     </g>
   {/each}
   <g>
