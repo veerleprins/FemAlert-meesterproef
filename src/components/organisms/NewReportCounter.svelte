@@ -15,8 +15,13 @@
   const allDates = allReports.map((item) => item.date)
 
   // Get todays date in DD/MM/YYYY format
-  let date  = new Date()
-  let today = date.toLocaleDateString("en-US", { day: '2-digit' })+ "/"+ date.toLocaleDateString("en-US", { month: '2-digit' })+ "/" + date.toLocaleDateString("en-US", { year: 'numeric' }) // 16-Nov-2019
+  let date = new Date()
+  let today =
+    date.toLocaleDateString('en-US', { day: '2-digit' }) +
+    '/' +
+    date.toLocaleDateString('en-US', { month: '2-digit' }) +
+    '/' +
+    date.toLocaleDateString('en-US', { year: 'numeric' }) // 16-Nov-2019
 
   // Count the number of reports made today
   let todayReports = allDates.filter((item) => item === today).length
@@ -27,29 +32,28 @@
   @import 'src/styles/index.scss';
 
   section {
-    margin: 2em 1.5em;
-    padding: 1em;
     background-color: $ui-section;
-    border-radius: 15px;
-    height: 6em;
+    margin: 1em 0em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    border-radius: $borderSize;
+    height: 100%;
   }
 
-   @include size-m {
-     section {
-       margin: 0 ;
-       display: flex;
-       flex-direction: column;
-       justify-content: space-between;
-       height: 100%
-     }
-   }
+  @include size-m {
+    section {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
 </style>
 
 <section>
   <Title isSubtitle smallSectionTitle>Totaal</Title>
-  <Counter>{todayReports} Meldingen</Counter>
+  <Counter alignCenter>{todayReports} Meldingen</Counter>
   <Comparer />
 </section>

@@ -1,6 +1,6 @@
 <script>
   // Components
-  import WelcomeMessage from '@/components/organisms/WelcomeMessage.svelte'
+  import Title from '@/components/atoms/Title.svelte'
   import SettingOverview from '@/components/organisms/SettingOverview.svelte'
 </script>
 
@@ -41,7 +41,7 @@
 
 <div>
   <header>
-    <WelcomeMessage />
+    <Title>Instellingen</Title>
   </header>
 
   <section>

@@ -4,8 +4,7 @@
   import Title from '../atoms/Title.svelte'
 
   // Internals
-  import {reportData} from '@/stores/dataStore.js'
-
+  import { reportData } from '@/stores/dataStore.js'
 
   // Get all reports
   let allReports
@@ -17,7 +16,12 @@
 
   // Get todays date in DD/MM/YYYY format
   let date = new Date()
-  let today = date.toLocaleDateString('en-US', {day: '2-digit'}) + '/' + date.toLocaleDateString('en-US', {month: '2-digit'}) + '/' + date.toLocaleDateString('en-US', {year: 'numeric'}) // 16-Nov-2019
+  let today =
+    date.toLocaleDateString('en-US', { day: '2-digit' }) +
+    '/' +
+    date.toLocaleDateString('en-US', { month: '2-digit' }) +
+    '/' +
+    date.toLocaleDateString('en-US', { year: 'numeric' }) // 16-Nov-2019
 
   // Count the number of reports made today
   let todayReports = allDates.filter((item) => item === today).length
@@ -28,29 +32,28 @@
   @import 'src/styles/index.scss';
 
   section {
-    margin: 2em 1.5em;
-    padding: 1em;
     background-color: $ui-section;
-    border-radius: 15px;
-    height: 6em;
+    margin: 2em 0em;
+    padding: 1em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    border-radius: $borderSize;
+    height: 100%;
   }
 
   @include size-m {
     section {
-      margin: 0 ;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+      margin: 0;
     }
   }
 </style>
 
 <section>
   <Title isSubtitle smallSectionTitle>Hulp nodig</Title>
-  <Counter>{todayReports} Meldingen</Counter>
+  <Counter alignCenter>{todayReports} Meldingen</Counter>
   <Comparer />
 </section>

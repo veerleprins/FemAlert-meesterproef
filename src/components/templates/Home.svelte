@@ -4,7 +4,6 @@
   import NewReportCounter from '@/components/organisms/NewReportCounter.svelte'
   import DonutSection from '@/components/organisms/DonutSection.svelte'
   import GraphSection from '@/components/organisms/GraphSection.svelte'
-  import WelcomeMessage from '@/components/organisms/WelcomeMessage.svelte'
   import Title from '@/components/atoms/Title.svelte'
   import ComparedTo from '@/components/organisms/ComparedTo.svelte'
 </script>
@@ -56,7 +55,7 @@
       div:nth-of-type(2) {
         grid-row: 5;
         grid-column: 4;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         border-radius: 15px;
       }
     }
@@ -65,10 +64,9 @@
 
 <section>
   <header>
-      <Title>Dashboard</Title>
+    <Title>Dashboard</Title>
     <DateSlider />
   </header>
-
 
   <section>
     <GraphSection />
@@ -81,9 +79,5 @@
   <div>
     <NewReportCounter />
     <ComparedTo />
-  </div>
-
-  <div>
-    <!--Insert something fancy here-->
   </div>
 </section>

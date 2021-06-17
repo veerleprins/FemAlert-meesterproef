@@ -8,12 +8,11 @@
 
   // Retrieve reports
   let allReports
-    reportData.subscribe((value) => {
-      allReports = value
-    })
+  reportData.subscribe((value) => {
+    allReports = value
+  })
 
   let data = compareReports(allReports)
-
 </script>
 
 <style lang="scss">
@@ -21,12 +20,21 @@
   @import 'src/styles/index.scss';
   div {
     display: flex;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    span {
+      padding-right: 1em;
+      font-size: 1rem;
+    }
   }
 </style>
 
 <div>
-  <Counter isNegative="{data.difference < 0}" isPositive="{data.difference > 0}" alignCenter>
+  <Counter
+    isNegative={data.difference < 0}
+    isPositive={data.difference > 0}
+    alignCenter
+  >
     <span>{data.content}</span>
   </Counter>
   vergeleken met vorige week

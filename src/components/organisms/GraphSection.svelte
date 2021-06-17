@@ -21,7 +21,7 @@
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
   section {
-    margin: 2em 1.5em;
+    margin: 1em 0em;
     padding: 1em;
     background-color: $ui-section;
     border-radius: 15px;

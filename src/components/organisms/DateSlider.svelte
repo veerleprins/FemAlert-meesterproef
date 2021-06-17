@@ -1,5 +1,6 @@
 <script>
-  import Button from '../atoms/Button.svelte'
+  // Components
+  import Button from '@/components/atoms/Button.svelte'
 </script>
 
 <style lang="scss">
@@ -13,6 +14,7 @@
       flex-direction: row;
       overflow-x: scroll;
       padding: 1em;
+      padding-left: 0em;
       &::-webkit-scrollbar {
         display: none;
       }
