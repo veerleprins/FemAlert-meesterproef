@@ -1,9 +1,8 @@
 <script>
   // Props
-  export let className
-  export let yVal
-  export let xVal
-  export let transform
+  export let transform = ''
+  export let x
+  export let y
 </script>
 
 <style lang="scss">
@@ -12,9 +11,16 @@
 
   text {
     fill: $ui-black;
+    text-anchor: middle;
   }
 </style>
 
-<text class={className} y={yVal} x={xVal} {transform} textAnchor="middle">
-  <slot />
-</text>
+{#if transform !== ''}
+  <text {y} {x} {transform}>
+    <slot />
+  </text>
+{:else}
+  <text {x} {y}>
+    <slot />
+  </text>
+{/if}
