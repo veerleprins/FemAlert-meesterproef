@@ -2,6 +2,8 @@
     // Props
     export let innerRadius
 
+    import Title from '../atoms/Title.svelte'
+
     // Internals
     import { reportData } from '@/stores/dataStore.js'
 
@@ -142,17 +144,25 @@
     flex-direction: column;
     align-items: center;
 
+    g path {
+      stroke: #FFFFFF;
+      stroke-width: 3px;
+    }
+
     #tooltip {
+      margin: 0.5em;
       color: #FFFFFF;
-      min-width: 15em;
-      text-align: center;
-      margin-top: 0.5em;
-      padding: 0.5em 0;
-      border-radius: 15px;
+      padding: 0.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      p:first-of-type {
+        font-weight: bold;
+      }
     }
   }
-
-
 </style>
 
 <div>
@@ -165,6 +175,7 @@
     </g>
   </svg>
   <div id="tooltip" style="background-color: {tooltipColor}">
-    {tooltipName} : {tooltipValue} {content}
+    <p>Aantal meldingen:</p>
+    <p>{tooltipName} : {tooltipValue} {content}</p>
   </div>
 </div>

@@ -17,18 +17,15 @@
     div {
       display: flex;
       flex-direction: column;
+      margin: 0 0.5em;
     }
   }
 
   @include size-xs {
     div {
-      flex-direction: row;
-    }
-  }
-
-  @include size-s {
-    div {
-      justify-content: space-around;
+      div {
+        flex-direction: row;
+      }
     }
   }
 

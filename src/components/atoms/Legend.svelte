@@ -3,27 +3,27 @@
   let data = [
     {
       report: 'Agressie',
-      color: '#05006E',
+      color: '#0070A2',
     },
     {
       report: 'Racisme',
-      color: '#492B9E',
+      color: '#0074C2',
     },
     {
       report: 'Aanranding',
-      color: '#7D43F9',
+      color: '#7972C5',
     },
     {
       report: 'Discriminatie',
-      color: '#8760DB',
+      color: '#BE70B0',
     },
     {
       report: 'Uitgescholden',
-      color: '#AA83FF',
+      color: '#E17B94',
     },
     {
       report: 'Anders...',
-      color: '#D6C8F4',
+      color: '#EA947E',
     },
   ]
 </script>
@@ -31,6 +31,7 @@
 <style lang="scss">
   @import 'src/styles/index.scss';
   ul {
+    margin: 0 0.5em 0.5em 0.5em;
     display: grid;
     grid-template-columns: auto auto;
     li {
@@ -40,12 +41,6 @@
       svg {
         margin-right: 10px;
       }
-    }
-  }
-
-  @include size-m {
-    ul {
-      grid-template-columns: auto;
     }
   }
 </style>
