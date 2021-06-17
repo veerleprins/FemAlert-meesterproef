@@ -65,7 +65,7 @@ Club data:
   }
 ```
 
-### Database
+### 💾 Database
 
 To save this data, a database is needed. That's why we are using Firebase during this project. Firebase is a platform developed by Google for creating mobile and web applications. It also supports a realtime database function.
 
