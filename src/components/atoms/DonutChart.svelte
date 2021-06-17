@@ -1,47 +1,78 @@
 <script>
     // Props
     export let innerRadius
-    // export let data
 
-    /**
-     * todo
-     * give height/width with props
-     * calculate transform/outer radius based on width and height
-     * give colour array with props?
-     */
+    import Title from '../atoms/Title.svelte'
 
-    let data = [
-            {
-                'size': 25,
-                'name': 'Agressie',
-                'color': '#05006E'
-            },
-            {
-                'size': 8,
-                'name': 'Aanranding',
-                'color': '#492B9E'
-            },
-            {
-                'size': 12,
-                'name': 'Anders',
-                'color': '#7D43F9'
-            },
-            {
-                'size': 2,
-                'name': 'Anders',
-                'color': '#8760DB'
-            },
-            {
-                'size': 39,
-                'name': 'Anders',
-                'color': '#AA83FF'
-            },
-            {
-                'size': 11,
-                'name': 'Anders',
-                'color': '#D6C8F4'
+    // Internals
+    import { reportData } from '@/stores/dataStore.js'
+
+    // Select only the accidents from each report
+    let rawData
+    reportData.subscribe((value) => {
+        rawData = value
+    })
+
+    // Map over all the reports and return them as arrays with objects
+    const allReports = rawData.map((item) => item.accident)
+
+     // Create empty objects which will be used to count the
+     // number of reports and to build the donut chart
+    const getObject = (dynamicName) => {
+        return {
+            name: dynamicName,
+            count: 0,
+            color: ''
+        }
+    }
+    const gropingObject = getObject('Aanranding')
+    const racismObject = getObject('Racisme')
+    const swearingObject = getObject('Uitgescholden')
+    const agressionObject = getObject('Agressie')
+    const andersObject = getObject('Anders')
+    const discriminationObject = getObject('Discriminatie')
+
+     // For each array of objects containing report types
+     // loop through both the outer arrays and the objects
+     // and check the type of report, then add to the correct counter
+     allReports.forEach((item) => {
+        item.forEach((accident) => {
+            if (accident.type === 'Aanranding') {
+                gropingObject.count ++
+                gropingObject.color = accident.color
             }
-        ]
+            else if (accident.type === 'Agressie') {
+                agressionObject.count ++
+                agressionObject.color = accident.color
+            }
+            else if (accident.type === 'Uitgescholden') {
+                swearingObject.count ++
+                swearingObject.color = accident.color
+            }
+            else if (accident.type === 'Discriminatie') {
+                discriminationObject.count ++
+                discriminationObject.color = accident.color
+            }
+            else if (accident.type === 'Racisme') {
+                racismObject.count ++
+                racismObject.color = accident.color
+            }
+            else if (accident.type === 'Anders') {
+                andersObject.count ++
+                andersObject.color = accident.color
+            }
+        })
+    })
+
+    // Combine all the new objects into an array
+    let data = [
+        agressionObject,
+        gropingObject,
+        swearingObject,
+        discriminationObject,
+        racismObject,
+        andersObject
+    ]
 
     /**
      * based on an example by Rich-harrishttps:
@@ -58,38 +89,93 @@
     //create a full circle
     let angle = Math.PI * 2
 
-    let total = data.reduce((total, item) => total + item.size, 0)
+    let total = data.reduce((total, item) => total + item.count, 0)
     let arcs
-        let acc = 0
-        //map over data and create an arc for each data point
-        arcs = data.map(segment => {
-            const options = {
-                //set up inner and outer radius
-                innerRadius: innerRadius,
-                outerRadius: width / 2,
-                //get the starting point of the segment
-                startAngle: acc,
-                //find the end point of the segment and store this in startAngle
-                //this way the next segment will start where the previous one ended
-                endAngle: (acc += (angle * segment.size / total))
-            }
-            return {
-                color: segment.color,
-                path: fn(options)
-            }
-        })
+    let acc = 0
+
+    //map over data and create an arc for each data point
+    arcs = data.map((segment, id) => {
+        const options = {
+            //set up inner and outer radius
+            innerRadius: innerRadius,
+            outerRadius: width / 2,
+            //get the starting point of the segment
+            startAngle: acc,
+            //find the end point of the segment and store this in startAngle
+            //this way the next segment will start where the previous one ended
+            endAngle: (acc += (angle * segment.count / total))
+        }
+
+        return {
+          color: segment.color,
+          label: segment.name,
+          value: segment.count,
+          d: fn(options),
+          centroid: fn.centroid(options),
+          id: id
+        }
+    })
+
+    let shownTooltip = 1
+    let tooltipColor = gropingObject.color
+    let tooltipName = gropingObject.name
+    let tooltipValue = gropingObject.count
+    let  content = tooltipValue > 1
+      ? 'meldingen'
+      : 'melding'
+
+
+    const showTooltip = (id, color, name, value) => {
+      shownTooltip = id,
+      tooltipColor = color
+      tooltipName = name
+      tooltipValue = value
+      content = tooltipValue > 1
+        ? 'meldingen'
+        : 'melding'
+    }
 </script>
 
 <style lang="scss">
-  // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    g path {
+      stroke: #FFFFFF;
+      stroke-width: 3px;
+    }
+
+    #tooltip {
+      margin: 0.5em;
+      color: #FFFFFF;
+      padding: 0.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      p:first-of-type {
+        font-weight: bold;
+      }
+    }
+  }
 </style>
 
-<svg {width} {height} class='pie'>
+<div>
+  <svg {width} {height} class='pie'>
     <g transform='translate(75,75)'>
-        {#each arcs as arc}
-            <!-- single arc -->
-            <path d={arc.path} fill={arc.color}/>
-        {/each}
+      {#each arcs as arc}
+        <!-- single arc -->
+        <path d={arc.d} fill={arc.color} on:mouseenter={showTooltip(arc.id, arc.color, arc.label, arc.value)}/>
+      {/each}
     </g>
-</svg>
+  </svg>
+  <div id="tooltip" style="background-color: {tooltipColor}">
+    <p>Aantal meldingen:</p>
+    <p>{tooltipName} : {tooltipValue} {content}</p>
+  </div>
+</div>

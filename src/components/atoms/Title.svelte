@@ -1,6 +1,7 @@
 <script>
   // Props
   export let isSubtitle = false
+  export let sectionTitle = false
 </script>
 
 <style lang="scss">
@@ -10,7 +11,6 @@
   h1,
   h2 {
     font-family: $bold-font;
-    color: $ui-black;
   }
 
   h1 {
@@ -20,14 +20,18 @@
   h2 {
     font-size: $h2-size;
   }
+
+  .sectionTitle {
+    margin-left: 1em;
+  }
 </style>
 
 {#if !isSubtitle}
-  <h1>
+  <h1 >
     <slot />
   </h1>
 {:else}
-  <h2>
+  <h2 class:sectionTitle>
     <slot />
   </h2>
 {/if}
