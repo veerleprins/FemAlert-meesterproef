@@ -10,6 +10,7 @@
   @import 'src/styles/index.scss';
 
   text {
+    font-family: $standard-font;
     fill: $ui-body-color;
     text-anchor: middle;
   }
