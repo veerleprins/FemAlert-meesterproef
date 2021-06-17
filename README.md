@@ -19,9 +19,9 @@ Many people in The Netherlands are the victim of (sexual) harassment. For exampl
 Nowadays, unwanted and inappropriate behavior towards victims keeps getting worse. Especially in clubs and festivals, people are more often the victim of harassment in any possible way. Sexual harassment and intimidation, aggression, racism and/or discrimination towards victims are the main problems in today's nightlife.
 
 That's where ReportAlert comes in handy. ReportAlert is an initiative, established by Rosanne Verbeek, to protect people from unwanted situations while partying or going out to clubs.
-ReportAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. ReportAlert also lets club or bar owners get in touch with victims to help them and offer support.
+ReportAlert is a platform where people can report any kind of unacceptable behavior in an accessible way, without immediately taking it to the police. ReportAlert also lets club, bar, or festival owners get in touch with victims to help them and offer support.
 
-The platform ReportAlert is also made for club owners to give them insights, to see exactly what's going on inside of their clubs. With these insights, club owners can anticipate on the situations to make the nightlife much safer and better in their venues.
+The platform ReportAlert is also made for owners to give them insights, to see exactly what's going on inside of their clubs or festivals. With these insights, the owners can anticipate on the situations to make the nightlife much safer and better in their venues.
 
 Our job is to make a neat-designed and detailed dashboard for both club owners and festival owners to provide them with visualized data about the reports made in/for their clubs.
 
@@ -33,7 +33,8 @@ We created 2 datasets. One for all the reports, and one for the clubs. These dat
 
 Reports data:
 
-```{
+```
+{
     "id": 12,
     "date": "07/02/2021",
     "time": "0:18",
