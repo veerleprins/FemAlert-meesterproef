@@ -3,13 +3,19 @@
   import SingleReport from '@/components/organisms/SingleReport.svelte'
   import Title from '@/components/atoms/Title.svelte'
   import Input from '@/components/atoms/Input.svelte'
+  import ClickedReport from '@/components/molecules/ClickedReport.svelte'
 
   // Internals
-  import {reportData} from '@/stores/dataStore.js'
+  import { reportData } from '@/stores/dataStore.js'
+  import { singleReport } from '@/stores/reportStore.js'
+
+  // Data
   let data
   reportData.subscribe((value) => {
     data = value
   })
+
+  singleReport.set(data[0])
 </script>
 
 <style lang="scss">
@@ -22,13 +28,17 @@
       margin-bottom: 1.5em;
     }
 
-    section {
-      ul {
-        margin-top: 1.5em;
+    div {
+      display: flex;
+      flex-direction: column;
+      section {
+        ul {
+          margin-top: 1.5em;
+        }
       }
-    }
-    section:nth-of-type(2) {
-      display: none;
+      section:nth-of-type(2) {
+        display: none;
+      }
     }
   }
 
@@ -36,19 +46,33 @@
     // Styling for grid
     div {
       max-height: 100vh;
-      display: grid;
-      grid-template-columns: 0.2em 2fr 1fr 0.2em;
-      grid-template-rows: 0.2em 1fr 1fr 4fr 0.2em;
-      grid-column-gap: 2em;
-      grid-row-gap: 2em;
+      // padding-left: 1em;
       header {
-        grid-column: 2 / 4;
-        grid-row: 2;
-        align-self: center;
+        height: auto;
       }
-      section:first-of-type {
-        grid-column: 2;
-        grid-row: 3;
+      div {
+        flex-direction: row;
+        gap: 1em;
+        section:first-of-type {
+          background-color: #f3f3f3;
+          border-radius: $borderSize;
+          height: 80vh;
+          width: 50%;
+          padding: 1em;
+          overflow-y: scroll;
+          ul {
+            position: relative;
+          }
+        }
+        section:nth-of-type(2) {
+          display: block;
+          position: relative;
+          background-color: $ui-section;
+          border-radius: $borderSize;
+          padding: 1em;
+          height: 80vh;
+          width: 50%;
+        }
       }
     }
   }
@@ -59,18 +83,22 @@
     <Title>Alle meldingen</Title>
   </header>
 
-  <section>
-    <Input
-      type="text"
-      name="search"
-      placeholder="Zoek melding...  (Bijv. “Aanranding”)"
-      searchBar
-    />
-    <ul>
-      {#each data as report, index}
-        <SingleReport {report} {index} />
-      {/each}
-    </ul>
-  </section>
-
+  <div>
+    <section>
+      <Input
+        type="text"
+        name="search"
+        placeholder="Zoek melding...  (Bijv. “Aanranding”)"
+        searchBar
+      />
+      <ul>
+        {#each data as report, index}
+          <SingleReport {report} {index} />
+        {/each}
+      </ul>
+    </section>
+    <section>
+      <ClickedReport />
+    </section>
+  </div>
 </div>

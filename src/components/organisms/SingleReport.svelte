@@ -5,6 +5,7 @@
 
   // Internals
   import { countWords, shortenWords } from '@/utils/checkWords.js'
+  import { singleReport } from '@/stores/reportStore.js'
 
   // Props
   export let report
@@ -27,6 +28,14 @@
         margin-bottom: 1rem;
         font-family: $light-font;
       }
+      button {
+        border: none;
+        color: $ui-blue;
+        background-color: transparent;
+        font-family: $bold-font;
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
     ul {
       display: flex;
@@ -45,6 +54,9 @@
         height: 15px;
         margin-bottom: 0em;
       }
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
     .readMore {
       display: inline-block;
@@ -66,7 +78,7 @@
     <div class="readMore">
       <p class="story">
         {shortenWords(report.story, 200)}...
-        <a href="#">Lees meer</a>
+        <button on:click={singleReport.set(report)}> Lees meer </button>
       </p>
     </div>
   {/if}
