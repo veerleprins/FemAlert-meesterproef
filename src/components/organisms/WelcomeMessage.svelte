@@ -14,8 +14,6 @@
   @include size-m {
     div {
       margin: 0;
-      background-color: $ui-accent-grey;
-      border-radius: 15px;
       padding: 1em;
     }
   }

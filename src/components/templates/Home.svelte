@@ -5,6 +5,7 @@
   import DonutSection from '@/components/organisms/DonutSection.svelte'
   import GraphSection from '@/components/organisms/GraphSection.svelte'
   import WelcomeMessage from '@/components/organisms/WelcomeMessage.svelte'
+  import Title from '@/components/atoms/Title.svelte'
   import ComparedTo from '@/components/organisms/ComparedTo.svelte'
 </script>
 
@@ -21,42 +22,45 @@
     section:only-child {
       max-height: 100vh;
       display: grid;
-      grid-template-columns: 0.2em 2fr 2fr 0.2em;
-      grid-template-rows: 0.2em 1fr 5fr 4fr 0.2em;
+      grid-template-columns: 0.2em 1fr 1fr 1fr 0.2em;
+      grid-template-rows: 0.2em 1fr 2fr 3fr 2fr 0.2em;
       grid-column-gap: 2em;
       grid-row-gap: 2em;
 
-      // welcome message
+      // welcome message + date select
       header {
-        grid-column: 2 / 4;
+        grid-column: 2 / 5;
         grid-row: 2;
         align-self: center;
       }
 
-      // date slider
-      section:nth-of-type(1) {
-        display: none;
-      }
-
       // large chart
-      section:nth-of-type(2) {
-        display: block;
+      section:nth-of-type(1) {
+        grid-row: 4 / 6;
         grid-column: 2 / 4;
-        grid-row: 3;
       }
 
       // pie chart
-      section:nth-of-type(3) {
-        grid-column: 2;
-        grid-row: 4;
+      section:nth-of-type(2) {
+        grid-column: 4;
+        grid-row: 3 / 5;
       }
 
       // small text blocks
-      div {
-        grid-column: 3;
-        grid-row: 4;
+      div:first-of-type {
+        grid-row: 3;
+        grid-column: 2 / 4;
         display: grid;
-        grid-row-gap: 2em;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 2em;
+      }
+
+      // Small extra block
+      div:nth-of-type(2) {
+        grid-row: 5;
+        grid-column: 4;
+        background-color: #FFFFFF;
+        border-radius: 15px;
       }
     }
   }
@@ -64,12 +68,10 @@
 
 <section>
   <header>
-    <WelcomeMessage />
+      <Title>Dashboard</Title>
+    <DateSlider />
   </header>
 
-  <section>
-    <DateSlider />
-  </section>
 
   <section>
     <GraphSection />
@@ -82,5 +84,9 @@
   <div>
     <NewReportCounter />
     <ComparedTo />
+  </div>
+
+  <div>
+    <!--Insert something fancy here-->
   </div>
 </section>

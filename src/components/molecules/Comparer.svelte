@@ -19,8 +19,15 @@
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
+  div {
+    display: flex;
+    align-items: center;
+  }
 </style>
 
-<Counter isNegative="{data.difference < 0}" isPositive="{data.difference > 0}">
-  {data.content}
-</Counter>
+<div>
+  <Counter isNegative="{data.difference < 0}" isPositive="{data.difference > 0}">
+    <span>{data.content}</span>
+  </Counter>
+  vergeleken met vorige week
+</div>

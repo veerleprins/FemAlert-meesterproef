@@ -1,5 +1,6 @@
 <script>
   import Counter from '../atoms/Counter.svelte'
+  import Comparer from '../molecules/Comparer.svelte'
 
   // Internals
   import { reportData } from '@/stores/dataStore.js'
@@ -52,5 +53,6 @@
 
 <section>
   <p>Totaal aantal meldingen</p>
-  <Counter>{todayReports}</Counter>
+  <Counter>{todayReports} Meldingen</Counter>
+  <Comparer />
 </section>

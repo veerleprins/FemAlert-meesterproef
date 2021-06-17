@@ -8,15 +8,19 @@
   @import 'src/styles/index.scss';
 
   p {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     color: $ui-black;
   }
   #positive {
     color: #ff0000;
+    font-size: 1em;
+    font-weight: 100;
   }
   #negative {
     color: #44ff00;
+    font-size: 1em;
+    font-weight: 100;
   }
 
 </style>
