@@ -1,18 +1,7 @@
 <script>
+  // Props
   export let name
-  // export let values
-
-  let testValues = [
-    '22:00',
-    '23:00',
-    '00:00',
-    '01:00',
-    '02:00',
-    '03:00',
-    '04:00',
-    '05:00',
-    '06:00',
-  ]
+  export let options
 </script>
 
 <style lang="scss">
@@ -25,10 +14,15 @@
     select {
       width: 100%;
       background-color: $ui-blue;
-      color: #FFFFFF;
+      border: none;
+      color: $ui-white;
       border-radius: 15px;
       padding: 0.5em 1em;
       margin-top: 0.2em;
+      font-family: $standard-font;
+    }
+    label {
+      font-family: $standard-font;
     }
   }
 
@@ -53,7 +47,7 @@
   <label for={name}>{name}:</label>
 
   <select {name} id={name}>
-    {#each testValues as option}
+    {#each options as option}
       <option value={option}>{option}</option>
     {/each}
   </select>

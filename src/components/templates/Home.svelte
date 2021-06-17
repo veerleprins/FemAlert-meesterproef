@@ -1,11 +1,11 @@
 <script>
   // Components
-  import DateSlider from '../organisms/DateSlider.svelte'
-  import NewReportCounter from '../organisms/NewReportCounter.svelte'
-  import DonutSection from '../organisms/DonutSection.svelte'
-  import LargeChartSection from '../organisms/LargeChartSection.svelte'
-  import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
-  import ComparedTo from '../organisms/ComparedTo.svelte'
+  import DateSlider from '@/components/organisms/DateSlider.svelte'
+  import NewReportCounter from '@/components/organisms/NewReportCounter.svelte'
+  import DonutSection from '@/components/organisms/DonutSection.svelte'
+  import GraphSection from '@/components/organisms/GraphSection.svelte'
+  import WelcomeMessage from '@/components/organisms/WelcomeMessage.svelte'
+  import ComparedTo from '@/components/organisms/ComparedTo.svelte'
 </script>
 
 <style lang="scss">
@@ -72,7 +72,7 @@
   </section>
 
   <section>
-    <LargeChartSection />
+    <GraphSection />
   </section>
 
   <section>
