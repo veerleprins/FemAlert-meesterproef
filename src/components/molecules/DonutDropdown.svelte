@@ -1,7 +1,19 @@
 <script>
   // Imports
-  import DonutChart from '../atoms/DonutChart.svelte'
-  import Dropdown from '../atoms/Dropdown.svelte'
+  import DonutChart from '@/components/atoms/DonutChart.svelte'
+  import Dropdown from '@/components/atoms/Dropdown.svelte'
+
+  let options = [
+    '22:00',
+    '23:00',
+    '00:00',
+    '01:00',
+    '02:00',
+    '03:00',
+    '04:00',
+    '05:00',
+    '06:00',
+  ]
 </script>
 
 <style lang="scss">
@@ -39,9 +51,9 @@
 </style>
 
 <div>
-  <DonutChart innerRadius="30"/>
+  <DonutChart innerRadius="30" />
   <div>
-    <Dropdown name="Tijd" />
-    <Dropdown name="Melding" />
+    <Dropdown name="Tijd" {options} />
+    <Dropdown name="Melding" {options} />
   </div>
 </div>
