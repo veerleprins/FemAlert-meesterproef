@@ -155,13 +155,6 @@
       width: 100%;
     }
   }
-
-  @include size-m {
-    #tooltip {
-
-    }
-  }
-
 </style>
 
 <div>
