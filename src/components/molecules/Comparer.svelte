@@ -12,7 +12,7 @@
       allReports = value
     })
 
-  let noto = compareReports(allReports)
+  let data = compareReports(allReports)
 
 </script>
 
@@ -21,6 +21,6 @@
   @import 'src/styles/index.scss';
 </style>
 
-<Counter isNegative="{noto.difference < 0}" isPositive="{noto.difference > 0}">
-  {noto.content}
+<Counter isNegative="{data.difference < 0}" isPositive="{data.difference > 0}">
+  {data.content}
 </Counter>

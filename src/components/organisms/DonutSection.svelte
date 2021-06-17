@@ -1,6 +1,6 @@
 <script>
-  import Title from '../atoms/Title.svelte'
   import Legend from '../atoms/Legend.svelte'
+  import Title from '../atoms/Title.svelte'
   import DonutDropdown from '../molecules/DonutDropdown.svelte'
 </script>
 
@@ -9,20 +9,11 @@
   @import 'src/styles/index.scss';
 
   section {
+    padding-top: 1em;
     margin: 2em 1.5em;
-    padding: 1em;
     background-color: $ui-section;
     border-radius: 15px;
     box-shadow: 1px 1px 6px #9a9a9a;
-
-    div {
-      padding: 1em 0 0 1em;
-    }
-
-    ul {
-      margin-top: 1em;
-      list-style: square;
-    }
   }
 
   @include size-m {
@@ -33,7 +24,7 @@
 
       div {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: column;
         justify-content: space-between;
       }
     }
@@ -41,7 +32,7 @@
 </style>
 
 <section>
-  <Title isSubtitle>Soort meldingen</Title>
+  <Title isSubtitle sectionTitle>Soort meldingen</Title>
   <div>
     <DonutDropdown />
     <Legend />
