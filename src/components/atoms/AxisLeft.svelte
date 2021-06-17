@@ -2,28 +2,32 @@
   // Props
   export let yScale
   export let innerWidth
-  export let tickFormat
+  export let ticks
 </script>
 
 <style lang="scss">
   // Import fonts, vars, etc.
   @import 'src/styles/index.scss';
 
-  line {
-    stroke: $ui-black;
-  }
-
-  text {
-    fill: $ui-black;
+  g {
+    g {
+      line {
+        stroke: #c9c9c9;
+        text-anchor: middle;
+      }
+      text {
+        text-anchor: middle;
+        font-family: $light-font;
+      }
+    }
   }
 </style>
 
-{#each yScale.ticks() as tickValue}
-  <g key={tickValue} transform={`translate(0, ${yScale(tickValue)})`}>
-    <line class="lines" x2={innerWidth} />
-    <text x={-3} dy=".32em" style={{ textAnchor: 'end' }}>
-      <!-- {tickFormat(tickValue)} -->
-      <slot />
-    </text>
-  </g>
-{/each}
+<g class="y-Axis">
+  {#each ticks() as tickValue}
+    <g transform={`translate(0, ${yScale(tickValue)})`}>
+      <line x2={innerWidth} />
+      <text x={-20} dy=".32em">{tickValue}</text>
+    </g>
+  {/each}
+</g>
