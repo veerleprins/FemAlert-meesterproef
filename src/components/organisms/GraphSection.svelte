@@ -1,10 +1,20 @@
 <script>
   // Components
   import Title from '@/components/atoms/Title.svelte'
-  import BarChart from '../molecules/BarChart.svelte'
+  import BarChart from '@/components/molecules/BarChart.svelte'
+  import Dropdown from '@/components/atoms/Dropdown.svelte'
 
   // Internals
   let width = 800
+  let options = [
+    'Totaal',
+    'Aanranding',
+    'Agressie',
+    'Discriminatie',
+    'Uitgescholden',
+    'Racisme',
+    'Anders',
+  ]
 </script>
 
 <style lang="scss">
@@ -27,5 +37,6 @@
 
 <section bind:clientWidth={width}>
   <Title isSubtitle>Aantal meldingen per uur</Title>
+  <Dropdown {options} name="Melding" />
   <BarChart {width} />
 </section>
