@@ -12,7 +12,7 @@
   g {
     g {
       line {
-        stroke: #c9c9c9;
+        stroke: $ui-stroke-color;
         text-anchor: middle;
       }
       text {

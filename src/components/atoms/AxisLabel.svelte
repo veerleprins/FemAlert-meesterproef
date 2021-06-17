@@ -10,7 +10,7 @@
   @import 'src/styles/index.scss';
 
   text {
-    fill: $ui-black;
+    fill: $ui-body-color;
     text-anchor: middle;
   }
 </style>

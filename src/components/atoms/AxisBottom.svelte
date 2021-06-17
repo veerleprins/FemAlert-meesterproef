@@ -12,13 +12,13 @@
   g {
     g {
       line {
-        stroke: #c9c9c9;
+        stroke: $ui-stroke-color;
         text-anchor: middle;
       }
       text {
         font-family: $light-font;
         text-anchor: middle;
-        fill: black;
+        fill: $ui-body-color;
       }
     }
   }
