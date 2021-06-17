@@ -21,6 +21,7 @@
       margin: 0;
       display: flex;
       flex-direction: column;
+      height: 100%;
 
       div {
         display: flex;

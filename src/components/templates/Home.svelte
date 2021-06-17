@@ -21,7 +21,7 @@
       grid-template-columns: 0.2em 1fr 1fr 1fr 0.2em;
       grid-template-rows: 0.2em 1fr 2fr 3fr 2fr 0.2em;
       grid-column-gap: 2em;
-      grid-row-gap: 2em;
+      grid-row-gap: 1em;
 
       // welcome message + date select
       header {
@@ -40,6 +40,7 @@
       section:nth-of-type(2) {
         grid-column: 4;
         grid-row: 3 / 5;
+        height: 100%;
       }
 
       // small text blocks

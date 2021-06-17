@@ -1,6 +1,7 @@
 <script>
   export let isPositive = false
   export let isNegative = false
+  export let alignCenter = false
 </script>
 
 <style lang="scss">
@@ -23,14 +24,18 @@
     font-weight: 100;
   }
 
+  .smallSectionTitle {
+    align-self: center;
+  }
+
 </style>
 
 {#if isPositive === false && isNegative === false}
-  <p>
+  <p class:alignCenter>
     <slot />
   </p>
   {:else if isPositive === true}
-  <p id="positive">
+  <p id="positive" >
     <slot />
   </p>
   {:else}

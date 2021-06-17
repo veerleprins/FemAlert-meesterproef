@@ -2,6 +2,7 @@
   // Props
   export let isSubtitle = false
   export let sectionTitle = false
+  export let smallSectionTitle = false
 </script>
 
 <style lang="scss">
@@ -25,6 +26,10 @@
   .sectionTitle {
     margin-left: 1em;
   }
+
+  .smallSectionTitle {
+    align-self: flex-start;
+  }
 </style>
 
 {#if !isSubtitle}
@@ -32,7 +37,7 @@
     <slot />
   </h1>
 {:else}
-  <h2 class:sectionTitle>
+  <h2 class:sectionTitle class:smallSectionTitle>
     <slot />
   </h2>
 {/if}
