@@ -204,7 +204,51 @@ npm run dev
 
 ## 📋 Sources
 
-https://bradfrost.com/blog/post/atomic-web-design/
+Deyana, H. (2019, 19 oktober). is not a valid SSR component in Sapper. ww.github.com. https://github.com/rob-balfre/svelte-select/issues/87
+
+Add Firebase to your JavaScript project. (z.d.). Firebase. https://firebase.google.com/docs/web/setup?authuser=0#add-sdks-initialize
+
+Frost, B. (2020, 31 augustus). Atomic Design. Brad Frost. https://bradfrost.com/blog/post/atomic-web-design/
+
+Rau, C. (2021, 23 februari). Bug: Rollup plugin-replace: preventAssignment set to “false” · Issue #302 · sveltejs/sapper-template. GitHub. https://github.com/sveltejs/sapper-template/issues/302
+
+Kivistö, S. (2018, 16 februari). Circular dependencies inside d3 selection. www.github.com. https://github.com/d3/d3-selection/issues/168
+
+ColorSpace - Color Palettes Generator and Color Gradient Tool. (z.d.). ColorSpace. https://mycolor.space/?hex=%23EEC0A6&sub=1
+
+Watch and Learn. (2019, 20 november). Creating #Svelte, #Sapper and #WordPress Website - Part 02 - Post Details And Environment Variables. YouTube. https://www.youtube.com/watch?v=_aQTfCYo6_8
+
+D. (2021, 17 februari). Fetching Data in Svelte. DEV Community. https://dev.to/daveturissini/fetching-data-in-svelte-1jpn
+
+Get data with Cloud Firestore |. (z.d.). Firebase. https://firebase.google.com/docs/firestore/query-data/get-data#node.js
+
+How To Create a Toggle Switch. (z.d.). W3Schools. https://www.w3schools.com/howto/howto_css_switch.asp
+
+How to count a number of words in given string in JavaScript? (z.d.). Tutorialspoint. https://www.tutorialspoint.com/how-to-count-a-number-of-words-in-given-string-in-javascript
+
+How to get unique values in an array. (2012, 28 juni). Stack Overflow. https://stackoverflow.com/questions/11246758/how-to-get-unique-values-in-an-array
+
+Leaflet — an open-source JavaScript library for interactive maps. (z.d.). Leaflet. https://leafletjs.com/
+
+Maximum amount of characters in a div/paragraph tag. (2013, 17 oktober). Stack Overflow. https://stackoverflow.com/questions/19425555/maximum-amount-of-characters-in-a-div-paragraph-tag/19425776
+
+Remove empty elements from an array in Javascript. (2008, 11 november). Stack Overflow. https://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+
+Harris, R. (2019, 4 mei). Rich-Harris/svelte-d3-arc-demo. GitHub. https://github.com/Rich-Harris/svelte-d3-arc-demo
+
+McCann, B. (2020, 12 juni). RollupCompiler does not output warnings in dev mode. github.com. https://github.com/sveltejs/sapper/issues/1266
+
+Shorten string without cutting words in JavaScript. (2011, 28 maart). Stack Overflow. https://stackoverflow.com/questions/5454235/shorten-string-without-cutting-words-in-javascript
+
+Style SVG circle with CSS. (2013, 10 januari). Stack Overflow. https://stackoverflow.com/questions/14255631/style-svg-circle-with-css
+
+Svelte REPL. (z.d.-b). Svelte. https://svelte.dev/repl/e9c4ff0b0ff94059a6c85a09c556284a?version=3.29.0
+
+Svelte REPL. (z.d.-a). Svelte. https://svelte.dev/repl/03f0be0c4dc54eb4af5a168f644f5c31?version=3.19.1
+
+Svelte: add noscroll classname to body from component. (2020, 5 augustus). Stack Overflow. https://stackoverflow.com/questions/63259289/svelte-add-noscroll-classname-to-body-from-component
+
+Laarman, G. (2020, 23 november). gijslaarman/d3-svelte. GitHub. https://github.com/gijslaarman/d3-svelte/blob/master/src/components/Graph.svelte
 
 ## © License
 
