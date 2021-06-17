@@ -160,7 +160,8 @@ With Atomic Web Design, you are using Atoms, Molecules, Organisms, and Templates
 
 In our project, all the small parts like buttons, charts, graphs etc., are atoms. These atoms are put into molecules, like a navigation bar, a list of different reports, and so on. These molecules are then being placed into organisms; mostly bigger sections. All the organisms can be placed in a template, which create the pages for your application.<br>
 This way of working makes coding easier and more understandable.
-<br><br>
+<br>
+
 Here is a screenshot of the map-structure in our project:<br><br>
 <img src="https://imgur.com/iJNANzA.png" width="200" height="500">
 
@@ -192,8 +193,6 @@ To install all the used packages in this project, type the following command in 
 npm install
 ```
 
-<br>
-
 ### 🟢 Start and run the server
 
 To run the server, type the following command in your terminal:
@@ -201,8 +200,6 @@ To run the server, type the following command in your terminal:
 ```
 npm run dev
 ```
-
-<br>
 
 ## 📋 Sources
 
