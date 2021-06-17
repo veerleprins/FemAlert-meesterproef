@@ -6,12 +6,11 @@
   // Internals
   import { singleReport } from '@/stores/reportStore.js'
 
+  // Data
   let clickedReport
   singleReport.subscribe((value) => {
     clickedReport = value
   })
-
-  $: console.log(clickedReport)
 </script>
 
 <style lang="scss">

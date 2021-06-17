@@ -7,7 +7,7 @@
 </style>
 
 <svelte:head>
-  <title>Alle meldingen | FemAlert</title>
+  <title>Alle meldingen | ReportAlert</title>
 </svelte:head>
 
 <Reports />

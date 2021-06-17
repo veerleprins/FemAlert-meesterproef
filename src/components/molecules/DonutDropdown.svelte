@@ -3,6 +3,7 @@
   import DonutChart from '@/components/atoms/DonutChart.svelte'
   import Dropdown from '@/components/atoms/Dropdown.svelte'
 
+  // Internals
   let options = [
     '22:00',
     '23:00',
