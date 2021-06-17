@@ -187,7 +187,6 @@ git clone https://github.com/veerleprins/ReportAlert-meesterproef.git
 ### 📦 Install all the used packages
 
 To install all the used packages in this project, type the following command in your terminal:
-<br><br>
 
 ```
 npm install
@@ -198,7 +197,6 @@ npm install
 ### 🟢 Start and run the server
 
 To run the server, type the following command in your terminal:
-<br><br>
 
 ```
 npm run dev
