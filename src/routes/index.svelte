@@ -1,13 +1,13 @@
 <script>
   // Components
-  import Home from '../components/templates/Home.svelte'
+  import Home from '@/components/templates/Home.svelte'
 </script>
 
 <style>
 </style>
 
 <svelte:head>
-  <title>FemAlert | Home</title>
+  <title>Dashboard | ReportAlert</title>
 </svelte:head>
 
 <Home />

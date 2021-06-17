@@ -5,6 +5,8 @@
   // Props
   export let support
   export let contact
+  export let text = 'Contact voor meer info'
+  export let bottom = false
 </script>
 
 <style lang="scss">
@@ -19,6 +21,16 @@
     align-items: baseline;
     margin: 1em 0 0 0;
     height: auto;
+    &.bottom {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      bottom: 1em;
+      width: 80%;
+      p {
+        margin-top: 1em;
+      }
+    }
     p {
       &.both {
         margin: 0 2em 1em 0;
@@ -43,11 +55,11 @@
 </style>
 
 {#if support || contact}
-  <div>
+  <div class:bottom>
     {#if support && contact}
       <p class="both icon">
         <Icons iconType="contact" />
-        Contact voor meer info
+        {text}
       </p>
       <p class="icon">
         <Icons iconType="support" />
@@ -61,7 +73,7 @@
     {:else}
       <p class="icon">
         <Icons iconType="contact" />
-        Contact voor meer info
+        {text}
       </p>
     {/if}
   </div>

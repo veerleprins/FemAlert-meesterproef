@@ -1,7 +1,7 @@
 <script>
   // Components
-  import WelcomeMessage from '../organisms/WelcomeMessage.svelte'
-  import SettingOverview from '../organisms/SettingOverview.svelte'
+  import WelcomeMessage from '@/components/organisms/WelcomeMessage.svelte'
+  import SettingOverview from '@/components/organisms/SettingOverview.svelte'
 </script>
 
 <style lang="scss">
