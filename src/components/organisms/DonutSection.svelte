@@ -13,7 +13,7 @@
     margin: 2em 1.5em;
     background-color: $ui-section;
     border-radius: 15px;
-    box-shadow: 1px 1px 6px #9a9a9a;
+    box-shadow: 1px 1px 6px #9a9a9a
   }
 
   @include size-m {
@@ -21,6 +21,7 @@
       margin: 0;
       display: flex;
       flex-direction: column;
+      height: 100%;
 
       div {
         display: flex;
