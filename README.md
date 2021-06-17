@@ -167,7 +167,7 @@ Here is a screenshot of the map-structure in our project:<br><br>
 
 ## 🔨 Install
 
-Here's a manual for installing this project.
+Here's a manual for installing this project.<br>
 
 ### 📡 Install Node.js & npm
 
