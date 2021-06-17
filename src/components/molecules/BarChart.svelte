@@ -11,7 +11,7 @@
   // Internals
   import { height, innerHeight, margin } from '@/utils/constants'
   import { reportData } from '@/stores/dataStore.js'
-  import { getCleanedChartData } from '@/utils/cleaning/clean.js'
+  import { getCleanedChartData } from '@/utils/cleaning/getBarData.js'
 
   // Props
   export let width
