@@ -19,6 +19,7 @@
         font-family: $light-font;
         text-anchor: middle;
         fill: $ui-body-color;
+        font-size: 1rem;
       }
     }
   }
