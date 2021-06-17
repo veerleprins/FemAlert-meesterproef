@@ -22,7 +22,7 @@ export function compareReports(allReports) {
 
   // Compare amount of reports, if the result is greater than 0, add a +
   // Set the value of content based on if the difference is greater or smaller than 0
-  const difference = reportsLastWeek - reportsToday
+  const difference = reportsToday - reportsLastWeek
   const content = difference > 0
     ? `+${difference}`
     : difference

@@ -21,13 +21,14 @@
   section {
     display: flex;
     flex-direction: column;
+    margin-bottom: 1em;
     select {
       width: 100%;
       background-color: $ui-blue;
       color: #FFFFFF;
       border-radius: 15px;
       padding: 0.5em 1em;
-      margin-top: 0.5em;
+      margin-top: 0.2em;
     }
   }
 
