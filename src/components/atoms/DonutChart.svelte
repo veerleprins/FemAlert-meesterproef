@@ -136,6 +136,7 @@
     g path {
       stroke: #ffffff;
       stroke-width: 3px;
+      cursor: pointer;
     }
 
     #tooltip {
