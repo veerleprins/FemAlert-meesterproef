@@ -46,17 +46,18 @@
     // Styling for grid
     div {
       max-height: 100vh;
-      // padding-left: 1em;
+      padding-left: 1em;
       header {
         height: auto;
       }
       div {
         flex-direction: row;
         gap: 1em;
+        // padding-left: 1em;
         section:first-of-type {
           background-color: #f3f3f3;
           border-radius: $borderSize;
-          height: 80vh;
+          height: 85vh;
           width: 50%;
           padding: 1em;
           overflow-y: scroll;
@@ -70,7 +71,7 @@
           background-color: $ui-section;
           border-radius: $borderSize;
           padding: 1em;
-          height: 80vh;
+          height: 85vh;
           width: 50%;
         }
       }
