@@ -11,7 +11,7 @@ Here is the live link to our demo of the dashboard:
 
 _by [Sharon Veldman](https://github.com/SharonV33), [Johan van Beusekom](https://github.com/johancvb) & [Veerle Prins](https://github.com/veerleprins)_
 
-The full process can be found at: [Product Biography](https://www.figma.com/file/qmR60oIyQVMrd7dndpxZCh/Untitled?node-id=0%3A1) or the [Design Rationale](https://www.figma.com/proto/qmR60oIyQVMrd7dndpxZCh/Untitled?page-id=1%3A4985&node-id=1%3A4986&viewport=406%2C571%2C0.134629487991333&scaling=min-zoom)
+The full process can be found at: [Product Biography](https://www.figma.com/proto/qmR60oIyQVMrd7dndpxZCh/Work-FemAlert?page-id=0%3A1&node-id=1%3A919&viewport=375%2C2840%2C0.11073474586009979&scaling=min-zoom) or the [Design Rationale](https://www.figma.com/proto/qmR60oIyQVMrd7dndpxZCh/Work-FemAlert?page-id=1%3A4985&node-id=1%3A5313&viewport=405%2C470%2C0.134629487991333&scaling=min-zoom)
 
 ---
 
